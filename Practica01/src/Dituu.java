@@ -12,4 +12,28 @@
  public class Dituu implements Personaje{
      /*Nombre del personaje */
      private String nombre="Dittu";
+
+
+
+
+
+    
+     public String getNombre() {
+         return nombre;
+     }
+
+     
+     @Override
+     public String mostrarInformacion(){
+        return ("Nombre:"+getNombre()+ "\n");
+     }
+
+    
+
+
+     public static void main(String[] args) {
+        Dituu dt=new Dituu();
+        System.out.println(dt.mostrarInformacion());
+    }
+    
  }

@@ -13,4 +13,29 @@
 
     /*Nombre del personaje */
     private String nombre="Korby";
+
+
+      /**objecto especial 1 */
+      private String obj1="guante";
+
+      /**objecto especial 2 */
+      private String obj2="sombrero";
+
+       /**objecto especial 3 */
+     private String obj3="Espada";
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String mostrarInformacion(){
+       return ("Nombre:"+getNombre()+ "\n");
+    }
+
+    public static void main(String[] args) {
+        Korby kb=new Korby();
+        System.out.println(kb.mostrarInformacion());
+    }
  }
