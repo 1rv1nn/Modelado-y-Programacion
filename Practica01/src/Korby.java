@@ -1,5 +1,5 @@
 /**
- * Interfaz Personaje
+ * Clase Korby
  * 
  * @author Cruz Gonzalez Irvin Javier
  * @author Ugalde Ubaldo Fernando
@@ -9,6 +9,8 @@
  * 
  */
 
- public interface Personaje{
-    public String mostrarInformacion();
+ public class Korby implements Personaje{
+
+    /*Nombre del personaje */
+    private String nombre="Korby";
  }

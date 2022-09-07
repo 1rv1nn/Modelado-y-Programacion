@@ -1,5 +1,5 @@
 /**
- * Interfaz Personaje
+ * Clase Dituu
  * 
  * @author Cruz Gonzalez Irvin Javier
  * @author Ugalde Ubaldo Fernando
@@ -9,6 +9,7 @@
  * 
  */
 
- public interface Personaje{
-    public String mostrarInformacion();
+ public class Dituu implements Personaje{
+     /*Nombre del personaje */
+     private String nombre="Dittu";
  }
