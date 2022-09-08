@@ -1,28 +1,62 @@
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class CampoDeBatalla implements Sujeto {
     Meganman megaman;
     Korby kirby;
     Ditto dittu;
-    List<Espectador> espectadoresActuales;
+    ArrayList<Espectador> espectadoresActuales;
     String mensaje;
-
-    void transformaciones(Meganman megaman){
-	this.megaman = megaman;
+    
+    public CampoDeBatalla() {
+    	megaman = new MeganmanBasico();
+    	kirby = new KorbyBasico();
+    	dittu = new DittoBasico();
+    	espectadoresActuales = new ArrayList<>();
+    	mensaje = new String();
     }
 
-    void transformaciones(Korby kirby) {
-	this.kirby = kirby;
+    public void transformaciones(Meganman megaman){
+    	this.megaman = megaman;
     }
 
-    void transformaciones(Ditto dittu) {
-	this.dittu = dittu;
+    public void transformaciones(Korby kirby) {
+    	this.kirby = kirby;
     }
 
-    Random rand = new Random();
+    public void transformaciones(Ditto dittu) {
+    	this.dittu = dittu;
+    }
 
-    // If random = 0 then megaman, else random = 1 then kirby else ditto;
-    int random = rand.nextInt(2 - 0 + 1) + 0;
+    public String getMensaje(){
+		return mensaje;
+	}
+
+	public void setMensaje(String nuevaRonda){
+		mensaje = nuevaRonda;
+	}
+
+
+	@Override
+	public void registrar(Espectador viewer) {
+		espectadoresActuales.add(viewer);
+	}
+
+	@Override
+	public void remover(Espectador viewer) {
+		espectadoresActuales.remove(viewer);
+	}
+
+	@Override
+	public void notificar() {
+		if(espectadoresActuales.size() > 0){
+			System.out.println("****************************************"
+				+ "\n********Pantallas de espectadores.********\n"
+				+ "****************************************");
+			for(Espectador c : espectadoresActuales){
+				c.actualizar();
+			}
+		}		
+	}
     
 }
