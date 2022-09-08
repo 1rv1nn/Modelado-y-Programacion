@@ -6,11 +6,11 @@ public abstract class Korby {
 	
 	
     public void realizaAtaque(Ditto dittu, Meganman megaman) {
-    	
+    	ataque.ataca(dittu, megaman);
     }
     
     public void realizaDefensa(Korby kirby) {
-    	
+    	defensa.defiende(kirby);
     }
     
     public void setVida(int vida) {
