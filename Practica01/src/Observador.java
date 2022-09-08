@@ -1,0 +1,3 @@
+interface Observador {
+    void actualizar();
+}
