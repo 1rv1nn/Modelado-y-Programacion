@@ -79,17 +79,23 @@ Strategy y Observer\\Practica 01\\
                       de ejecución ahorrando así espacio en memoria \\
 
                 \item \colorbox[rgb]{1.0, 0.43, 0.29}{Desventajas}
-                      ""      
+                      Si hay muchas estrategias alternativas, el número de objetos sera considerable.\\
+                      Los clientes deben tener cierta comprensión de cada estrategia, y el cliente decide qué clase de estrategia usar. \\
+                      
 
             \end{itemize}
 
             \item Observer
             \begin{itemize}
                 \item \colorbox[rgb]{0.69, 0.93, 0.93}{Ventajas}\\\\
+                      Tiene un alto grado de independencia entre el sujeto y los observadores. Los cambios entre el Sujeto u Observadores no afectan a otro.  \\
+                      Permite agregar observadores sin modificar el sujeto o los observadores. \\
                       
 
                 \item \colorbox[rgb]{1.0, 0.43, 0.29}{Desventajas}
-                      ""      
+                      No se especifica el receptor de una actualización. Las informaciones de cambios transmitidas pueden ser 
+                      irrelevantes para ciertos observadores. \\
+                      
 
             \end{itemize}    
             
