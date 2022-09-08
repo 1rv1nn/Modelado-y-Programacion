@@ -1,8 +1,8 @@
 public abstract class Korby {
 	
 	int vida;
-	IAtaqueMeganman ataque;
-	IDefensaMeganman defensa;
+	IAtaqueKorby ataque;
+	IDefensaKorby defensa;
 	
 	
     public void realizaAtaque(Ditto dittu, Meganman megaman) {
