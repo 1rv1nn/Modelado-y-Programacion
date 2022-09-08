@@ -1,6 +1,8 @@
-public class AtaqueSimpleMega {
-    int ataca(Korby kirby, Ditto dittu){
-	kirby.setVida(80); //Le bajs 20 al kirby
-	dittu.setVida(80)
+
+
+public class AtaqueSimpleMega implements IAtaqueMeganman {
+    public void ataca(Korby kirby, Ditto dittu){
+	kirby.setVida(kirby.getVida() - 10);
+	dittu.setVida(dittu.getVida() - 10);
     }
 }

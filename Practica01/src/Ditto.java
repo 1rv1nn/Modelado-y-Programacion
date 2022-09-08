@@ -1,15 +1,15 @@
-public abstract class Meganman {
+public abstract class Ditto {
 	int vida;
 	IAtaqueMeganman ataque;
 	IDefensaMeganman defensa;
 	
 	
-    public void realizaAtaque(Korby kirby, Ditto dittu) {
-    	ataque.ataca(kirby, dittu);
+    public void realizaAtaque(Korby kirby, Meganman megaman) {
+    	
     }
     
-    public void realizaDefensa(Meganman megaman) {
-    	defensa.defiende(megaman);
+    public void realizaDefensa(Ditto dittu) {
+    	
     }
     
     public void setVida(int vida) {
@@ -19,4 +19,4 @@ public abstract class Meganman {
     public int getVida() {
     	return vida;
     }
-} 
+}

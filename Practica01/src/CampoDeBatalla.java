@@ -1,9 +1,10 @@
+import java.util.List;
 import java.util.Random;
 
 public class CampoDeBatalla implements Sujeto {
     Meganman megaman;
     Korby kirby;
-    Dittu ditto;
+    Ditto dittu;
     List<Espectador> espectadoresActuales;
     String mensaje;
 
@@ -15,8 +16,8 @@ public class CampoDeBatalla implements Sujeto {
 	this.kirby = kirby;
     }
 
-    void transformaciones(Dittu ditto) {
-	this.ditto = ditto;
+    void transformaciones(Ditto dittu) {
+	this.dittu = dittu;
     }
 
     Random rand = new Random();
@@ -24,7 +25,4 @@ public class CampoDeBatalla implements Sujeto {
     // If random = 0 then megaman, else random = 1 then kirby else ditto;
     int random = rand.nextInt(2 - 0 + 1) + 0;
     
-    while(ditto.getVida() != 0 && kirby.getVida() != 0 && megaman.getVida() != 0) {
-	
-    }
 }

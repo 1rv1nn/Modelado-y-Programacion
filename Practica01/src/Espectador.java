@@ -10,10 +10,10 @@ public class Espectador implements Observador {
     }
 
     public void actualizar() {
-	noticia = stream.getMensaje();
+	resumen = stream.getMensaje();
     }
 
     public void desconectarse() {
-	steam.remover();
+	stream.remover();
     }
 }
