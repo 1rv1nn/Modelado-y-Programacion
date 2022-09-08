@@ -1,5 +1,5 @@
 
-public class DefensaSimple implements IDefensaDitto {
+public class DefensaSimpleDitto implements IDefensaDitto {
 
 	@Override
 	public void defiende(Ditto dittu) {
