@@ -6,4 +6,9 @@ public class  MeganmanBoomerang extends Meganman {
 	    ataque = new AtaqueBoomerang();
 	    defensa = new DefensaSaltando();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Meganman Boomerang";
+	}
 }

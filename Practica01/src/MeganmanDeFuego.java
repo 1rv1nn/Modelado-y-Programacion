@@ -5,4 +5,9 @@ public class  MeganmanDeFuego extends Meganman {
 	    ataque = new AtaqueBolasDeFuego();
 	    defensa = new DefensaDeFuego();	    
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Meganman de Fuego";
+	}
 }    

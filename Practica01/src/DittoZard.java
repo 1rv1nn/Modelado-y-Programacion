@@ -5,4 +5,9 @@ public class DittoZard extends Ditto {
 	    ataque = new AtaqueEscupeFuego();
 	    defensa = new DefensaVolando();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Ditto Charizard";
+	}
 }

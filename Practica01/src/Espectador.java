@@ -14,6 +14,7 @@ public class Espectador implements Observador {
 
     public void actualizar() {
     	resumen = stream.getMensaje();
+    	verDirecto();
     }
 
     public void desconectarse() {

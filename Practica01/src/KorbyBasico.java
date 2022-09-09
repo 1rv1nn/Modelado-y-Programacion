@@ -5,4 +5,9 @@ public class KorbyBasico extends Korby {
 	    ataque = new AtaqueSimpleKorby();
 	    defensa = new DefensaSimpleKorby();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Korby Basico";
+	}
 }

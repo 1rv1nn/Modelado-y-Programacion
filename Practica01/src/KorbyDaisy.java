@@ -5,4 +5,9 @@ public class KorbyDaisy extends Korby {
 	    ataque = new AtaqueLanzandoAToad();
 	    defensa = new DefensaEscudoDeToad();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Korby Daisy";
+	}
 }

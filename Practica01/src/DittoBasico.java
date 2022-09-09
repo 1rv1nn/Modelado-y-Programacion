@@ -5,4 +5,9 @@ public class DittoBasico extends Ditto{
 	    ataque = new AtaqueSimpleDitto();
 	    defensa = new DefensaSimpleDitto();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Ditto Basico";
+	}
 }

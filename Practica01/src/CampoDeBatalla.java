@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
 
 public class CampoDeBatalla implements Sujeto {
     Meganman megaman;
@@ -34,6 +33,10 @@ public class CampoDeBatalla implements Sujeto {
 
 	public void setMensaje(String nuevaRonda){
 		mensaje = nuevaRonda;
+	}
+	
+	public void actualidad() {
+		System.out.println("Actualmente " + kirby.getNombre() + " tiene "  + kirby.getVida() + " puntos de vida");
 	}
 
 

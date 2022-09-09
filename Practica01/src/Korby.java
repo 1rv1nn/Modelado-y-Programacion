@@ -20,4 +20,8 @@ public abstract class Korby {
     public int getVida() {
     	return vida;
     }
+    
+    public String getNombre() {
+		return "Korby";
+	}
 }

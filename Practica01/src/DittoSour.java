@@ -5,4 +5,9 @@ public class DittoSour extends Ditto {
 	    ataque = new AtaqueLanzaPolen();
 	    defensa = new DefensaDeFlores();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Ditto Bolbasor";
+	}
 }

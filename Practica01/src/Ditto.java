@@ -19,4 +19,8 @@ public abstract class Ditto {
     public int getVida() {
     	return vida;
     }
+    
+	public String getNombre() {
+		return "Ditto";
+	}
 }

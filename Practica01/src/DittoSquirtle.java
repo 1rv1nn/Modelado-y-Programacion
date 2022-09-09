@@ -5,4 +5,9 @@ public class DittoSquirtle extends Ditto {
 	    ataque = new AtaqueEscupeAgua();
 	    defensa = new DefensaDeAgua();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Ditto Escuirol";
+	}
 }

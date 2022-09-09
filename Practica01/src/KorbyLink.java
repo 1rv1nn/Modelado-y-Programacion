@@ -5,4 +5,9 @@ public class KorbyLink extends Korby {
 	    ataque = new AtaqueConArco();
 	    defensa = new DefensaConFlechas();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Korby Link";
+	}
 }

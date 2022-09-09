@@ -19,4 +19,9 @@ public abstract class Meganman {
     public int getVida() {
     	return vida;
     }
+    
+    
+	public String getNombre() {
+		return "Meganman";
+	}
 } 

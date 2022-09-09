@@ -4,4 +4,9 @@ public class  MeganmanBasico extends Meganman {
 	    ataque = new AtaqueSimpleMega();
 	    defensa = new DefensaSimpleMega();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Meganman Basico";
+	}
 }
