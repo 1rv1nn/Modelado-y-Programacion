@@ -1,3 +1,13 @@
+/**
+ * Clase CampoDeBatalla 
+ * 
+ * @author Cruz Gonzalez Irvin Javier
+ * @author Ugalde Ubaldo Fernando
+ * @author Ugalde Flores Jimena
+ * @since Modelado y Programacion 2023-3
+ * @version 1.0
+ * 
+ */
 import java.util.ArrayList;
 
 public class CampoDeBatalla implements Sujeto {
