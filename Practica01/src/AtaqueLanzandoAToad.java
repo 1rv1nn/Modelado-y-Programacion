@@ -12,8 +12,12 @@ public class AtaqueLanzandoAToad implements IAtaqueKorby {
 
 	@Override
 	public void ataca(Ditto dittu, Meganman megaman) {
-		dittu.setVida(dittu.getVida() - 15);
-		megaman.setVida(megaman.getVida() - 15);		
+		if(dittu.getVida() > 0) {
+			dittu.setVida(dittu.getVida() - 15);			
+		}
+		if(megaman.getVida() > 0) {			
+			megaman.setVida(megaman.getVida() - 15);
+		}		
 	}
 	
 	

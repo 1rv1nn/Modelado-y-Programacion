@@ -12,7 +12,8 @@ public class DefensaDeFlores implements IDefensaDitto{
 
 	@Override
 	public void defiende(Ditto dittu) {
-		dittu.setVida(dittu.getVida() + 7);		
+		if(dittu.getVida() > 0)
+			dittu.setVida(dittu.getVida() + 7);		
 	}
 
 }

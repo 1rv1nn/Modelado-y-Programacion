@@ -12,8 +12,12 @@ public class AtaqueConArco implements IAtaqueKorby {
 
 	@Override
 	public void ataca(Ditto dittu, Meganman megaman) {
-		dittu.setVida(dittu.getVida() - 20);
-		megaman.setVida(megaman.getVida() - 20);
+		if(dittu.getVida() > 0) {
+			dittu.setVida(dittu.getVida() - 20);			
+		}
+		if(megaman.getVida() > 0) {			
+			megaman.setVida(megaman.getVida() - 20);
+		}
 	}
 	
 	

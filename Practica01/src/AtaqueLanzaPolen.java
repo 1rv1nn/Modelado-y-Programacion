@@ -12,8 +12,12 @@ public class AtaqueLanzaPolen implements IAtaqueDitto {
 
 	@Override
 	public void ataca(Korby kirby, Meganman megaman) {
-		kirby.setVida(kirby.getVida() - 15);
-		megaman.setVida(megaman.getVida() - 15);		
+		if(kirby.getVida() > 0) {
+			kirby.setVida(kirby.getVida() - 15);			
+		}
+		if(megaman.getVida() > 0) {			
+			megaman.setVida(megaman.getVida() - 15);
+		}		
 	}
 
 }

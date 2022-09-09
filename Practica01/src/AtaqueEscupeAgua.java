@@ -12,8 +12,12 @@ public class AtaqueEscupeAgua implements IAtaqueDitto {
 
 	@Override
 	public void ataca(Korby kirby, Meganman megaman) {
-		kirby.setVida(kirby.getVida() - 20);
-		megaman.setVida(megaman.getVida() - 20);		
+		if(kirby.getVida() > 0) {
+			kirby.setVida(kirby.getVida() - 20);			
+		}
+		if(megaman.getVida() > 0) {			
+			megaman.setVida(megaman.getVida() - 20);
+		}		
 	}
 
 }

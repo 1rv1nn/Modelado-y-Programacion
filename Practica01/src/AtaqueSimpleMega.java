@@ -13,7 +13,11 @@ public class AtaqueSimpleMega implements IAtaqueMeganman {
     
 	@Override
 	public void ataca(Korby kirby, Ditto dittu){
-	kirby.setVida(kirby.getVida() - 10);
-	dittu.setVida(dittu.getVida() - 10);
+		if(kirby.getVida() > 0) {
+			kirby.setVida(kirby.getVida() - 10);			
+		}
+		if(dittu.getVida() > 0) {			
+			dittu.setVida(dittu.getVida() - 10);
+		}
     }
 }

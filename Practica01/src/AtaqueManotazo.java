@@ -12,8 +12,12 @@ public class AtaqueManotazo implements IAtaqueKorby {
 
 	@Override
 	public void ataca(Ditto dittu, Meganman megaman) {
-		dittu.setVida(dittu.getVida() - 25);
-		megaman.setVida(megaman.getVida() - 25);
+		if(dittu.getVida() > 0) {
+			dittu.setVida(dittu.getVida() - 25);			
+		}
+		if(megaman.getVida() > 0) {			
+			megaman.setVida(megaman.getVida() - 25);
+		}
 	}
 
 }

@@ -15,4 +15,9 @@ public class KorbyKong extends Korby {
 	    ataque = new AtaqueManotazo();
 	    defensa = new DefensaBarril();
 	}
+	
+	@Override
+	public String getNombre() {
+		return "Korby Kong";
+	}
 }

@@ -10,7 +10,11 @@
  */
 public class AtaqueConGranadas implements IAtaqueMeganman {
     public void ataca(Korby kirby, Ditto dittu){
-	kirby.setVida(kirby.getVida() - 25);
-	dittu.setVida(dittu.getVida() - 25);
+    	if(dittu.getVida() > 0) {
+			dittu.setVida(dittu.getVida() - 25);			
+		}
+		if(kirby.getVida() > 0) {			
+			kirby.setVida(kirby.getVida() - 25);
+		}
     }
 }

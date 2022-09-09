@@ -26,11 +26,11 @@ public class Espectador implements Observador {
      * @param peleadorFavorito
      * @param username
      */
-    public Espectador(String idViewer, String peleadorFavorito, String username) {
+    public Espectador(String idViewer, String peleadorFavorito, String username, CampoDeBatalla stream) {
     	this.idViewer = idViewer;
     	this.peleadorFavorito = peleadorFavorito;
     	this.username = username;
-    	stream = new CampoDeBatalla();
+    	this.stream = stream;
     }
 
     /*
@@ -49,9 +49,9 @@ public class Espectador implements Observador {
     }
     
     public void verDirecto() {
-    	System.out.println("Username: " + username
-    			+ "\nID: " + idViewer
-    			+ "\nPeleador favorito: " + peleadorFavorito 
-    			+ "\n Lo que ha pasado es: " + resumen);
+    	System.out.println("ID: " + idViewer
+    			+ "\nPeleador favorito: " + peleadorFavorito
+    			+ "\nHola " + username 
+    			+ "\nLo que ha pasado es: \n" + resumen);
     }
 }

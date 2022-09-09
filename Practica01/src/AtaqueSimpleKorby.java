@@ -12,8 +12,12 @@ public class AtaqueSimpleKorby implements IAtaqueKorby {
 
 	@Override
 	public void ataca(Ditto dittu, Meganman megaman) {
-		dittu.setVida(dittu.getVida() - 10);
-		megaman.setVida(megaman.getVida() - 10);
+		if(dittu.getVida() > 0) {
+			dittu.setVida(dittu.getVida() - 10);			
+		}
+		if(megaman.getVida() > 0) {			
+			megaman.setVida(megaman.getVida() - 10);
+		}
 	}
 	
 }
