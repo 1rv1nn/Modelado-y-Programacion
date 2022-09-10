@@ -6,7 +6,7 @@ import java.util.Random;
  * @author Cruz Gonzalez Irvin Javier
  * @author Ugalde Ubaldo Fernando
  * @author Ugalde Flores Jimena
- * @since Modelado y Programacion 2023-3
+ * @since Modelado y Programacion 2023-1
  * @version 1.0
  * 
  */
@@ -21,6 +21,9 @@ public class Main {
 		Espectador d404 = new Espectador("d404", "Megaman", "foreman", batalla);
 		
 		batalla.registrar(a101);
+		batalla.registrar(b202);
+		batalla.registrar(c303);
+		batalla.registrar(d404);
 		
 		Random rand = new Random();
 		
@@ -28,7 +31,7 @@ public class Main {
 		
 		int opcion = rand.nextInt(2) + 1;
 		
-		int i = 1;
+		int i = 0;
 		switch(opcion) {
 		case 1:
 			while(batalla.dittu.getVida() > 0 || batalla.kirby.getVida() > 0 || batalla.megaman.getVida() > 0) {
@@ -38,8 +41,11 @@ public class Main {
 					batalla.dittu.realizaAtaque(batalla.kirby, batalla.megaman);
 					batalla.kirby.realizaDefensa(batalla.kirby);
 					batalla.megaman.realizaDefensa(batalla.megaman);
-					batalla.setMensaje("Ronda " + i + "." + " Dittu ataca.");
-					batalla.notificar();				
+					batalla.setMensaje("Ronda " + (++i) + "." + " Dittu ataca.");
+					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[0] = 1;
 				}
@@ -50,6 +56,9 @@ public class Main {
 					batalla.dittu.realizaDefensa(batalla.dittu);
 					batalla.setMensaje("Ronda " + (++i) + "." + " Megaman ataca.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[1] = 1;
 				}
@@ -60,6 +69,9 @@ public class Main {
 					batalla.dittu.realizaDefensa(batalla.dittu);
 					batalla.setMensaje("Ronda " + (++i) + "." + " Kirby ataca.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[2] = 1;
 				}
@@ -68,16 +80,27 @@ public class Main {
 					batalla.transformaciones(new KorbyKong(batalla.kirby.getVida()));
 					batalla.setMensaje("Kirby absorbe el poder de DK");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else if(ran == 1 && batalla.megaman.getVida() > 0 && batalla.megaman.getNombre() != "Meganman Boomerang") {
 					batalla.transformaciones(new MeganmanBoomerang(batalla.megaman.getVida()));
 					batalla.setMensaje("Megaman absorbe el poder del Boomerang.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else if(ran == 2 && batalla.dittu.getVida() > 0 && batalla.dittu.getNombre() != "Ditto Bolbasor") {
 					batalla.transformaciones(new DittoSour(batalla.dittu.getVida()));
 					batalla.setMensaje("Dittu absorbe el poder de Bulbasaour.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				}
-				
+				for(Espectador e : batalla.espectadoresActuales) {
+					e.creaTXT();
+				}
 				int verificacion = 0;
 				for(int a : personajesEstado) {
 					verificacion += a;
@@ -88,6 +111,7 @@ public class Main {
 				} else {
 					verificacion = 0;
 				}
+				
 			}
 			break;
 		case 2:
@@ -98,8 +122,11 @@ public class Main {
 					batalla.dittu.realizaAtaque(batalla.kirby, batalla.megaman);
 					batalla.kirby.realizaDefensa(batalla.kirby);
 					batalla.megaman.realizaDefensa(batalla.megaman);
-					batalla.setMensaje("Ronda " + i + "." + " Dittu ataca.");
-					batalla.notificar();				
+					batalla.setMensaje("Ronda " + (++i) + "." + " Dittu ataca.");
+					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[0] = 1;
 				}
@@ -110,6 +137,9 @@ public class Main {
 					batalla.dittu.realizaDefensa(batalla.dittu);
 					batalla.setMensaje("Ronda " + (++i) + "." + " Megaman ataca.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[1] = 1;
 				}
@@ -120,6 +150,9 @@ public class Main {
 					batalla.dittu.realizaDefensa(batalla.dittu);
 					batalla.setMensaje("Ronda " + (++i) + "." + " Kirby ataca.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[2] = 1;
 				}
@@ -128,14 +161,23 @@ public class Main {
 					batalla.transformaciones(new KorbyDaisy(batalla.kirby.getVida()));
 					batalla.setMensaje("Kirby absorbe el poder de la princesa Daisy");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else if(ran == 1 && batalla.megaman.getVida() > 0 && batalla.megaman.getNombre() != "Meganman Bombastico") {
 					batalla.transformaciones(new MeganmanBombastico(batalla.megaman.getVida()));
 					batalla.setMensaje("Megaman absorbe el poder del lanzar bombas.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else if(ran == 2 && batalla.dittu.getVida() > 0 && batalla.dittu.getNombre() != "Ditto Charizard") {
 					batalla.transformaciones(new DittoZard(batalla.dittu.getVida()));
 					batalla.setMensaje("Dittu absorbe el poder de Charizard.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				}
 				
 				int verificacion = 0;
@@ -143,11 +185,17 @@ public class Main {
 					verificacion += a;
 				}
 				
+				for(Espectador e : batalla.espectadoresActuales) {
+					e.creaTXT();
+				}
+				
 				if(verificacion >= 2) {
 					break;
 				} else {
 					verificacion = 0;
 				}
+				
+				
 			}
 			break;
 			
@@ -159,8 +207,11 @@ public class Main {
 					batalla.dittu.realizaAtaque(batalla.kirby, batalla.megaman);
 					batalla.kirby.realizaDefensa(batalla.kirby);
 					batalla.megaman.realizaDefensa(batalla.megaman);
-					batalla.setMensaje("Ronda " + i + "." + " Dittu ataca.");
-					batalla.notificar();				
+					batalla.setMensaje("Ronda " + (++i) + "." + " Dittu ataca.");
+					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[0] = 1;
 				}
@@ -171,6 +222,9 @@ public class Main {
 					batalla.dittu.realizaDefensa(batalla.dittu);
 					batalla.setMensaje("Ronda " + (++i) + "." + " Megaman ataca.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[1] = 1;
 				}
@@ -181,6 +235,9 @@ public class Main {
 					batalla.dittu.realizaDefensa(batalla.dittu);
 					batalla.setMensaje("Ronda " + (++i) + "." + " Kirby ataca.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else {
 					personajesEstado[2] = 1;
 				}
@@ -189,28 +246,37 @@ public class Main {
 					batalla.transformaciones(new KorbyKong(batalla.kirby.getVida()));
 					batalla.setMensaje("Kirby absorbe el poder de Link");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else if(ran == 1 && batalla.megaman.getVida() > 0 && batalla.megaman.getNombre() != "Meganman de Fuego") {
 					batalla.transformaciones(new MeganmanDeFuego(batalla.megaman.getVida()));
 					batalla.setMensaje("Megaman absorbe el poder del Fuego.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				} else if(ran == 2 && batalla.dittu.getVida() > 0 && batalla.dittu.getNombre() != "Ditto Escuirol") {
 					batalla.transformaciones(new DittoSquirtle(batalla.dittu.getVida()));
 					batalla.setMensaje("Dittu absorbe el poder de Squirtle.");
 					batalla.notificar();
+					for(Espectador e : batalla.espectadoresActuales) {
+						e.creaTXT();
+					}
 				}
 				
 				int verificacion = 0;
 				for(int a : personajesEstado) {
 					verificacion += a;
 				}
-				
 				if(verificacion >= 2) {
 					break;
 				} else {
 					verificacion = 0;
 				}
-				break;
+				
 			}
+			break;
 		}
 	}
 }
