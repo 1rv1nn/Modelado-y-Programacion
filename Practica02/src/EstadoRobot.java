@@ -1,4 +1,4 @@
-/*
+/**
  * Clase que simula los comportamientos de un robot mesero
  * 
  * @author Cruz González Irvin Javier
@@ -18,6 +18,6 @@
     public void activar();
     public void caminar(); 
     public void cocinar();
-    public void MostrarMenu();
+    public void mostrarMenu();
     public void suspender();
  }

@@ -1,4 +1,4 @@
-/*
+/**
  * Clase que simula los comportamientos de un robot mesero
  * 
  * @author Cruz González Irvin Javier
@@ -11,30 +11,31 @@
 
  class Robot{
 
-    /*Verifica si ya se tomo la orden */
+   /**Verifica si una orden */
+   private boolean ordenRecibida;
+
+    /**Verifica si ya se tomo la orden */
     private boolean ordenMenu;
 
-    /*Verifica si ya cocinó el robot */
+    /**Verifica si ya cocinó el robot */
     private boolean cocinar;
 
-    /*Verifica si el robot esta en movimiento */
+    /**Verifica si el robot esta en movimiento */
     private boolean camina;
 
-    /*Verifica si entrego la comida */
+    /**Verifica si entrego la comida */
     private boolean entrega;
 
  
 
-    /*Activación del Robot por parte de un cliente */
-    //private boolean activarCliente;
 
-    /*Indica la ubicacion del robot */
+    /**Indica la ubicacion del robot */
     private boolean ubicacionCorrecta;
 
-    /*Indica la mesa objectivo del comensal a la que irá el robot */
-    private Objectivo mesaC;
+    /**Indica la mesa objectivo del comensal a la que irá el robot */
+    private Objetivo mesaC;
 
-    /*Verifica el estado del robot */
+    /** Verifica el estado del robot */
     private EstadoRobot estadoActual;
     
     /*Indica si el robot esta encendido */
@@ -56,9 +57,10 @@
     public Robot(){
 
         modoSuspendido=new ModoSuspendido(this);
-        //modoMovimiento=new ModoMovimiento(this);
-        //modoCocinar=new ModoCocinar(this);
-        //modoLeerMenu= new ModoLeerMenu(this);
+        modoMovimiento=new ModoMovimiento(this);
+        modoCocinar=new ModoCocinar(this);
+        modoLeerMenu= new ModoLeerMenu(this);
+        modoEncendido=new ModoEncendido(this);
         
         estadoActual=modoEncendido;
     }
@@ -68,7 +70,7 @@
      * 
      * @return la ubicacion correcta del robot
      */
-    public boolean getOrdenMenu(){
+    public boolean getUbicacionCorrecta(){
         if(mesaC.getDistancia()>0){
             return ubicacionCorrecta;
         }else{
@@ -77,7 +79,11 @@
         }
     }
 
-    /*getCocino 
+    public boolean getOrdenRecibida(){
+        return ordenRecibida;
+    }
+
+    /*getCocinar
      * 
      * @return 
     */
@@ -110,17 +116,149 @@
         }
     }
 
-    /*
+    /**
      * asignarNuevoEstado
-     * @param nuevo estado 
+     * @param nuevoEstado estado 
      */
     public void asignarNuevoEstado(EstadoRobot nuevoEstado){
         estadoActual=nuevoEstado;
     }
 
+     /**getEstadoEncendido
+     * 
+     * @return regresa si el robot esta encendido
+     */
     public EstadoRobot getEstadoEncendido(){
         return modoEncendido;
     }
+
+    /**getEstadoCamina
+     * 
+     * @return regresa si el robot esta en movimiento
+     */
+    public EstadoRobot getEstadoCamina(){
+        return modoMovimiento;
+    }
+
+    /**getEstadoLeeMenu
+     * 
+     * @return regresa si el robot lee el menu
+     */
+    public EstadoRobot getEstadoLeeMenu(){
+        return modoLeerMenu;
+    }
+
+    /**getEstadoCocina
+     * 
+     * @return regresa si el robot esta en movimiento
+     */
+    public EstadoRobot getEstadoCocina(){
+        return modoCocinar;
+    }
+
+    /*getEstadoSuspendio
+     * 
+     * @return regresa si el robot esta en suspencion
+     */
+    public EstadoRobot getEstadoSuspendido(){
+        return modoSuspendido;
+    }
+
+
+    /**reducirDistancia 
+    *
+    * Método que indica cuanta distancia recorrio    
+    */
+
+    public void reducirDistancia(){
+        mesaC.setTiempoComida(mesaC.getDistancia()-1);
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+
+    /**getComidaAcabada
+     * 
+     * Método que indica que el robot termino de hacer la comida
+     */
+
+     public boolean getComidaAcabada(){
+        if(mesaC.getTiempoComida()>0){
+            return cocinar;
+        }else{
+            cocinar=true;
+            return cocinar;
+        }
+     }
+
+     /**
+      * reducirComida()
+      */
+      public void reducirComida(){
+        mesaC.setTiempoComida(mesaC.getTiempoComida()-1);
+      }
+
+      /*
+       * getOrdenCompleta 
+       */
+
+       public Boolean getOrdenCompleta(){
+        if(mesaC.getOrden()==true){
+            return ordenMenu;
+        }else{
+            ordenMenu=true;
+            return ordenMenu;
+        }
+       }
+
+       public void ordenCompletada(){
+        mesaC.setOrden(mesaC.getOrden());
+       }
+
+
+       /**
+        * 
+        * ingresaOrden
+        */
+        public void ingresaOrden(){
+            System.out.println("OrdenAceptada ");
+            Objetivo mesa=new Objetivo(3, 5);
+            recibirOrdenObjetivo(mesa);
+            System.out.println("Orden recibida");
+        }
+
+        /**
+         * recibitOrdenObjetivo
+         */
+        public void recibirOrdenObjetivo(Objetivo mesa){
+            mesaC=mesa;
+            ordenRecibida=true;
+
+        }
+
+        public void activar(){
+            estadoActual.activar();
+        }
+
+        public void caminar(){
+            estadoActual.caminar();
+        }
+
+        public void tomarOrden(){
+            estadoActual.mostrarMenu();
+        }
+
+        public void cocinar(){
+            estadoActual.cocinar();
+        }
+
+        public void suspender(){
+            estadoActual.suspender();
+        }
+
 
 
  }
