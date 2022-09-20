@@ -1,6 +1,6 @@
 
 /**
- * Clase que implementa la preparación de una hamburguesa hawaiana.
+ * Clase que implementa la preparación de una hamburguesa tocineta.
  * Además extiende de Hamburguesa.
  * 
  * @author Cruz González, Irvin Javier
@@ -9,15 +9,15 @@
  * @version 1.0
  * @since Semester: 2023-1
  */
-public class HamburguesaHawaiana extends Hamburguesa{
+public class HamburguesaTocineta extends Hamburguesa{
 
     @Override
     void prepararCarne() {
-        System.out.println("Con carne molida y especias hacemos las hamburguesas.");
+        System.out.println("Con carne molida y huevo hacemos las hamburguesas. Añadimos tocineta también.");
     }
 
     @Override
     void ponerQueso() {
-        System.out.println("Ponemos queso parmesano y manchego.");
+        System.out.println("Ponemos queso cheddar.");
     }
 }
