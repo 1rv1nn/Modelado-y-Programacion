@@ -11,6 +11,20 @@
  */
 public class HamburguesaTocineta extends Hamburguesa{
 
+    public HamburguesaTocineta () {
+        id = 3;
+        nombre = "Hamburguesa Tocineta.";
+        precio = 40;
+        tieneQueso = true;
+        esVegetariano = false;
+        descripcion = "ID: " + id 
+                    + "\nNombre: " + nombre  
+                    + "\nPrecio: " + precio 
+                    + "\nTiene queso" 
+                    + "\nNo es vegetariana" 
+                    + "Deliciosa hamburguesa con tocineta.";
+    }
+
     @Override
     void prepararCarne() {
         System.out.println("Con carne molida y huevo hacemos las hamburguesas. Añadimos tocineta también.");

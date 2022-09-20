@@ -8,6 +8,13 @@
  * @since Semester: 2023-1
  */
 public abstract class Hamburguesa {
+    
+    int id;
+    String nombre;
+    String descripcion;
+    int precio;
+    boolean tieneQueso;
+    boolean esVegetariano;
 
     /**
      * Método final sobre cómo preparar cualquier hamburguesa dentro de los platillos
