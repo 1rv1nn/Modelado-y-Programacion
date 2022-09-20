@@ -10,6 +10,20 @@
  */
 public class HamburguesaChoriqueso extends Hamburguesa{
 
+    public HamburguesaChoriqueso () {
+        id = 4;
+        nombre = "Hamburguesa Choriqueso.";
+        precio = 35;
+        tieneQueso = true;
+        esVegetariano = false;
+        descripcion = "ID: " + id 
+                    + "\nNombre: " + nombre  
+                    + "\nPrecio: " + precio 
+                    + "\nTiene queso" 
+                    + "\nNo es vegetariana" 
+                    + "Deliciosa hamburguesa de choriquesog.";
+    }
+
     @Override
     void prepararCarne() {
         System.out.println("Con carne de res, huevo, pan molido y chorizo hacemos las hamburguesas.");

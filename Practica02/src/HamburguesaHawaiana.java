@@ -11,6 +11,20 @@
  */
 public class HamburguesaHawaiana extends Hamburguesa{
 
+    public HamburguesaHawaiana() {
+        id = 1;
+        nombre = "Hamburguesa Hawaiana.";
+        precio = 50;
+        tieneQueso = true;
+        esVegetariano = false;
+        descripcion = "ID: " + id 
+                    + "\nNombre: " + nombre  
+                    + "\nPrecio: " + precio 
+                    + "\nTiene queso" 
+                    + "\nNo es vegetariana" 
+                    + "Deliciosa hamburguesa con piña y jamón.";
+    }
+
     @Override
     void prepararCarne() {
         System.out.println("Con carne molida y especias hacemos las hamburguesas.");
