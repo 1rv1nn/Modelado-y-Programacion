@@ -10,6 +10,20 @@
  */
 public class HamburguesaVegetariana extends Hamburguesa{
 
+    public HamburguesaVegetariana() {
+        id = 2;
+        nombre = "Hamburguesa Vegetariana.";
+        precio = 60;
+        tieneQueso = false;
+        esVegetariano = true;
+        descripcion = "ID: " + id 
+                    + "\nNombre: " + nombre  
+                    + "\nPrecio: " + precio 
+                    + "\nNo tiene queso" 
+                    + "\nEs vegetariana" 
+                    + "Deliciosa hamburguesa vegetariana.";
+    }
+
     @Override
     void prepararCarne() {
         System.out.println("Con calabazas, zanahorias, germinado, huevo y pan molido hacemos las hamburguesas.");
@@ -17,6 +31,6 @@ public class HamburguesaVegetariana extends Hamburguesa{
 
     @Override
     void ponerQueso() {
-        System.out.println("Ponemos queso Halloumi.");
+        System.out.println("No tiene queso.");
     }
 }
