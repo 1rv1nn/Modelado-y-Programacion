@@ -54,7 +54,7 @@ public abstract class Hamburguesa {
      * 
      * Aquí es donde se implementa el patrón Template.
      */
-    abstract prepararCarne();
+    abstract void prepararCarne();
 
     /**
      * Método que simula ponerle mostaza a la hamburguesa.
@@ -68,7 +68,7 @@ public abstract class Hamburguesa {
      * 
      * Aquí es donde se implementa el patrón Template.
      */
-    abstract ponerQueso();
+    abstract void ponerQueso();
 
 
     /**
