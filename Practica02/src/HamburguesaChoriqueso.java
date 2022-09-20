@@ -21,7 +21,7 @@ public class HamburguesaChoriqueso extends Hamburguesa{
                     + "\nPrecio: " + precio 
                     + "\nTiene queso" 
                     + "\nNo es vegetariana" 
-                    + "Deliciosa hamburguesa de choriquesog.";
+                    + "Deliciosa hamburguesa de choriqueso.";
     }
 
     @Override
