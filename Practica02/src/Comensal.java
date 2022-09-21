@@ -8,7 +8,7 @@
  * @version 1.0
  * @since Modelado y Programacion 2023-1
  */ 
-public class Objectivo{
+public class Comensal{
 
     /*Verifica la distacia que camina el robot a un mesa */
     private int distanciaAlaMesa;
