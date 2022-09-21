@@ -25,6 +25,11 @@ public class Objetivo{
     private boolean orden;
 
 
+    /**
+     * Crea un objetivo
+     * @param distanciaAlaMesa 
+     * @param tiempoComida 
+     */
     public Objetivo(int distanciaAlaMesa,int tiempoComida){
         this.distanciaAlaMesa=distanciaAlaMesa;
         this.tiempoComida=tiempoComida;

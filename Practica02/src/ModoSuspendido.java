@@ -14,6 +14,10 @@
    Robot walle; 
 
 
+   /**
+    * Crea un modoSuspendido 
+    * @param walle
+    */
    public ModoSuspendido(Robot walle){
     this.walle=walle;
    }

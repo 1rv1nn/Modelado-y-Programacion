@@ -13,6 +13,10 @@ class ModoLeerMenu implements EstadoRobot{
 
     Robot walle; 
 
+    /**
+     * Crea el modo LeerMenu
+     * @param walle
+     */
     public ModoLeerMenu(Robot walle){
         this.walle=walle;
        }

@@ -14,6 +14,10 @@ class ModoCocinar implements EstadoRobot{
 
     Robot walle; 
 
+    /**
+     * Crea el modoCocinar
+     * @param walle
+     */
     public ModoCocinar(Robot walle){
         this.walle=walle;
        }

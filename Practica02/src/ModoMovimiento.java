@@ -13,6 +13,10 @@ class ModoMovimiento implements EstadoRobot{
 
     Robot walle; 
 
+    /**
+     * Crea un modoMovimiento
+     * @param walle
+     */
     public ModoMovimiento(Robot walle){
         this.walle=walle;
        }

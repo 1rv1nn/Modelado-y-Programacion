@@ -14,10 +14,18 @@ public class MesaComensal{
     private int distanciaAlaMesa;
     
 
+    /**
+     * Crea una MesaComensal
+     * @param distanciaAlaMesa
+     */
     public MesaComensal(int distanciaAlaMesa){
         this.distanciaAlaMesa=distanciaAlaMesa;
     }
 
+    /**
+     * getDistancia
+     * @return distanciaAlaMesa
+     */
     public int getDistancia () {
         return distanciaAlaMesa;
     }

@@ -54,6 +54,10 @@
     private EstadoRobot modoLeerMenu;
 
     
+
+    /**
+     * Crea un Robot
+     */
     public Robot(){
 
         modoSuspendido=new ModoSuspendido(this);
@@ -205,7 +209,7 @@
        * getOrdenCompleta 
        */
 
-       public Boolean getOrdenCompleta(){
+       public boolean getOrdenCompleta(){
         if(mesaC.getOrden()==true){
             return ordenMenu;
         }else{
@@ -239,22 +243,37 @@
 
         }
 
+        /**
+         * Activa al robot
+         */
         public void activar(){
             estadoActual.activar();
         }
 
+        /**
+         * Camina el robot
+         */
         public void caminar(){
             estadoActual.caminar();
         }
 
+        /**
+         * Toma una orden el robot
+         */
         public void tomarOrden(){
             estadoActual.mostrarMenu();
         }
 
+        /**
+         * Cocina el robot
+         */
         public void cocinar(){
             estadoActual.cocinar();
         }
 
+        /**
+         * Entra en modoS Suspencion
+         */
         public void suspender(){
             estadoActual.suspender();
         }

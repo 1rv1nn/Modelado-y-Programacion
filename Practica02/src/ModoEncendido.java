@@ -13,6 +13,10 @@ class ModoEncendido implements EstadoRobot{
 
     Robot walle; 
 
+    /**
+     * Crea un ModoEncendido
+     * @param walle
+     */
     public ModoEncendido(Robot walle){
         this.walle=walle;
        }
