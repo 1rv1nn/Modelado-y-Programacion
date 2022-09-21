@@ -57,9 +57,7 @@ public abstract class Hamburguesa {
     }
 
     /**
-     * Método abstracto de cómo preparar la carne.
-     * 
-     * Aquí es donde se implementa el patrón Template.
+     * Método que indica cómo preparar la carne.
      */
     abstract void prepararCarne();
 
@@ -71,9 +69,7 @@ public abstract class Hamburguesa {
     }
 
     /**
-     * Método abstracto de si ponerle queso a la hamburguesa o no.
-     * 
-     * Aquí es donde se implementa el patrón Template.
+     * Método que indica si ponerle queso a la hamburguesa o no.
      */
     abstract void ponerQueso();
 
