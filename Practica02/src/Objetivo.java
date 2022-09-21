@@ -19,10 +19,10 @@ public class Objetivo{
     /*Indica la distacia del robot */
     private int distaciaActual;
 
-    private int comidaLista;
+    private int comidaPorHacer;
 
-    /**Indica si ya se tomo la orden del menú */
-    private boolean orden;
+    /**Indica la cantidad de alimentos que tiene una orden */
+    private int orden;
 
 
     /**
@@ -35,11 +35,18 @@ public class Objetivo{
         this.tiempoComida=tiempoComida;
     }
 
-    /*getDistancia
+    /**getDistancia
      * @return distanciaAlaMesa
      */
     public int getDistancia () {
         return distanciaAlaMesa;
+    }
+
+    /** setDistancia 
+     * 
+    */
+    public void setDistancia(int distanciaAlaMesa){
+        this.distanciaAlaMesa=distanciaAlaMesa;
     }
 
 
@@ -47,7 +54,7 @@ public class Objetivo{
      * @return el tiempo en que tarda en hacer la comida
      */
     public int getTiempoComida (){
-        return tiempoComida;
+        return comidaPorHacer;
     }
 
     public void setTiempoComida(int tiempoComida){
@@ -65,17 +72,17 @@ public class Objetivo{
      * @return comidaLista
      */
     public int getComida(){
-        return comidaLista;
+        return comidaPorHacer;
     }
 
     /**getOrdenCompletada
      * @return la orden 
      */
-    public boolean getOrden(){
+    public int getOrden(){
         return orden;
     }
 
-    public void setOrden(boolean orden){
+    public void setOrden(int orden){
         this.orden=orden;
     }
 

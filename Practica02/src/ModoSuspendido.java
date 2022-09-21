@@ -45,18 +45,18 @@
       walle.asignarNuevoEstado(walle.getEstadoEncendido());
     }else{
       if(walle.getOrdenRecibida()){
-        System.out.println("*** MODO Activado *** \n Wall-e camina a la mesa del cliente." );
+        System.out.println("*** MODO ACTIVADO *** \n Wall-e camina a la mesa del cliente." );
         walle.asignarNuevoEstado(walle.getEstadoCamina());
       }else{
         if(walle.getOrdenRecibida()&&walle.getCocinar()){
-          System.out.println("*** MODO Activado ***\n Wall-e NO puede caminar mientras cocina ");
+          System.out.println("*** MODO ACTIVADO ***\n Wall-e NO puede caminar mientras cocina ");
           walle.asignarNuevoEstado(walle.getEstadoCamina());
         }else{
           if(walle.getOrdenRecibida() && walle.getUbicacionCorrecta()){
-            System.out.println("*** MODO Activado ***\n Wall-e NO puede caminar mientras estas ordenando ");
+            System.out.println("*** MODO ACTIVADO ***\n Wall-e NO puede caminar mientras estas ordenando ");
             walle.asignarNuevoEstado(walle.getEstadoCamina());
           }else{
-            System.out.println("*** MODO Activado ***\n Wall-e NO ha recibido una orden.Pasara al MODO SUSPENDIDO ");
+            System.out.println("*** MODO ACTIVADO ***\n Wall-e NO ha recibido una orden.Pasara al MODO SUSPENDIDO ");
             walle.asignarNuevoEstado(walle.getEstadoSuspendido());
           }
         }
@@ -73,18 +73,18 @@
       walle.asignarNuevoEstado(walle.getEstadoEncendido());
     }else{
       if(walle.getOrdenRecibida()){
-        System.out.println("*** MODO Activado *** \n Wall-e empieza a cocinar." );
+        System.out.println("*** MODO ACTIVADO *** \n Wall-e empieza a cocinar." );
         walle.asignarNuevoEstado(walle.getEstadoCocina());
       }else{
         if(walle.getOrdenRecibida()&&walle.getCamina()){
-          System.out.println("*** MODO Activado ***\n Wall-e NO puede cacinar mientras camina ");
+          System.out.println("*** MODO ACTIVADO ***\n Wall-e NO puede cacinar mientras camina ");
           walle.asignarNuevoEstado(walle.getEstadoCocina());
         }else{
           if(walle.getOrdenRecibida() && walle.getUbicacionCorrecta()){
-            System.out.println("*** MODO Activado ***\n Wall-e NO puede cocinar mientras esta pidiendo una orden ");
+            System.out.println("*** MODO ACTIVADO ***\n Wall-e NO puede cocinar mientras esta pidiendo una orden ");
             walle.asignarNuevoEstado(walle.getEstadoCocina());
           }else{
-            System.out.println("*** MODO Activado ***\n Wall-e NO ha recibido una orden.Pasara al MODO SUSPENDIDO ");
+            System.out.println("*** MODO ACTIVADO ***\n Wall-e NO ha recibido una orden.Pasara al MODO SUSPENDIDO ");
             walle.asignarNuevoEstado(walle.getEstadoSuspendido());
           }
         }
@@ -101,18 +101,18 @@
       walle.asignarNuevoEstado(walle.getEstadoEncendido());
     }else{
       if(walle.getOrdenRecibida()){
-        System.out.println("*** MODO Activado *** \n Wall-e esta tomando una orden." );
+        System.out.println("*** MODO ACTIVADO *** \n Wall-e esta tomando una orden." );
         walle.asignarNuevoEstado(walle.getEstadoLeeMenu());
       }else{
         if(walle.getOrdenRecibida()&&walle.getCocinar()){
-          System.out.println("*** MODO Activado ***\n Wall-e NO puede cocinar mientras esta pidiendo una orden  ");
+          System.out.println("*** MODO ACTIVADO ***\n Wall-e NO puede cocinar mientras esta pidiendo una orden  ");
           walle.asignarNuevoEstado(walle.getEstadoLeeMenu());
         }else{
           if(walle.getOrdenRecibida() && walle.getCamina()){
-            System.out.println("*** MODO Activado ***\n Wall-e NO puede caminar mientras estas ordenando ");
+            System.out.println("*** MODO ACTIVADO ***\n Wall-e NO puede caminar mientras estas ordenando ");
             walle.asignarNuevoEstado(walle.getEstadoLeeMenu());
           }else{
-            System.out.println("*** MODO Activado ***\n Wall-e NO ha recibido una orden.Pasara al MODO SUSPENDIDO ");
+            System.out.println("*** MODO ACTIVADO ***\n Wall-e NO ha recibido una orden.Pasara al MODO SUSPENDIDO ");
             walle.asignarNuevoEstado(walle.getEstadoSuspendido());
           }
         }
