@@ -19,25 +19,33 @@ class ModoLeerMenu implements EstadoRobot{
 
 
 
-  /*Metodo que verifica si el robot esta activado */
+  /**
+   * Metodo que verifica si el robot esta activado 
+   */
   @Override
   public void activar(){
     System.out.println("***MODO Cocinar***\nWall-e ya esta activado");
   }
 
-  /*Metodo que verifica si el robot esta en movimiento */
+  /**
+   * Metodo que verifica si el robot esta en movimiento 
+   */
   @Override
   public void caminar(){
     System.out.println("***MODO Cocinar***\nWall-e NO puede caminar mientras tomo una orden");
   }
 
-   /*Metodo que verifica si el robot esta cocinando */
+   /**
+    * Metodo que verifica si el robot esta cocinando 
+    */
    @Override
    public void cocinar(){
     System.out.println("***MODO Cocinar***\nWall-e NO puede cocinar mientras toma una orden");
    }
 
-    /*Metodo que verifica si el robot esta tomando una orden*/
+   /**
+    * Metodo que verifica si el robot esta tomando una orden
+    */
   @Override
   public void mostrarMenu(){
     if(!walle.getOrdenCompleta()){
@@ -48,7 +56,9 @@ class ModoLeerMenu implements EstadoRobot{
     }
   }
 
-   /*Metodo que verifica si el robot esta en suspencion */
+   /** 
+    * Metodo que verifica si el robot esta en suspencion 
+    */
    @Override
    public void suspender(){
     if(!walle.getOrdenCompleta()){
@@ -58,6 +68,4 @@ class ModoLeerMenu implements EstadoRobot{
       walle.asignarNuevoEstado(walle.getEstadoSuspendido());
     }
    }
-
-
 }
