@@ -1,4 +1,3 @@
-
 /**
  * Clase que implementa la preparación de una hamburguesa tocineta.
  * Además extiende de Hamburguesa.
@@ -33,5 +32,10 @@ public class HamburguesaTocineta extends Hamburguesa{
     @Override
     void ponerQueso() {
         System.out.println("Ponemos queso cheddar.");
+    }
+
+    @Override
+    public String toString() {
+        return descripcion;
     }
 }

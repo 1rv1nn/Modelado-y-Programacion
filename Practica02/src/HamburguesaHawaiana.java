@@ -1,4 +1,3 @@
-
 /**
  * Clase que implementa la preparación de una hamburguesa hawaiana.
  * Además extiende de Hamburguesa.
@@ -33,5 +32,10 @@ public class HamburguesaHawaiana extends Hamburguesa{
     @Override
     void ponerQueso() {
         System.out.println("Ponemos queso parmesano y manchego.");
+    }
+
+    @Override
+    public String toString() {
+        return descripcion;
     }
 }

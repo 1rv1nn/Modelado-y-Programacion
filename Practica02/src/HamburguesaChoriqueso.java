@@ -33,4 +33,9 @@ public class HamburguesaChoriqueso extends Hamburguesa{
     void ponerQueso() {
         System.out.println("Agregamos queso asadero.");
     }
+
+    @Override
+    public String toString() {
+        return descripcion;
+    }
 }

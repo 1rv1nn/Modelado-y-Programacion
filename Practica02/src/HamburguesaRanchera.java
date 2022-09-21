@@ -34,4 +34,9 @@ public class HamburguesaRanchera extends Hamburguesa {
     void ponerQueso() {
         System.out.println("No tiene queso.");
     }
+
+    @Override
+    public String toString() {
+        return descripcion;
+    }
 }
