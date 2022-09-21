@@ -175,7 +175,7 @@
     */
 
     public void reducirDistancia(){
-        mesaC.setTiempoComida(mesaC.getDistancia()-1);
+        mesaC.setDistancia(mesaC.getDistancia()-1);
     }
 
 
@@ -210,7 +210,7 @@
        */
 
        public boolean getOrdenCompleta(){
-        if(mesaC.getOrden()==true){
+        if(mesaC.getOrden()>0){
             return ordenMenu;
         }else{
             ordenMenu=true;
@@ -219,7 +219,7 @@
        }
 
        public void ordenCompletada(){
-        mesaC.setOrden(mesaC.getOrden());
+        mesaC.setOrden(mesaC.getOrden()-1);
        }
 
 
@@ -228,7 +228,7 @@
         * ingresaOrden
         */
         public void ingresaOrden(){
-            System.out.println("OrdenAceptada ");
+            System.out.println("Orden Aceptada ");
             Objetivo mesa=new Objetivo(3, 5);
             recibirOrdenObjetivo(mesa);
             System.out.println("Orden recibida");

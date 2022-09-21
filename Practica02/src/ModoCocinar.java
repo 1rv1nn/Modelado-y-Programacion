@@ -26,13 +26,13 @@ class ModoCocinar implements EstadoRobot{
   /*Metodo que verifica si el robot esta activado */
   @Override
   public void activar(){
-    System.out.println("***MODO Cocinar***\nWall-e esta activado");
+    System.out.println("***MODO COCINAR***\nWall-e esta activado");
   }
 
   /*Metodo que verifica si el robot esta en movimiento */
   @Override
   public void caminar(){
-    System.out.println("***MODO Cocinar***\nWall-e NO puede caminar mientras cocina");
+    System.out.println("***MODO COCINAR***\nWall-e NO puede caminar mientras cocina");
  
   }
 
@@ -41,9 +41,9 @@ class ModoCocinar implements EstadoRobot{
    public void cocinar(){
     if(!walle.getComidaAcabada()){
       walle.reducirComida();
-      System.out.println("***MODO Cocinar***\nWall-e esta cocinando.");
+      System.out.println("***MODO COCINAR***\nWall-e esta cocinando.");
     }else{
-      System.out.println("***MODO Cocinar***\nWall-e ha terminado de cocinar");
+      System.out.println("***MODO COCINAR***\nWall-e ha terminado de cocinar");
     }
    }
 
@@ -51,9 +51,9 @@ class ModoCocinar implements EstadoRobot{
   @Override
   public void mostrarMenu(){
     if(!walle.getComidaAcabada()){
-      System.out.println("***MODO Cocinar***\nWall-e NO ha terminado de cocinar");
+      System.out.println("***MODO COCINAR***\nWall-e NO ha terminado de cocinar");
     }else{
-      System.out.println("***MODO Cocinar***\nWall-e tomará una orden");
+      System.out.println("***MODO COCINAR***\nWall-e tomará una orden");
       walle.asignarNuevoEstado(walle.getEstadoLeeMenu());
     }
   }
@@ -61,7 +61,12 @@ class ModoCocinar implements EstadoRobot{
    /** Metodo que verifica si el robot esta en suspencion */
    @Override
    public void suspender(){
-    System.out.println("***MODO Cocinar***\nWall-e NO se puede suspender mientras cocina");
+    if(!walle.getComidaAcabada()){
+      System.out.println("***MODO COCINAR***\nWall-e NO se puede suspender mientras cocina");
+    }else{
+      System.out.println("***MODO COCINAR***\nWall-e NO pasará al MODO SUSPENDIDO");
+    }
+    
    }
 
 

@@ -28,7 +28,7 @@ class ModoLeerMenu implements EstadoRobot{
    */
   @Override
   public void activar(){
-    System.out.println("***MODO Cocinar***\nWall-e ya esta activado");
+    System.out.println("***MODO LEER MENÚ***\nWall-e ya esta activado");
   }
 
   /**
@@ -36,7 +36,7 @@ class ModoLeerMenu implements EstadoRobot{
    */
   @Override
   public void caminar(){
-    System.out.println("***MODO Cocinar***\nWall-e NO puede caminar mientras tomo una orden");
+    System.out.println("***MODO LEER MENÚ***\nWall-e NO puede caminar mientras tomo una orden");
   }
 
    /**
@@ -44,7 +44,13 @@ class ModoLeerMenu implements EstadoRobot{
     */
    @Override
    public void cocinar(){
-    System.out.println("***MODO Cocinar***\nWall-e NO puede cocinar mientras toma una orden");
+    if(!walle.getOrdenCompleta()){
+      System.out.println("***MODO LEER MENÚ***\nWall-e NO ha terminado de tomar la orden");
+    }else{
+      System.out.println("***MODO LEER MENÚ***\nWall-e pasará al MODO COCINAR");
+      walle.asignarNuevoEstado(walle.getEstadoCocina());
+    }
+    
    }
 
    /**
@@ -54,9 +60,9 @@ class ModoLeerMenu implements EstadoRobot{
   public void mostrarMenu(){
     if(!walle.getOrdenCompleta()){
       walle.ordenCompletada();
-      System.out.println("***MODO Cocinar***\nWall-e Esta tomando una orden");
+      System.out.println("***MODO LEER MENÚ***\nWall-e Esta tomando una orden");
     }else{
-      System.out.println("***MODO Cocinar***\nWall-e ha acabado de tomar la orden");
+      System.out.println("***MODO LEER MENÚ***\nWall-e ha acabado de tomar la orden");
     }
   }
 
@@ -66,9 +72,9 @@ class ModoLeerMenu implements EstadoRobot{
    @Override
    public void suspender(){
     if(!walle.getOrdenCompleta()){
-      System.out.println("***MODO Cocinar***\nWall-e NO ha acabado de tomar la orden");
+      System.out.println("***MODO LEER MENÚ***\nWall-e NO ha acabado de tomar la orden");
     }else{
-      System.out.println("***MODO Cocinar***\nWall-e esta suspendido");
+      System.out.println("***MODO LEER MENÚ***\nWall-e esta suspendido");
       walle.asignarNuevoEstado(walle.getEstadoSuspendido());
     }
    }
