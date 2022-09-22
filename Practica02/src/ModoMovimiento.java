@@ -57,7 +57,7 @@ class ModoMovimiento implements EstadoRobot{
     if(!walle.getUbicacionCorrecta()){
       System.out.println("***MODO MOVIMIENTO***\n Wall-e no puede mostar el menú al cliente");
     }else{
-      System.out.println("***MODO MOVIMIENTO***\n Wall-e esta tomando una orden");
+      System.out.println("***MODO MOVIMIENTO***\n Wall-e pasará a MODO LEER MENÚ");
       walle.asignarNuevoEstado(walle.getEstadoLeeMenu());
     }
   }

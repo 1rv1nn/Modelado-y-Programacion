@@ -7,7 +7,7 @@ public class Prueba{
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 
-		System.out.println("***BIENVENIDO A LA CONSOLA DE Walle.***"
+		System.out.println("***BIENVENIDO A LA CONSOLA DE WALLE.***"
 						+ "\nPor favor elige la opcion que deseas ejecutar.");
 
 		do{

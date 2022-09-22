@@ -64,7 +64,8 @@ class ModoCocinar implements EstadoRobot{
     if(!walle.getComidaAcabada()){
       System.out.println("***MODO COCINAR***\nWall-e NO se puede suspender mientras cocina");
     }else{
-      System.out.println("***MODO COCINAR***\nWall-e NO pasará al MODO SUSPENDIDO");
+      System.out.println("***MODO COCINAR***\nWall-e termino de cocinar pasará al MODO SUSPENDIDO");
+      walle.asignarNuevoEstado(walle.getEstadoSuspendido());
     }
     
    }
