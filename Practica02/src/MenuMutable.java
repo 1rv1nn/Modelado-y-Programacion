@@ -15,4 +15,8 @@ public class MenuMutable {
     public Iterator<Hamburguesa> getIterator() {
         return menuMutable.iterator();
     }
+
+    public ArrayList<Hamburguesa> getMenu(){
+        return menuMutable;
+    }
 }

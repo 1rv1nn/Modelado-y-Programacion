@@ -31,17 +31,28 @@ public class MenuEspecial {
      * @return IteradorHash, el iterador de la HashTable
      */
     public Iterator<Hamburguesa> getIterator() {
-        return new HashIterador<>();
+        return new HashIterador<>(menuEspacial);
+    }
+
+    public Hashtable<Integer, Hamburguesa> getMenu(){
+        return menuEspacial;
     }
 
     /**
      * Clase interna que implementa el iterador del Hashtable.
-     * @param <T> Utilizamos génericos.
+     * @param <T,V> T para el tipo de valor de las keys, E para los elementos almacenados.
      */
-    private class HashIterador<T> implements Iterator<Hamburguesa> {
+    private class HashIterador<T,E> implements Iterator<E> {
 
-        Set<Integer> keys = menuEspacial.keySet();
-        Iterator<Integer> it = keys.iterator(); 
+        private Hashtable<T,E> hash;
+        private Set<T> keys;
+        private Iterator<T> it; 
+
+        public HashIterador(Hashtable<T,E> hash) {
+            this.hash = hash;
+            keys = this.hash.keySet();
+            it = keys.iterator();
+        }
 
         @Override
         public boolean hasNext() {
@@ -53,9 +64,9 @@ public class MenuEspecial {
         }
 
         @Override
-        public Hamburguesa next() {
+        public E next() {
             if(hasNext()){
-                return menuEspacial.get(it.next());
+                return hash.get(it.next());
             }
             return null;
         }

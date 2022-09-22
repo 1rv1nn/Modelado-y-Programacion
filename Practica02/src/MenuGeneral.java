@@ -10,12 +10,21 @@ public class MenuGeneral {
     }
 
     public Iterator<Hamburguesa> getIterator(){
-        return new ArrayIterador<Hamburguesa>();
+        return new ArrayIterador<Hamburguesa>(menuGeneral);
     }
 
-    private class ArrayIterador<T> implements Iterator<Hamburguesa> {
+    public Hamburguesa[] getMenu() {
+        return menuGeneral;
+    }
+
+    private class ArrayIterador<E> implements Iterator<E> {
 
         int index = 0;
+        E array[];
+
+        public ArrayIterador(E[] array) {
+            this.array = array;
+        }
 
         @Override
         public boolean hasNext() {
@@ -26,9 +35,9 @@ public class MenuGeneral {
         }
         
         @Override
-        public Hamburguesa next() {
+        public E next() {
             if(hasNext()){
-                return menuGeneral[index++];
+                return array[index++];
             }
             return null;
         }
