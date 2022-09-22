@@ -36,7 +36,7 @@ public class Objetivo{
     }
 
     /**getDistancia
-     * @return distanciaAlaMesa
+     * @return distanciaen que camina ala mesa
      */
     public int getDistancia () {
         return distanciaAlaMesa;

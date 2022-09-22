@@ -30,7 +30,7 @@
         System.out.println("*** MODO SUSPENDIDO ***\n Wall-e ha terminado su servicio. Gracias");
         walle.asignarNuevoEstado(walle.getEstadoEncendido());
      } else{
-            System.out.println("***MODO ENCENDIDO*** \n Wall-e esta a la espera de su orden.");
+            System.out.println("***MODO ENCENDIDO*** \n Wall-e esta ACTIVADO, a la espera de su orden.");
         }
    }
 
@@ -45,7 +45,7 @@
       walle.asignarNuevoEstado(walle.getEstadoEncendido());
     }else{
       if(walle.getOrdenRecibida()){
-        System.out.println("*** MODO ACTIVADO *** \n Wall-e camina a la mesa del cliente." );
+        System.out.println("*** MODO ACTIVADO *** \n Wall-e pasará al MODO MOVIMIENTO." );
         walle.asignarNuevoEstado(walle.getEstadoCamina());
       }else{
         if(walle.getOrdenRecibida()&&walle.getCocinar()){
