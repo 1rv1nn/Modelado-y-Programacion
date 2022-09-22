@@ -13,7 +13,7 @@ public class HamburguesaVegana extends Hamburguesa {
     public HamburguesaVegana() {
         id = 9;
         nombre = "Hamburguesa Vegana.";
-        precio = 65;
+        precio = 80;
         tieneQueso = false;
         esVegetariano = true;
         descripcion = "ID: " + id

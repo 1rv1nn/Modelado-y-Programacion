@@ -11,7 +11,7 @@
 public class HamburguesaChoriqueso extends Hamburguesa{
 
     public HamburguesaChoriqueso () {
-        id = 4;
+        id = 3;
         nombre = "Hamburguesa Choriqueso.";
         precio = 35;
         tieneQueso = true;

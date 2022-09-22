@@ -18,6 +18,7 @@ public class MenuEspecial {
      * Método constructor de la clase.
      */
     public MenuEspecial() {
+        this.menuEspacial = new Hashtable<>();
         Hamburguesa n = new HamburguesaEspecial();
         Hamburguesa m = new HamburguesaAsadera();
         Hamburguesa v = new HamburguesaVegana();
