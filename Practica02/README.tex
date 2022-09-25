@@ -72,33 +72,21 @@ State, Template e Iterator \\Practica 02\\
     \item Menciona los principios de diseño esenciales del patrón State, Template e Iterator. Menciona una desventaja de cada patrón.\\\\ De acuerdo a los principios SOLID
         \begin{enumerate}
             \item \colorbox[rgb]{0.53, 0.81, 0.98}{State}
-                \begin{itemize}
-                    \item Sustitución de Liskov
-                    \item Principio de segregación de interfaces.\\Dado que este principio se basa principalmente en dividir varias interfaces
-                          donde definen comportamientos más especificos es decir no obligar a ninguna clase a implementar métodos que no utiliza;
-                          State aplica de una manera eficiente este comportamiento dado que se tiene una interfaz con cada uno de los estados del 
-                          objecto de contexto.
-                    \item State puede ser usado cuando necesitamos cambiar el estado de un objeto en tiempo de ejecución,teniendo diferentes subclases de algunas  
-                    clases; Esta circunstancia es una ventaja y \textcolor{red}{desventaja} al mismo tiempo, porque tenemos clases con estados claros con cierta lógica y, por otro lado, el número de clases crece.
-                   
-                \end{itemize}
+                El proposito de \textit{State} es permitir que un objeto modifique su comportamiento a la vez que camibe su estado interno. Pues hace parecer que cambia la clase del objeto.
+                
+                La deventaja de este patrón es que puede ser complicado si un objeto tiene muchas transiciones o, en otro caso, el objeto no utiliza frecuentemente estos estodos.
 
 
             
             \item \colorbox[rgb]{1.0, 0.71, 0.76}{Template}
-            \begin{itemize}
-                \item 
-                \item 
-                 \\
-                
-            \end{itemize}
-            
+                El proposito de \textit{Template} es definir el esqueleto de un algoritmo, delegando en subclases algunos de sus pasos. A su vez, permite que las subclases redefinan ciertos pasos de los algoritmos sin cambiar su estructura.
+
+                La desventaja de este patrón es que puede ser algo rígido a la hora de los pasos, y por tanto, díficil de mantener si algunos de los pasos, o la mayoría, cambian. Al mismo tiempo, puede que un cliente no tenga claro el esqueleto de lo que busca. 
 
             \item \colorbox[rgb]{0.69, 0.61, 0.85}{Iterator}
-            \begin{itemize}
-                \item %Sustitución de Liskov
-                \item        
-            \end{itemize}    
+                El proposito de \textit{Iterator} es proporcionar un modo de acceder secuencialmente a los elementos de un objeto agregado sin exponer su representación interna.
+
+                La deventaja de este patrón es que es muy específico. También no puede haber subsecciones de elementos del objeto, lo cual lo hace algo rígido.
         \end{enumerate}
 \end{enumerate}
 
