@@ -12,12 +12,12 @@ public class BaguetteAvenaMiel implements Alimento{
 
     @Override
     public String getDescripcion() {
-        return "Una baguete de avena con miel \t$13";
+        return "Una baguete de avena con miel \t$10";
     }
 
     @Override
     public double precio() {
-        return 13;
+        return 10;
     }
     
 }

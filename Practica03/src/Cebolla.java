@@ -20,12 +20,12 @@ public class Cebolla extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon cebolla \t$0";
+        return alimento.getDescripcion() + "\nCon cebolla \t$3";
     }
 
     @Override
     public double precio(){
-        return alimento.precio() + 0;
+        return alimento.precio() + 3;
     }
 }
 

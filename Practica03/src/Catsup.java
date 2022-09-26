@@ -20,12 +20,12 @@ public class Catsup extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon catsup \t$1";
+        return alimento.getDescripcion() + "\nCon catsup \t$2.5";
     }
 
     @Override
     public double precio(){
-        return alimento.precio() + 1;
+        return alimento.precio() + 2.5;
     }
 }
 
