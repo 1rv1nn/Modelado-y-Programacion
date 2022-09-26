@@ -21,12 +21,12 @@ Te toca realizar las siguientes clases, por ahora.
 - Jitomate
 - Mayonesa
 - BaguetteIntegral
-- PizzaHonolulu
-- PizzaPepperoni
+- PizzaHonolulu (manchego, jamon, gruesa)
+- PizzaPepperoni (chedda, salchicha, delgada)
 
 *** TODO Irvin
 Te toca realizar las siguientes clases, por ahora.
 
-- PizzaMexicana
-- PizzaVegetariana
+- PizzaMexicana (cheddar, pollo, delgada)
+- PizzaVegetariana (manchego, pollo, gruesa)
 - Parte teorica
