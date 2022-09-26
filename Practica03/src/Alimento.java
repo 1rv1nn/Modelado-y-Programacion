@@ -1,5 +1,11 @@
 /**
  * Interface de alimento que contiene los métodos de cada alimento.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
  */
 public interface Alimento {
     /**

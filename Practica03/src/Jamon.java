@@ -1,5 +1,12 @@
 /**
  * Clase que decora al Alimento e implementa la interface Ingrediente. 
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * 
  */
 public class Jamon extends Ingrediente{
     
