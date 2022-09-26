@@ -1,9 +1,12 @@
 #+TITLE: Pendientes
 
-Consideraciones importantes. 
+*Consideraciones importantes*. 
 
-La lista de los precios de los ingredientes se encuentran en el archivo [[precios_de_ingredientes.csv][precios_de_ingredientes]].
-La identación es de 4 spaces para que todos lo tengamos similar.
+La *lista de los precios* de los ingredientes se encuentran en el archivo [[precios_de_ingredientes.csv][precios_de_ingredientes]].
+
+La *identación* es de *4 spaces* para que todos lo tengamos similar.
+
+*REALICEN TODO EN LA RAMA _WAYSUB_*.
 
 ** TODO Jimena
 Te toca realizar las siguientes clases, por ahora.
