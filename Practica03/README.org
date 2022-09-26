@@ -6,7 +6,7 @@ La *lista de los precios* de los ingredientes se encuentran en el archivo [[prec
 
 La *identación* es de *4 spaces* para que todos lo tengamos similar.
 
-*REALICEN TODO EN LA RAMA /WAYSUB/*.
+*REALICEN TODO EN LA RAMA _WAYSUB_.*
 
 ** TODO Jimena
 Te toca realizar las siguientes clases, por ahora.
