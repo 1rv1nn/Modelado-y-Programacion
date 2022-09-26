@@ -20,12 +20,12 @@ public class Mostaza extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon mostaza \t$3";
+        return alimento.getDescripcion() + "\nCon mostaza \t$1";
     }
 
     @Override
     public double precio(){
-        return alimento.precio() + 3;
+        return alimento.precio() + 1;
     }
 }
 
