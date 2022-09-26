@@ -2,7 +2,7 @@
 
 ** Consideraciones importantes. 
 
-La *lista de los precios* de los ingredientes se encuentran en el archivo [[precios_de_ingredientes.csv][precios_de_ingredientes]].
+La *lista de los precios* de los ingredientes se encuentran en el archivo [[precios_de_ingredientes.csv][precios_de_ingredientes]] (incluye el precio de las pizzas y los ingredientes de las pizzas).
 
 La *identación* es de *4 spaces* para que todos lo tengamos similar.
 
