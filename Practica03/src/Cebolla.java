@@ -20,7 +20,7 @@ public class Cebolla extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon jamón \t$0";
+        return alimento.getDescripcion() + "\nCon cebolla \t$0";
     }
 
     @Override
