@@ -1,7 +1,7 @@
 /**
  * Clase que implementa la pizza hawaiana.
  */
-public class PizzaHawaina implements Pizza{
+public class PizzaHawaiana implements Pizza{
 
     private final String nombre = "pizza hawaiana"; 
 
