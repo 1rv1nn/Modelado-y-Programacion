@@ -21,3 +21,6 @@ Te toca realizar las siguientes clases, por ahora.
 - Catsup 
 - BaguetteAvenaMiel
 
+*** Ejemplos
+- Para los ingredientes pueden basarse en la clase [[./src/Jamon.java][Jamon]].
+- Para la baguette pueden basarse en la clase [[./src/BaguetteBlanco][BaguetteBlanco]].
