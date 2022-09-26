@@ -74,31 +74,31 @@ public class MenuWaySub {
 
             switch(tipoPizza){
                 case 1:
-                    Pizza hawaiana = new PizzaHawaina();
+                    Pizza hawaiana = new PizzaHawaiana();
                     pizzaWaySub = new AdaptadorPizza(hawaiana);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" + 
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 2:
-                    Pizza pepperoni = new PizzaHawaina();
+                    Pizza pepperoni = new PizzaHawaiana();
                     pizzaWaySub = new AdaptadorPizza(pepperoni);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" + 
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 3:
-                    Pizza mexicana = new PizzaHawaina();
+                    Pizza mexicana = new PizzaHawaiana();
                     pizzaWaySub = new AdaptadorPizza(mexicana);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" + 
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 4:
-                    Pizza vegetariana = new PizzaHawaina();
+                    Pizza vegetariana = new PizzaHawaiana();
                     pizzaWaySub = new AdaptadorPizza(vegetariana);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" +
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 5:
-                    Pizza honolulu = new PizzaHawaina();
+                    Pizza honolulu = new PizzaHawaiana();
                     pizzaWaySub = new AdaptadorPizza(honolulu);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" + 
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
