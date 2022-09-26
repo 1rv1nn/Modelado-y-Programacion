@@ -20,7 +20,7 @@ public class Jamon extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon jamón \t$10";
+        return alimento.getDescripcion() + "\nCon jamón \t\t\t$10";
     }
 
     @Override
