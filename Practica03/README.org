@@ -1,6 +1,6 @@
 #+TITLE: Pendientes
 
-*Consideraciones importantes*. 
+** Consideraciones importantes. 
 
 La *lista de los precios* de los ingredientes se encuentran en el archivo [[precios_de_ingredientes.csv][precios_de_ingredientes]].
 
@@ -8,22 +8,25 @@ La *identación* es de *4 spaces* para que todos lo tengamos similar.
 
 Realicen todo en la rama =waysub=.
 
-** TODO Jimena
+*** Ejemplos
+- Para los ingredientes pueden basarse en la clase [[./src/Jamon.java][Jamon]].
+- Para la baguette pueden basarse en la clase [[./src/BaguetteBlanco.java][BaguetteBlanco]].
+- Para las pizzas pueden basarse en la clase [[./src/PizzaHawaiana.java][PizzaHawaiana]].
+
+** Cosas por hacer
+*** TODO Jimena
 Te toca realizar las siguientes clases, por ahora.
 
 - Pepperoni
 - Jitomate
 - Mayonesa
 - BaguetteIntegral
+- PizzaHonolulu
+- PizzaPepperoni
 
-** TODO Irvin
+*** TODO Irvin
 Te toca realizar las siguientes clases, por ahora.
 
-- Cebolla
-- Mostaza 
-- Catsup 
-- BaguetteAvenaMiel
-
-*** Ejemplos
-- Para los ingredientes pueden basarse en la clase [[./src/Jamon.java][Jamon]].
-- Para la baguette pueden basarse en la clase [[./src/BaguetteBlanco.java][BaguetteBlanco]].
+- PizzaMexicana
+- PizzaVegetariana
+- Parte teorica
