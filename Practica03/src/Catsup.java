@@ -20,7 +20,7 @@ public class Catsup extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon catsup \t$2.5";
+        return alimento.getDescripcion() + "\nCon catsup \t\t\t$2.5";
     }
 
     @Override

@@ -20,7 +20,7 @@ public class Lechuga extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon lechuga \t$4";
+        return alimento.getDescripcion() + "\nCon lechuga \t\t\t$4";
     }
 
     @Override

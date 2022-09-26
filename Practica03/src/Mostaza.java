@@ -20,7 +20,7 @@ public class Mostaza extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon mostaza \t$1";
+        return alimento.getDescripcion() + "\nCon mostaza \t\t\t$1";
     }
 
     @Override
