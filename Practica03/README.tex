@@ -55,7 +55,7 @@ Equipo: Cerebros de Pollo\\
 \large 
 \textbf{Modelado y Programación}\\ 
 \normalsize 
-State, Template e Iterator \\Practica 02\\
+Decorator y Adapter \\Practica 03\\
 \end{minipage}
 \begin{minipage}{0.295\textwidth} 
 \raggedleft
@@ -69,37 +69,43 @@ State, Template e Iterator \\Practica 02\\
 
 \begin{enumerate}
     
-    \item Menciona los principios de diseño esenciales del patrón State, Template e Iterator. Menciona una desventaja de cada patrón
+    \item Menciona los principios de diseño esenciales de los patrones Decorator y Adapter. Menciona una desventaja de cada patrón.\\\\
+    
+        Dado que ambos patrones pertencen a la misma categoría (Patrones Estructurales) se cumplen los siguientes principios:
         \begin{enumerate}
-            \item \colorbox[rgb]{0.53, 0.81, 0.98}{State}
+            \item \colorbox[rgb]{0.53, 0.81, 0.98}{Decorator}
             \begin{itemize}
-                \item Ventajas\\\\
+               \item \textit{Principio de responsabilidad única}
+               
+                      Permite dividir funcionalidad entre clases con áreas de interés únicas. 
+               
+               \item \textit{Principio de abierto cerrado}  
+
+                \item Proporciona una manera más flexible de añadir responsabilidades a los objetos que la que podia obtenerse a través de la herencia(multiple) estática, teniendo como una \textit{desventaja} que se 
+                requiere crear una nueva clase para cada responsabilidad adicional, esto da lugar a muchas clases diferentes e incrementa la complejidad de un sistema.Heredar dos veces una clase resulta cuanto menos, propenso a errores             
+                      
+            \end{itemize}
+
+            
+            \item \colorbox[rgb]{1.0, 0.71, 0.76}{Adapter}
+            \begin{itemize}
+                \item \textit{Principio de responsabilidad única}
+                
+                      Puede separar la interfaz o el código de conversión de datos de la lógica de negocio primaria del programa\\\\  
+
+                \item \textit{Principio de abierto cerrado}
+                
+                      Introduce nuevos tipos de adaptadores al programa sin descomponer el código cliente existente, siempre y cuando trabajen con los
+                      adaptadores a tráves de la interfaz con el cliente.\\\\  
                      
-                \item Desventajas
-                      
-            \end{itemize}
-
-            
-            \item \colorbox[rgb]{1.0, 0.71, 0.76}{Template}
-            \begin{itemize}
-                \item Ventajas\\\\
-                      
-                      
-
-                \item Desventajas\\\\
-                       
-            \end{itemize}  
-            
-
-            \item \colorbox[rgb]{0.69, 0.61, 0.85}{Iterator}
-            \begin{itemize}
-                \item Ventajas \\\\
-
-
-                \item Desventajas
-            \end{itemize}
-            
+                \item  Una \textit{desventaja} es que la complejidad general del código aumenta, ya que se deben introducir un grupo de nuevas interfaces y clases.
+                      En ocasión resulta más sencillo cambiar la clase de servicios de modo que coincida con el resto del código.         
+            \end{itemize}              
         \end{enumerate}
+
+        \begin{thebibliography}{0}
+            \bibitem{Mauricio2016} Gamma, E., Helm, R., Johnson, R. & Vlissides, J. (1994). Design Patterns:Elements of Reusable Object-Oriented Software.                           
+          \end{thebibliography}
         
        
         
