@@ -20,7 +20,7 @@ public class Pepperoni extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon Pepperoni \t$12";
+        return alimento.getDescripcion() + "\nCon pepperoni \t\t\t$12";
     }
 
     @Override

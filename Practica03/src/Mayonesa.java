@@ -20,7 +20,7 @@ public class Mayonesa extends Ingrediente{
 
     @Override
     public String getDescripcion(){
-        return alimento.getDescripcion() + "\nCon mayonesa \t$7";
+        return alimento.getDescripcion() + "\nCon mayonesa \t\t\t$7";
     }
 
     @Override
