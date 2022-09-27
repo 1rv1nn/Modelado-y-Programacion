@@ -1,3 +1,13 @@
+/**
+ * Clase que adapta las pizzas para imprimir en el ticket la información general e implementa la interface alimento.
+ * 
+ * @author Cruz González, Irvin Javier
+ * @author Ugalde Flores, Jimena
+ * @author Ugalde Ubaldo, Fernando
+ * 
+ * @version 1.0
+ * 
+ */
 public class AdaptadorPizza implements Alimento{
 
     private Pizza pizza;

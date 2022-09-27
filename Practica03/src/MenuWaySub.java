@@ -1,7 +1,19 @@
 import java.util.Scanner;
-
+/**
+ * Clase que implementa el menu del restaurant WaySub.
+ * 
+ * @author Cruz González, Irvin Javier
+ * @author Ugalde Flores, Jimena
+ * @author Ugalde Ubaldo, Fernando
+ * 
+ * @version 1.0
+ * 
+ */
 public class MenuWaySub {
 
+    /**
+     * Método estátitco que devuelve el menú del restaurant.
+     */
     public static void imprimeMenuPrincipal(){
         int tipoAlimento = 0;
         Scanner sc = new Scanner(System.in);
@@ -33,6 +45,7 @@ public class MenuWaySub {
         }
     }
 
+    
     public static Alimento menuBaguettes(Scanner sc) {
         int tipoPan = 0;
         while(true){

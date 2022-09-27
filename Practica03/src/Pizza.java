@@ -1,5 +1,12 @@
 /**
  * Interface que implementa el sistema de pizzas de “Las pizzas de don cangrejo”
+ * 
+ * @author Cruz González, Irvin Javier
+ * @author Ugalde Flores, Jimena
+ * @author Ugalde Ubaldo, Fernando
+ * 
+ * @version 1.0
+ * 
  */
 public interface Pizza {
 

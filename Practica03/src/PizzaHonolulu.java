@@ -1,5 +1,12 @@
 /**
  * Clase que implementa la pizza honolulu.
+ * 
+ * @author Cruz González, Irvin Javier
+ * @author Ugalde Flores, Jimena
+ * @author Ugalde Ubaldo, Fernando
+ * 
+ * @version 1.0
+ * 
  */
 public class PizzaHonolulu implements Pizza{
 
