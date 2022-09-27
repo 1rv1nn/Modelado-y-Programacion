@@ -24,7 +24,7 @@ public class PizzaPepperoni implements Pizza{
 
     @Override
     public String getCarne(){
-        return "Salchicha \t\t\t\t$20";
+        return "Salchicha \t\t\t$20";
     }
 
     @Override
