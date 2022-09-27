@@ -45,7 +45,12 @@ public class MenuWaySub {
         }
     }
 
-    
+    /**
+     * Método que despliega el menu de las baguetes.
+     * 
+     * @param sc Un objeto de tipo Scanner para ingresar los datos.
+     * @return Alimento La baguete terminada.
+     */
     public static Alimento menuBaguettes(Scanner sc) {
         int tipoPan = 0;
         while(true){
@@ -60,7 +65,7 @@ public class MenuWaySub {
                 case 1:
                     return new BaguetteBlanco();
                 case 2:
-                    return new BaguetteAvenaMiel();
+                    return new BaguetteIntegral();
                 case 3:
                     return new BaguetteAvenaMiel();
                 default:
@@ -70,6 +75,11 @@ public class MenuWaySub {
         }
     }
 
+    /**
+     * Método que imprime el menú de las pizzas.
+     * 
+     * @param sc Un objeto de tipo Scanner para ingresar los datos.
+     */
     public static void menuPizaa(Scanner sc){
         int tipoPizza = 0;
         AdaptadorPizza pizzaWaySub;
@@ -93,25 +103,25 @@ public class MenuWaySub {
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 2:
-                    Pizza pepperoni = new PizzaHawaiana();
+                    Pizza pepperoni = new PizzaPepperoni();
                     pizzaWaySub = new AdaptadorPizza(pepperoni);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" + 
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 3:
-                    Pizza mexicana = new PizzaHawaiana();
+                    Pizza mexicana = new PizzaMexicana();
                     pizzaWaySub = new AdaptadorPizza(mexicana);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" + 
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 4:
-                    Pizza vegetariana = new PizzaHawaiana();
+                    Pizza vegetariana = new PizzaVegetariana();
                     pizzaWaySub = new AdaptadorPizza(vegetariana);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" +
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
                     break;
                 case 5:
-                    Pizza honolulu = new PizzaHawaiana();
+                    Pizza honolulu = new PizzaHonolulu();
                     pizzaWaySub = new AdaptadorPizza(honolulu);
                     System.out.println("\n" + pizzaWaySub.getDescripcion() + "\n--------------------------------------" + 
                                         "\nSu precio total es: \t\t$" + pizzaWaySub.precio());
@@ -123,6 +133,12 @@ public class MenuWaySub {
         } while (tipoPizza < 0 || 6 < tipoPizza);
     }
 
+    /**
+     * Método que agrega ingredientes a la baguete.
+     * 
+     * @param sc Un objeto de tipo Scanner para ingresar los datos.
+     * @param baguete Baguete a la cual se le añadirán los ingredientes extra.
+     */
     public static void agregaIngredientes(Scanner sc, Alimento baguete){
         int ingrediente = 0;
         int polloTriple = 0;
@@ -165,7 +181,7 @@ public class MenuWaySub {
                 case 2:
                     if(pepperoniTriple < 3){
                         pepperoniTriple++;
-                        baguete = new Pollo(baguete);
+                        baguete = new Pepperoni(baguete);
                     } else{
                         System.out.println("\nYa ha agregado 3 veces el mismo ingrediente, ya no lo puedo volver a seleccionar.");
                         continue;
@@ -192,7 +208,7 @@ public class MenuWaySub {
                 case 5:
                     if(jitomateTriple < 3){
                         jitomateTriple++;
-                        baguete = new Pollo(baguete);
+                        baguete = new Jitomate(baguete);
                     } else{
                         System.out.println("\nYa ha agregado 3 veces el mismo ingrediente, ya no lo puedo volver a seleccionar.");
                         continue;
@@ -228,7 +244,7 @@ public class MenuWaySub {
                 case 9:
                     if(mayonesaTriple < 3){
                         mayonesaTriple++;
-                        baguete = new Pollo(baguete);
+                        baguete = new Mayonesa(baguete);
                     } else{
                         System.out.println("\nYa ha agregado 3 veces el mismo ingrediente, ya no lo puedo volver a seleccionar.");
                         continue;
