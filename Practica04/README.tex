@@ -55,7 +55,7 @@ Equipo: Cerebros de Pollo\\
 \large 
 \textbf{Modelado y Programación}\\ 
 \normalsize 
-State, Template e Iterator \\Practica 02\\
+Factory, Abstract Factory y Builder \\Practica 04\\
 \end{minipage}
 \begin{minipage}{0.295\textwidth} 
 \raggedleft
@@ -69,34 +69,47 @@ State, Template e Iterator \\Practica 02\\
 
 \begin{enumerate}
     
-    \item Menciona los principios de diseño esenciales del patrón State, Template e Iterator. Menciona una desventaja de cada patrón
+    \item Menciona los principios de diseño esenciales del patrones Factory, Abstract Factory y Builder. Menciona una desventaja de cada patrón 
+    
+    Patrones de Creación 
+
         \begin{enumerate}
-            \item \colorbox[rgb]{0.53, 0.81, 0.98}{State}
+            \item \colorbox[rgb]{0.53, 0.81, 0.98}{Factory}
             \begin{itemize}
-                \item Ventajas\\\\
+                \item [\Checkmark] \textit{Open-Closed.} \\
+                \textcolor{red}{\textit{ "\ Objects or entities should be open for extension but closed for modification"}}\\
+                 extiende el código sin cambiarlo.\\\\
+
+                 \item [\Checkmark]
                      
-                \item Desventajas
+                \item [\XSolidBrush ] Una \textit{desventaja} es que los clientes pueden heredar de la clase padre simplemente para crear un determinado objeto.
+                      La herencía esta bien cuando el cliente tiene que heredar de todos modos de la clase padre, pero si no es así estaría introduciendo una
+                      nueva vía de futuros cambios. \\
                       
             \end{itemize}
 
             
-            \item \colorbox[rgb]{1.0, 0.71, 0.76}{Template}
+            \item \colorbox[rgb]{1.0, 0.71, 0.76}{Abstract Factory}
             \begin{itemize}
-                \item Ventajas\\\\
+                \item [\Checkmark]
+                
+                \item [\Checkmark]
                       
                       
 
-                \item Desventajas\\\\
+                \item [\XSolidBrush ] s
                        
             \end{itemize}  
             
 
-            \item \colorbox[rgb]{0.69, 0.61, 0.85}{Iterator}
+            \item \colorbox[rgb]{0.69, 0.61, 0.85}{Builder}
             \begin{itemize}
-                \item Ventajas \\\\
+                \item [\Checkmark]
+                
+                \item [\Checkmark]
 
 
-                \item Desventajas
+                \item [\XSolidBrush ] 
             \end{itemize}
             
         \end{enumerate}
