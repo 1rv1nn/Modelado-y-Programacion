@@ -8,7 +8,7 @@
  * @version 1.0
  * 
  */
-public class GeneralSpaceships {
+public class GeneralSpacecrafts {
     
     public static void main(String[] args) {
         System.out.println("hola");
