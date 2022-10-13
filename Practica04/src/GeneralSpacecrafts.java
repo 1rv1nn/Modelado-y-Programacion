@@ -6,6 +6,7 @@
  * @author Ugalde Ubaldo, Fernando
  * 
  * @version 1.0
+ * @since Java JDK 11.0
  * 
  */
 public class GeneralSpacecrafts {
