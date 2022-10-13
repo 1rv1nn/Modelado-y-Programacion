@@ -14,6 +14,7 @@
 \usepackage{csquotes} 
 \everymath{\displaystyle}
 \usepackage{setspace}
+\usepackage{hyperref}
 \usepackage[ddmmyyyy]{datetime} 
 \renewcommand{\dateseparator}{-} 
 \usepackage{fancyhdr}
@@ -91,13 +92,16 @@ Factory, Abstract Factory y Builder \\Practica 04\\
             
             \item \colorbox[rgb]{1.0, 0.71, 0.76}{Abstract Factory}
             \begin{itemize}
-                \item [\Checkmark]
+                \item [\Checkmark] \textit{Open-Closed.} \\
+                \textcolor{red}{\textit{ "\ Objects or entities should be open for extension but closed for modification"}}\\
+                \textbf{Abstract Factory }es la interfaz que provee un método para la obtención de cada objeto que pueda crear, de este modo si queremos crear estos objetos no implicaría estar modificando el código existente 
+                sino solo debemos extenderlo, en ningún momento se modifican las factorias concretas (familias de productos) cumpliendo así este principio.
                 
                 \item [\Checkmark]
                       
                       
 
-                \item [\XSolidBrush ] s
+                \item [\XSolidBrush ] Cuando se añaden nuevas familias de productos o cambian los existentes afecta a toda las familias creadas 
                        
             \end{itemize}  
             
@@ -109,10 +113,17 @@ Factory, Abstract Factory y Builder \\Practica 04\\
                 \item [\Checkmark]
 
 
-                \item [\XSolidBrush ] 
+                \item [\XSolidBrush ] Una \textit{desventaja} se debe a que se crea más codigo siendo este menos legible y con ello aúmenta la complejidad del programa,además requiere crear
+                      un ConcreteBuilder separado para cada tipo diferente de producto.  
             \end{itemize}
             
         \end{enumerate}
+
+        \begin{thebibliography}{2}
+            \bibitem{Mauricio2016} Gamma, E., Helm, R., Johnson, R. & Vlissides, J. (1994). Design Patterns:Elements of Reusable Object-Oriented Software.        
+            \bibitem{Mauricio2016} \url{https://es.wikipedia.org/wiki/Abstract_Factory}                 
+          \end{thebibliography}
+        
         
        
         
