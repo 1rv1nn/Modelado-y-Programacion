@@ -1,5 +1,5 @@
 /**
- * Clase implementa el sistema de propulción viaje intergaláctico. 
+ * Clase que implementa el sistema de propulción viaje intergaláctico. 
  * 
  * @author Cruz González, Irvin Javier
  * @author Ugalde Flores, Jimena

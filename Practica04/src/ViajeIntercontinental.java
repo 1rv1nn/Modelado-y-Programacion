@@ -1,5 +1,5 @@
 /**
- * Clase implementa el sistema de propulción viaje intercontinental. 
+ * Clase que implementa el sistema de propulción viaje intercontinental. 
  * 
  * @author Cruz González, Irvin Javier
  * @author Ugalde Flores, Jimena
@@ -15,7 +15,7 @@ public class ViajeIntercontinental extends SistemaDePropulacion{
     public String getNombre() {
         return "viaje intercontinental";
     }
-    
+
     @Override
     public double getPrecio() {
         return 100;
@@ -33,7 +33,7 @@ public class ViajeIntercontinental extends SistemaDePropulacion{
 
     @Override
     public int sumaVelocidad() {
-        return 100;
+        return 95000;
     }
 
     @Override
