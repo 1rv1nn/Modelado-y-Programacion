@@ -72,18 +72,21 @@ public class GeneralSpacecrafts {
                         switch (x) {
                             case 1:
                                 naveGenerica.setSistemaDePropulcion(new ViajeInterplanetario());
+                                sistema++;
                                 break;
                             case 2:
                                 naveGenerica.setSistemaDePropulcion(new ViajeIntercontinental());
+                                sistema++;
                                 break;
                             case 3:
                                 naveGenerica.setSistemaDePropulcion(new ViajeIntergalactico());
+                                sistema++;
                                 break;
                             default:
                                 System.err.println("Ingresaste un valor inválido.");
+                                x=100;
                                 break;
                         }
-                        sistema++;
                         break;
                     case 2:
                         if (0 < blin) {
@@ -98,18 +101,21 @@ public class GeneralSpacecrafts {
                         switch (x) {
                             case 1:
                                 naveGenerica.setBlindaje(new Simple());
+                                blin++;
                                 break;
                             case 2:
                                 naveGenerica.setBlindaje(new Reforzado());
+                                blin++;
                                 break;
                             case 3:
                                 naveGenerica.setBlindaje(new Fortaleza());
+                                blin++;
                                 break;
                             default:
                                 System.err.println("Ingresaste un valor inválido.");
+                                x=100;
                                 break;
                         }
-                        blin++;
                         break;
                     case 3:
                         if (0 < cab) {
@@ -124,18 +130,21 @@ public class GeneralSpacecrafts {
                         switch (x) {
                             case 1:
                                 naveGenerica.setCabina(new UnPiloto());
+                                cab++;
                                 break;
                             case 2:
                                 naveGenerica.setCabina(new Tripulacion());
+                                cab++;
                                 break;
                             case 3:
                                 naveGenerica.setCabina(new Ejercito());
+                                cab++;
                                 break;
                             default:
                                 System.err.println("Ingresaste un valor inválido.");
+                                x=100;
                                 break;
                         }
-                        cab++;
                         break;
                     case 4:
                         if (0 < arms) {
@@ -150,28 +159,36 @@ public class GeneralSpacecrafts {
                         switch (x) {
                             case 1:
                                 naveGenerica.setArmas(new LaserSimple());
+                                arms++;
                                 break;
                             case 2:
                                 naveGenerica.setArmas(new MisilesPlasma());
+                                arms++;
                                 break;
                             case 3:
                                 naveGenerica.setArmas(new LaserDestructorPlanetario());
+                                arms++;
                                 break;
                             default:
                                 System.err.println("Ingresaste un valor inválido.");
+                                x=100;
                                 break;
                         }
-                        arms++;
                         break;
                     default:
                         System.err.println("Ingreso un valor inválido");
                         x=100;
-                        continue;
+                        break;
+                }
+                if(x == 100){
+                    continue;
                 }
                 System.out.println("¿Desea agregar otro componente?\n1. Si\t0. No");
                 int continuar = sc.nextInt();
                 if (continuar == 1) {
                     continue;
+                } else if (continuar != 0) {
+                    System.err.println("Ingreso un valor inválido. Por lo que terminaremos la creación de la nave.");
                 }
                 naveVendida = new NaveEspacial(naveGenerica);
                 if (naveVendida.getPrecio() <= presupuesto) {
