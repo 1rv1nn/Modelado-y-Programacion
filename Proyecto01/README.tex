@@ -1,0 +1,105 @@
+\documentclass[a4paper,12pt]{article} 
+\usepackage[top=2cm,bottom=2cm,left=2cm,rigth=2cm,heightrounded]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow} 
+\usepackage[spanish]{babel}
+\usepackage[usenames]{color}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{bbding}  
+\usepackage[dvipsnames]{xcolor}
+\usepackage{csquotes}
+\usepackage[export]{adjustbox}
+\usepackage[all]{nowidow} 
+\usepackage{csquotes} 
+\everymath{\displaystyle}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage[ddmmyyyy]{datetime} 
+\renewcommand{\dateseparator}{-} 
+\usepackage{fancyhdr}
+\usepackage{amsmath,xcolor}
+\usepackage[inline]{enumitem}
+\usepackage{hhline,colortbl}
+\usepackage[most]{tcolorbox}
+
+%%%%%AQUÍ SE ENCUENTRAN LOS COLORES :)%%%%%%%%
+\definecolor{babypink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{celadon}{rgb}{0.67, 0.88, 0.69}
+\definecolor{outrageousorange}{rgb}{1.0, 0.43, 0.29}
+\definecolor{spirodiscoball}{rgb}{0.06, 0.75, 0.99}
+\definecolor{green(ncs)}{rgb}{0.0, 0.62, 0.42}
+\definecolor{paleblue}{rgb}{0.69, 0.93, 0.93}
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{brightube}{rgb}{0.82, 0.62, 0.91}
+
+
+\newtcolorbox{mybox}{colback=black!20!black,colframe=cyan!85!white}
+
+\pagestyle{fancy} 
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} 
+\fancyfoot[C]{} 
+\fancyfoot[R]{\thepage} 
+\newcommand{\note}[1]{\marginpar{\scriptsize \textcolor{red}{#1}}} 
+\begin{document}
+\fancyhead[C]{}
+\begin{minipage}{0.295\textwidth} 
+\raggedright
+Equipo: Cerebros de Pollo\\    
+\footnotesize 
+\colorbox[rgb]{0.67, 0.88, 0.69}{Cruz González Irvin Javier}
+\\\colorbox[rgb]{0.06, 0.75, 0.99 }{Ugalde Ubaldo Fernando}
+\\\colorbox[rgb]{0.96, 0.76, 0.76}{Ugalde Flores Jimena}
+
+\textcolor[rgb]{0.0, 0.72, 0.92}{\medskip\hrule}
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering 
+\large 
+\textbf{Modelado y Programación}\\ 
+\normalsize 
+Tienda Virtual(CheemsMart) \\Proyecto 01\\
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\footnotesize
+\colorbox[rgb]{0.67, 0.88, 0.69}{31716198-2}\\
+\colorbox[rgb]{0.06, 0.75, 0.99 }{31714149-8}\\
+\colorbox[rgb]{0.96, 0.76, 0.76}{31816536-1}\\
+\today
+\textcolor[rgb]{0.0, 0.72, 0.92}{\medskip\hrule}
+\end{minipage}
+
+
+\section*{Justificación}
+Patrones de Diseño Utilizados:
+
+   \begin{multicols}{4}
+     \colorbox{pink}{\textit{Strategy}}
+
+     \colorbox{brightube}{\textit{Facade}}
+
+     \colorbox{applegreen}{\textit{Iterator}}
+
+     \colorbox{cyan}{\textit{Proxy}}
+   \end{multicols} 
+
+    %En la parte de    -decidimos usar porque , -se resolvio de esta manera
+   El programa recibe a un cliente con una identificación,por lo que deberá ingresar un usuario y contraseña especificos para poder ingresar 
+   a la tienda.Dado el cliente,el idioma de la interfaz de inicio cambiará a ingles,español latino o español de españa.\\
+   En esta última parte se optó por utilizar el patrón \colorbox{pink}{Strategy} ya que el comportamiento(idioma) cambia en tiempo de ejecución
+   y permite que la interfaz cambie independiente del cliente que la use.De igual manera se hizo uso de \colorbox{pink}{Strategy} en la ofertas regionales de cada cliente dado que se cambia la estrategia(oferta) en cada respectivo 
+   cliente.\\
+
+   Para presentar el catálogo de forma remota del catálogo real se hizo uso del patrón \colorbox{brightube}{Facade} donde se desacopla al cliente del catálogo real de igual forma para que el sistema muestre ofertas
+   a todos los usuarios adecuados. \\
+
+   Para el manejo de los productos del catálogo se hizo uso del patrón \colorbox{applegreen}{Iterator} dado que proporciona una forma de acceder a los elementos secuencialmente de la estructura arrayList sin exponer su representación
+   básica NO se hizo uso de \textit{Composite} porqué no necesitamos tener una jerarquía de los productos ni que se traten de manera uniforme o individuales.\\
+
+   En el apartado de compra segura,donde se realiza cualquier operación a través de un representante se uso el patrón \colorbox{cyan}{Proxy} debido a que este representante o sustituto permite controlar el 
+   acceso a los datos personales de un cliente y tiene la necesidad de dar una referencia al número de cuenta. 
+
+
+\end{document}   
