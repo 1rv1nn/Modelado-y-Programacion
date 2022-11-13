@@ -2,7 +2,6 @@ package com.cheemsmart.iterator;
 
 import java.util.Iterator;
 import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
 import com.cheemsmart.facade.Producto;
 

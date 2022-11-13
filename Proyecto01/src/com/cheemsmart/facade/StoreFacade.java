@@ -3,7 +3,6 @@ package com.cheemsmart.facade;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Random;
-import java.util.function.Predicate;
 
 import com.cheemsmart.iterator.Catalogo;
 import com.cheemsmart.proxy.Cliente;
@@ -129,7 +128,6 @@ public class StoreFacade {
 	public void agregarProducto(int codigo) {
 		Producto p = catalogo.entrega(codigo);
 
-		Predicate<Producto> nulo = producto -> producto == null;
 		if(p == null) {
 			throw new NoSuchElementException(tienda.opcionIncorrecta());
 		}
