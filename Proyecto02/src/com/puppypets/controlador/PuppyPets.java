@@ -1,5 +1,8 @@
+package com.puppypets.controlador;
+
+
 public class PuppyPets {
     public static void main(String[] args) {
-        System.out.println();
+    	CtrlLogIn.getInstancia().iniciaFrame();
     }
 }
