@@ -7,10 +7,22 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
+/**
+ * Clase PanelVacunacion que hereda de la clase abstracta OpcionActual.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * @since Java JDK 11.0
+ * 
+ */
 @SuppressWarnings("serial")
 public class PanelVacunacion extends OpcionActual {
 	private JComboBox<String> cmbVacuna;
 
+	/**Constructor */
 	public PanelVacunacion() {
 		super();
 	}
@@ -33,6 +45,11 @@ public class PanelVacunacion extends OpcionActual {
 		return motivo.toString();
 	}
 	
+	/**
+	 * seleccionaVacuna.
+	 * 
+	 * Se elige una vacuna para la mascota
+	 */
 	private void seleccionaVacuna() {
 		JLabel lblEstudio = new JLabel("Vacuna");
 		lblEstudio.setFont(new Font("Cantarell", Font.BOLD, 14));

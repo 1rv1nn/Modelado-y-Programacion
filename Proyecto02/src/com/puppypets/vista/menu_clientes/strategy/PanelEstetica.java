@@ -7,6 +7,18 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
+/**
+ * Clase PanelEstetica que hereda de la clase OpcionActual.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * @since Java JDK 11.0
+ * 
+ */
+
 @SuppressWarnings("serial")
 public class PanelEstetica extends OpcionActual {
 	private JComboBox<String> cmbTipoDeCorte;
@@ -34,6 +46,11 @@ public class PanelEstetica extends OpcionActual {
 		return motivo.toString();
 	}
 	
+	/**
+	 * escogeCorte.
+	 * 
+	 * Panel donde se escoge un corte para la mascota
+	 */
 	private void escogeCorte() {
 		JLabel lblTipoDeCorte = new JLabel("Tipo de corte");
 		lblTipoDeCorte.setFont(new Font("Cantarell", Font.BOLD, 14));

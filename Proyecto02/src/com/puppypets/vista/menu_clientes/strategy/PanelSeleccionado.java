@@ -7,6 +7,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Clase PanelSeleccionado.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * @since Java JDK 11.0
+ * 
+ */ 
+
 @SuppressWarnings("serial")
 public class PanelSeleccionado extends JPanel {
 	
@@ -14,6 +26,7 @@ public class PanelSeleccionado extends JPanel {
 	private PanelPago panelPago;
 	private JLabel lblImagen;
 	
+	/*Opciones de panel */
 	public PanelSeleccionado() {
 		setBackground(new Color(36, 47, 65));
 		setBounds(266, 0, 472, 631);
@@ -21,6 +34,7 @@ public class PanelSeleccionado extends JPanel {
 		agregaImagenSecundaria();
 	}
 	
+	/**Opciones de panel */
 	public void restableceDefaultPanel() {
 		removeAll();
 		repaint();
@@ -28,6 +42,11 @@ public class PanelSeleccionado extends JPanel {
 		agregaImagenSecundaria();
 	}
 	
+	/**
+	 * cambioACita.
+	 * @param nuevoPanelActual
+	 * cambia una cita.
+	 */
 	public void cambioACita(OpcionActual nuevoPanelActual) {
 		removeAll();
 		repaint();
@@ -37,6 +56,11 @@ public class PanelSeleccionado extends JPanel {
 		revalidate();
 	}
 	
+	/**
+	 * cambioAPago
+	 * @param pago
+	 * cambio de pago
+	 */
 	public void cambioAPago(PanelPago pago) {
 		removeAll();
 		repaint();
@@ -47,6 +71,7 @@ public class PanelSeleccionado extends JPanel {
 		revalidate();
 	}
 	
+	/*Opciones de panel */
 	private void agregaImagenSecundaria() {
 		lblImagen = new JLabel("");
 		lblImagen.setIcon(new ImageIcon(
@@ -56,18 +81,35 @@ public class PanelSeleccionado extends JPanel {
 		add(lblImagen);
 	}
 
+	/**
+	 * Devuelve el panelCita
+	 * @param panelCita
+	 */
 	public void setPanelCita(OpcionActual panelCita) {
 		this.panelCita = panelCita;
 	}
 
+	/**
+	 * Muestra el panelPago
+	 * @param panelPago
+	 */
 	public void setPanelPago(PanelPago panelPago) {
 		this.panelPago = panelPago;
 	}
 
+
+	/**
+	 * getPanelCita
+	 * @return El panel cita
+	 */
 	public OpcionActual getPanelCita() {
 		return panelCita;
 	}
 	
+	/**
+	 * getPanelCitaop
+	 * @return El panel cita
+	 */
 	public Optional<OpcionActual> getPanelCitaOp() {
 		return Optional.ofNullable(panelCita);
 	}
@@ -77,6 +119,10 @@ public class PanelSeleccionado extends JPanel {
 	}
 	
 
+	/**
+	 * getPanelPago
+	 * @return El panle pago.
+	 */
 	public PanelPago getPanelPago() {
 		return panelPago;
 	}
