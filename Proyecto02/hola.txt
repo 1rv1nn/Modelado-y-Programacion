@@ -1,1 +1,0 @@
-Es un texto para que suba la carpeta a git. 
