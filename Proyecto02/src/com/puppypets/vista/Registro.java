@@ -165,7 +165,7 @@ public class Registro extends JFrame {
 
 		JLabel lblIcono = new JLabel("");
 		lblIcono.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\register (1).png"));
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\registro.png"));
 		lblIcono.setBounds(65, 121, 264, 300);
 		panelLogo.add(lblIcono);
 
@@ -183,7 +183,7 @@ public class Registro extends JFrame {
 
 		JLabel imgCompu = new JLabel("");
 		imgCompu.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\christin-hume-Hcfwew744z4-unsplash.png"));
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\compu.png"));
 		imgCompu.setBounds(0, 0, 380, 214);
 		panelImagen.add(imgCompu);
 	}

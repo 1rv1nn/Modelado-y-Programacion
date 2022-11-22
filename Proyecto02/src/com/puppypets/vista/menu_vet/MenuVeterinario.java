@@ -1,22 +1,23 @@
 package com.puppypets.vista.menu_vet;
 
+import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 import com.puppypets.modelo.builder.Cita;
 import com.puppypets.vista.MiniPanel;
 import com.puppypets.vista.menu_vet.builder.ConstructorOpcionesDelVeterinario;
 import com.puppypets.vista.menu_vet.builder.OpcionesDelVeterinario;
-
-import javax.swing.JTable;
-import java.awt.Color;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.SwingConstants;
 
 /**
  * Clase que implementa el menu del veterinario.
@@ -46,6 +47,8 @@ public class MenuVeterinario extends JFrame {
 	 * Método constructor del menú del veterinario.
 	 */
 	public MenuVeterinario() {
+		setIconImage(Toolkit.getDefaultToolkit()
+				.getImage("D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 932, 515);
 		contentPane = new JPanel();
@@ -238,19 +241,19 @@ public class MenuVeterinario extends JFrame {
 	 */
 	private void creaOpciones() {
 		ImageIcon imgCita = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\appointment (1).png");
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\cita.png");
 		MiniPanel panelCita = new MiniPanel("Consulta próximas citas", imgCita, 170, VERDE);
 
 		ImageIcon imgMascota = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\mascota (1).png");
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\mascota.png");
 		MiniPanel panelMascota = new MiniPanel("Consulta mascotas", imgMascota, 220, VERDE);
 
 		ImageIcon imgPago = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\credit-card (1).png");
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\tarjeta.png");
 		MiniPanel panelPago = new MiniPanel("Consulta citas pagadas", imgPago, 280, VERDE_OSCURO);
 
 		ImageIcon imgLogOut = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\logout (1).png");
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\logout.png");
 		MiniPanel panelLogOut = new MiniPanel("Cerrar sesión", imgLogOut, 340, VERDE_OSCURO);
 
 		panelCita.setBackground(VERDE_CLARO);

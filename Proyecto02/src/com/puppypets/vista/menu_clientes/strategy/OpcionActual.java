@@ -80,7 +80,7 @@ public abstract class OpcionActual extends JPanel {
 
 		JLabel lblBanner = new JLabel("");
 		lblBanner.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\matt-nelson-aI3EBLvcyu4-unsplash (1) (1).jpg"));
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\banner.jpg"));
 		lblBanner.setBounds(0, 0, 472, 100);
 		panelBanner.add(lblBanner);
 

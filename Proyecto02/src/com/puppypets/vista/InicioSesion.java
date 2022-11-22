@@ -122,7 +122,7 @@ public class InicioSesion extends JFrame {
 	private void creaLogo() {
 		JLabel imgLogo = new JLabel("");
 		imgLogo.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PuppyPets (3).png"));
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PuppyPets grande.png"));
 		imgLogo.setBounds(45, 110, 274, 256);
 		panelLogo.add(imgLogo);
 
