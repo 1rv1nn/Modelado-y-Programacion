@@ -1,0 +1,117 @@
+\documentclass{bachw}
+
+% Author and title
+\author{Cerebros de Pollo}
+\title{\textbf{Puppy Pets}\\Proyecto 2}
+
+\begin{document}
+
+\textbf{Categoria:Negocio} \\
+
+Implementar un sistema de prueba de un Hospital Veterinario que lleva por nombre \textbf{Puppy Pets}\\
+
+El sitio debe guardar información valiosa de las mascotas(ID,nombre,nombre del propietario,especie,género,raza si es gato o perro),
+de los propietarios o clientes(nombre,telefono,\\dirección,cuenta bancaria asociada) y de los médicos veterinarios(ID,nombre,género).
+
+El rol de médico o cliente servirá para cambiar la interfaz del sitio,el sitio funcionará para médicos y clientes.se
+desea ser lo más familiar posible para el usuario,al saludar, despedirse y mostrar menús de opciones.\\
+La interfaz y el menú de opciones  es requerido que cambie para cada rol,en donde cada respectivo menú contará con sus debidos servicios u opciones, y 
+dado el servicio se le solicitará algunos requerimientos necesarios para llevarlo a cabo:
+\begin{itemize}
+    \item \textbf{Menú cliente(estandar)}
+    \begin{itemize}
+        \item Agendar cita medica 
+        \begin{itemize}
+            \item Nombre de la mascota
+            \item Fecha y hora estimada para la cita
+        \end{itemize}
+        \item Agendar cita para Intervención quirúrgica
+        \begin{itemize}
+            \item Nombre de la mascota
+            \item Fecha y hora estimada para la cita
+            \item \textbf{Requerimiento:} Agendar cita para estudios clinicos (expres o tradicional)
+        \end{itemize}
+        No puede llevar a cabo una intervención quirúrgica si una mascota no se encuentra en óptimas codiciones.
+        \item Agendar cita para estetica
+        \begin{itemize}
+            \item Nombre de la mascota
+            \item Fecha y hora estimada para la cita
+            \item Indicar tipo de corte de pelo.
+        \end{itemize}
+        \item Agendar cita para vacuna o desparacitación
+        \begin{itemize}
+            \item Nombre de la mascota
+            \item Fecha y hora estimada para la cita
+            \item Indicar nombre de la vacuna.
+        \end{itemize}
+
+        \item Agendar cita para estudios clinicos
+            \begin{itemize}
+                \item \textit{Estudios clinicos express}
+                \begin{itemize}    
+                    \item Nombre de la mascota
+                    \item Fecha y hora estimada para la cita
+                    \item Indicar problema a tratar.
+                \end{itemize}
+                Estos estudios se entregan al instante menos de 3 horas(3 segundos)
+                \item \textit{Estudios clinicos tradicional}
+                \begin{itemize}    
+                    \item Nombre de la mascota
+                    \item Fecha y hora estimada para la cita
+                    \item Indicar problema a tratar.
+                \end{itemize}
+                Estos estudios se entregan dentro de 1 semana.
+            \end{itemize}
+     
+        \item Pago de servicios
+        \begin{itemize}
+            \item Cita medica \$200
+            \item Corte de pelo y uñas (estetica) \$300
+            \item Vacunas \$250
+            \item Intervención Quirúrgica \$1850
+            \item Estudios clinicos
+            \begin{itemize}
+                  \item Estudios clinicos expres \$1000
+                  \item Estudios clinicos tradicional \$800
+                  \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+    Al realizar el pago de cualquier servicio debe realizar la operación a través de un representante.El cliente deberá ingresar
+    el número de cuenta bancaria,que se comparará con su debido atributo,en caso de no ser el mismo, el pago se cancelará y 
+    regresará al menú estandar.\\
+    Al completarse cualquier pago de servicio éxitoso el cliente podrá ver un ticket del respectivo servicio, la fecha agendada
+    y al médico veterinario correspondiente.
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Menú Médico Veterinario}
+    \begin{itemize}
+        \item Citas proximas\\
+               Se muestran las citas agendadas dada su categoria.  
+        \item Clientes nuevos\\
+               Se muentra el registro de los clientes nuevos.  
+        \item Clientes con pagos éxitosos\\
+              Se muestra aquellos clientes que ya pagaron el servicio solicitado
+    \end{itemize}
+\end{itemize}
+
+ Al acceder al sitio se le mostrará un menú inicial en donde se le solicitará:
+
+ \begin{itemize}
+    \item \textbf{Menú inicial}
+          \begin{itemize}
+            \item ¿Primera vez que nos visitas?\\
+                  En este primer apartado se debe registrar un cliente con atributos que debe de tener una mascota y un cliente.
+            \item Soy cliente\\
+                  En este apartado se da por hecho que el cliente ya se encuentra registrado, por lo que se
+                  le solicitará sus debidas credenciales (usuario y contraseña) para acceder al sitio.  
+            \item Soy médico veterinario\\
+                  Al igual con el apartado anterior se da por hecho que el médico veterinario ya se encuentra 
+                  registrado en el sitio por lo que tambien se le solicitará sus credenciales.
+          \end{itemize}   
+ \end{itemize}
+
+
+%Bienvendo de nombre_mascota, que servicio estas buscando
+\end{document}
