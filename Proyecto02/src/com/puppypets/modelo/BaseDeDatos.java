@@ -7,10 +7,13 @@ import com.puppypets.modelo.proxy.Cliente;
 
 /**
  * Clase que implementa la base de datos de la tienda Puppy Pets.
- * @author FWgalde
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando (FWgalde)
  * @version Oracle JDK 17.0 LTS
  *
  */
+
 public class BaseDeDatos {
 	private static BaseDeDatos bdd;
 	private Set<Cliente> clientes;

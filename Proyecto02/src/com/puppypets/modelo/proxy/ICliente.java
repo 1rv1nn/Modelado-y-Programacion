@@ -1,5 +1,16 @@
 package com.puppypets.modelo.proxy;
 
+/**
+ * Clase que modela los pagos del el cliente.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando (FWgalde)
+ * 
+ * @version 1.0
+ * @since  Oracle JDK 17.0 LTS
+ */ 
+
 public interface  ICliente {
 	
 	/**

@@ -1,10 +1,15 @@
 package com.puppypets.modelo.proxy;
 
-/**
+ /**
  * Clase que implementa el patrón proxy para realizar compras seguras.
- * @author 106956120
- * @version Oracle 17.0 LTS
- */
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando (FWgalde)
+ * 
+ * @version 1.0
+ * @since  Oracle JDK 17.0 LTS
+ */ 
 public class ClienteProxy implements ICliente {
 	private ICliente cliente;
 	private String cuentaBancaria;

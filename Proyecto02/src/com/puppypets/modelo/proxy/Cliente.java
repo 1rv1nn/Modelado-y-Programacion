@@ -11,11 +11,15 @@ import com.puppypets.modelo.Usuario;
 import com.puppypets.modelo.builder.Cita;
 
 /**
- * Clase que implementa el papel de un cliente.
- * @author 
- * @version Oracle JDK 17.0 LTS
- *
- */
+ * Clase que modela el papel de un cliente.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando (FWgalde)
+ * 
+ * @version 1.0
+ * @since  Oracle JDK 17.0 LTS
+ */ 
 public class Cliente extends Usuario implements ICliente{
 	
 	private String direccion;
@@ -41,6 +45,10 @@ public class Cliente extends Usuario implements ICliente{
 		citasAgendadas = new HashSet<>();
 	}
 	
+	/**
+	 * Método para agregar una mascota
+	 * @param m Mascota
+	 */
 	public void agregaMascota(Mascota m) {
 		mascotas.add(m);
 	}
@@ -108,9 +116,13 @@ public class Cliente extends Usuario implements ICliente{
 		if(pago <= dineroDisponible)
 			dineroDisponible -= pago;
 		else 
-			throw new NoSuchElementException("No tiene el suficiente dinero");
+			throw new NoSuchElementException("No tiene el suficiente dinero.");
 	}
 	
+	/**
+	 * Método que agregar una cita 
+	 * @param c cita 
+	 */
 	public void agregarCita(Cita c) {
 		citasAgendadas.add(c);
 	}
@@ -119,10 +131,18 @@ public class Cliente extends Usuario implements ICliente{
 		return citasAgendadas;
 	}
 
+	/**
+	 * Método para las citas agendadas
+	 * @param citasAgendadas
+	 */
 	public void setCitasAgendadas(Set<Cita> citasAgendadas) {
 		this.citasAgendadas = citasAgendadas;
 	}	
 	
+	/**
+	 * Método getPrecioTotal.
+	 * @return El precio total
+	 */
 	public int getPrecioTotal() {
 		List<Integer> costos = citasAgendadas.stream().map(c -> c.getCosto()).toList();
 		return costos.stream().collect(Collectors.summingInt(Integer::intValue));

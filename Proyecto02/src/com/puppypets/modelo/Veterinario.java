@@ -6,10 +6,15 @@ import java.util.Set;
 import com.puppypets.modelo.builder.Cita;
 
 /**
- * Clase que implementa los veterinarios del local
- * @author 106956120
- * @version Oracle JDK 17.0 LTS
- *
+ * Clase que implementa a médicos veterinarios del local.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando (FWgalde)
+ * 
+ * @version 1.0
+ * @since  Oracle JDK 17.0 LTS
+ * 
  */
 public class Veterinario extends Usuario{
 	private Set<Mascota> mascotas;
@@ -27,14 +32,26 @@ public class Veterinario extends Usuario{
 		agenda = new HashSet<>();
 	}
 
+	/**
+	 * Método getMascotas
+	 * @return mascotas
+	 */
 	public Set<Mascota> getMascotas() {
 		return mascotas;
 	}
 
+	/**
+	 * getAgenda
+	 * @return La agenda de las citas.
+	 */
 	public Set<Cita> getAgenda() {
 		return agenda;
 	}
 	
+	/**
+	 * agregaCita
+	 * @param c Cita a agregar
+	 */
 	public void agregaCita(Cita c) {
 		agenda.add(c);
 		mascotas.add(c.getMascota());
