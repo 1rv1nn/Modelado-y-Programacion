@@ -10,23 +10,22 @@ import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 
 /**
- * Clase PanelEstudios que hereda de la clase OpcionActual.
+ * Clase que implementa el registro de una cita para estudios clínicos.
  * 
  * @author Cruz González Irvin Javier
  * @author Ugalde Flores Jimena
  * @author Ugalde Ubaldo Fernando
- * 
- * @version 1.0
- * @since Java JDK 11.0
+ * @version Oracle JDK 17.0 LTS
  * 
  */
-
 @SuppressWarnings("serial")
 public class PanelEstudios extends OpcionActual {
 	private JComboBox<String> cmbEstudio;
 	private JCheckBox chckbxExpress;
 	
-	/**Constructor */
+	/**
+	 * Método constructor.
+	 */
 	public PanelEstudios() {
 		super();
 		panelGuardar.setLocation(7, 325);
@@ -56,9 +55,7 @@ public class PanelEstudios extends OpcionActual {
 	}
 	
 	/**
-	 * seleccionaEstudio.
-	 * 
-	 * Panel para elegir el un tipo de estudio.
+	 * Método que añade los campos para elegir el un tipo de estudio.
 	 */
 	private void seleccionaEstudio() {
 		JLabel lblEstudio = new JLabel("Estudio");
@@ -77,9 +74,7 @@ public class PanelEstudios extends OpcionActual {
 	
 
 	/**
-	 * seleccionaRapidez.
-	 * 
-	 * Elege el tiempo en llevarse a cabo el estudio
+	 * Método que añade los campos para elegir el tiempo de entrega del estudio.
 	 */
 	private void seleccionaRapidez() {
 		chckbxExpress = new JCheckBox("Servicio express");
@@ -92,9 +87,7 @@ public class PanelEstudios extends OpcionActual {
 	}
 
 	/**
-	 * darInformacionEntrega.
-	 * 
-	 * Proporciona la información del servicio elegido.
+	 * Método que proporciona información sobre los diferentes tiempos de envío.
 	 */
 	private void daInformacionEntrega() {
 		JLabel lblInfoE = new JLabel("El servicio express se entrega en 8hrs después del ánalisis.");

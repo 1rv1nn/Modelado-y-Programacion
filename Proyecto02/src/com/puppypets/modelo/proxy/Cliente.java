@@ -16,12 +16,11 @@ import com.puppypets.modelo.builder.Cita;
  * @author Cruz González Irvin Javier
  * @author Ugalde Flores Jimena
  * @author Ugalde Ubaldo Fernando (FWgalde)
- * 
- * @version 1.0
- * @since  Oracle JDK 17.0 LTS
+ * @version Oracle JDK 17.0 LTS
  */ 
 public class Cliente extends Usuario implements ICliente{
-	
+	private static int idd = 1;
+	private int ID;
 	private String direccion;
 	private String cuentaBancaria;
 	private double dineroDisponible;
@@ -43,6 +42,17 @@ public class Cliente extends Usuario implements ICliente{
 		this.cuentaBancaria = cuentaBancaria;
 		mascotas = new HashSet<>();
 		citasAgendadas = new HashSet<>();
+		dineroDisponible = 5000;
+		ID = idd;
+		idd++;
+	}
+
+	/**
+	 * Método getter del ID
+	 * @return int id del cliente.
+	 */
+	public int getId() {
+		return ID;
 	}
 	
 	/**
@@ -129,14 +139,6 @@ public class Cliente extends Usuario implements ICliente{
 	public Set<Cita> getCitasAgendadas() {
 		return citasAgendadas;
 	}
-
-	/**
-	 * Método para las citas agendadas
-	 * @param citasAgendadas
-	 */
-	public void setCitasAgendadas(Set<Cita> citasAgendadas) {
-		this.citasAgendadas = citasAgendadas;
-	}	
 	
 	/**
 	 * Método getPrecioTotal.

@@ -16,21 +16,18 @@ import com.puppypets.modelo.builder.Cita;
 import com.puppypets.vista.menu_clientes.strategy.OpcionActual;
 
 /**
- * Clase PanelPago que modela el pago de un servicio.
+ * Clase que implementa el panel de pago.
  * 
  * @author Cruz González Irvin Javier
  * @author Ugalde Flores Jimena
  * @author Ugalde Ubaldo Fernando
- * 
- * @version 1.0
- * @since Java JDK 11.0
+ * @version Oracle JDK 17.0 LTS
  * 
  */
-
 @SuppressWarnings("serial")
 public class PanelPago extends JPanel {
 	private JTable table;
-	private  JPanel marcoTitulo;
+	private JPanel marcoTitulo;
 	private JPanel panelTabla;
 	private JPanel panelGuardar;
 	private JPanel panelBanner;
@@ -39,7 +36,7 @@ public class PanelPago extends JPanel {
 	private DefaultTableModel modelo;
 
 	/**
-	 * Create the panel.
+	 * Método constructor.
 	 */
 	public PanelPago() {
 		setBounds(0, 0, 472, 631);
@@ -54,8 +51,7 @@ public class PanelPago extends JPanel {
 
 		panelTabla = new JPanel();
 		panelTabla.setBackground(new Color(255, 255, 255));
-		panelTabla.setBounds(OpcionActual.centrar(getWidth(), 374), 
-				marcoTitulo.getHeight() + marcoTitulo.getY() + 10,
+		panelTabla.setBounds(OpcionActual.centrar(getWidth(), 374), marcoTitulo.getHeight() + marcoTitulo.getY() + 10,
 				374, 412);
 		add(panelTabla);
 		panelTabla.setLayout(null);
@@ -80,11 +76,46 @@ public class PanelPago extends JPanel {
 		creaTitulo("Pago");
 		creaTabla();
 		agregaScroll();
-		colocaBotones();
+		colocaBotonPagar();
+		colocaBotonPagarEnTienda();
 		creaModelo();
 	}
 
-	/*Opciones de panel */
+	/**
+	 * Método getter del botón guardar.
+	 * 
+	 * @return Botón guardar.
+	 */
+	public Button getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	/**
+	 * Método getter del botón cancelar.
+	 * 
+	 * @return Botón cancelar.
+	 */
+	public Button getBtnCancelar() {
+		return btnCancelar;
+	}
+	
+	/**
+	 * Método que rellena una fila de la tabla.
+	 * 
+	 * @param c Cita que se agrega a la tabla
+	 */
+	public void llenaCampo(Cita c) {
+		Object[] fila = new Object[4];
+		fila[0] = c.getTiempo().toString();
+		fila[1] = c.getMascota().getNombre();
+		fila[2] = c.getMotivo();
+		fila[3] = c.getCosto();
+		modelo.addRow(fila);
+	}
+
+	/**
+	 * Método que agrega scroll al panel si los datos en la tabla son demasiados.
+	 */
 	private void agregaScroll() {
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(10, 11, 354, 288);
@@ -92,8 +123,10 @@ public class PanelPago extends JPanel {
 		scroll.setViewportView(table);
 	}
 
-	/**Opciones de panel */
-	private void colocaBotones() {
+	/**
+	 * Método que coloca el botón de pagar.
+	 */
+	private void colocaBotonPagar() {
 		btnGuardar = new Button("Pagar");
 		btnGuardar.setBounds(OpcionActual.centrar(105, 105, panelGuardar.getWidth()),
 				OpcionActual.centrar(panelGuardar.getHeight(), 35), 105, 35);
@@ -101,7 +134,12 @@ public class PanelPago extends JPanel {
 		btnGuardar.setForeground(new Color(255, 255, 255));
 		btnGuardar.setBackground(new Color(36, 47, 65));
 		btnGuardar.setFont(new Font("Cantarell", Font.BOLD, 12));
+	}
 
+	/**
+	 * Método que coloca el botón de pagar en tienda.
+	 */
+	private void colocaBotonPagarEnTienda() {
 		btnCancelar = new Button("Pagar en tienda");
 		btnCancelar.setBounds(2 * OpcionActual.centrar(105, 105, panelGuardar.getWidth()) + 105,
 				OpcionActual.centrar(panelGuardar.getHeight(), 35), 105, 35);
@@ -111,11 +149,9 @@ public class PanelPago extends JPanel {
 		btnCancelar.setBackground(new Color(100, 226, 159));
 	}
 
-	public JTable getTable() {
-		return table;
-	}
-
-	/** Opciones de Panel */
+	/**
+	 * Método que crea titulo del panel
+	 */
 	private void creaTitulo(String titulo) {
 		JLabel lblTitulo = new JLabel(titulo);
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -135,9 +171,7 @@ public class PanelPago extends JPanel {
 	}
 
 	/**
-	 * creaModelo
-	 * 
-	 * Se crea las respectivas etiquetas.
+	 * Método que crea el modelo de la tabla
 	 */
 	private void creaModelo() {
 		modelo = new DefaultTableModel();
@@ -147,26 +181,4 @@ public class PanelPago extends JPanel {
 		modelo.addColumn("Motivo de visita");
 		modelo.addColumn("Precio");
 	}
-	
-
-	public void llenaCampo(Cita c) {
-		Object[] fila = new Object[4];
-		fila[0] = c.getTiempo().toString();
-		fila[1] = c.getMascota().getNombre();
-		fila[2] = c.getMotivo();
-		fila[3] = c.getCosto();
-		modelo.addRow(fila);
-	}
-
-	/**Opciones de panel */
-	public Button getBtnGuardar() {
-		return btnGuardar;
-	}
-
-	/*Opciones de panel */
-	public Button getBtnCancelar() {
-		return btnCancelar;
-	}
-	
-	
 }

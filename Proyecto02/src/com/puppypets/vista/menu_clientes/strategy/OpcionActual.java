@@ -16,14 +16,13 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 /**
- * Clase abstracta OpcionActual que modela el comportamiento de datos iniciales para una cita.
+ * Clase abstracta que modela el comportamiento de datos iniciales para una
+ * cita.
  * 
  * @author Cruz González Irvin Javier
  * @author Ugalde Flores Jimena
  * @author Ugalde Ubaldo Fernando
- * 
- * @version 1.0
- * @since Java JDK 11.0
+ * @version Oracle JDK 17.0 LTS
  * 
  */
 
@@ -47,7 +46,7 @@ public abstract class OpcionActual extends JPanel {
 	private Button btnCancelar;
 
 	/**
-	 * Create the panel.
+	 * Método constructor
 	 */
 	public OpcionActual() {
 		setBounds(0, 0, 472, 631);
@@ -90,47 +89,153 @@ public abstract class OpcionActual extends JPanel {
 		colocaBotones();
 	}
 
-
+	/**
+	 * Método que crea el título del panel.
+	 */
 	abstract void creaTitulo();
 
-	/*Cuestionario inicial */
+	/**
+	 * Método que crea el cuestionario del panel.
+	 */
 	abstract void creaCuestionario();
 
-	/**Motivo de la cita */
+	/**
+	 * Método que da el motivo de la cita
+	 */
 	public abstract String getMotivacion();
+	
+	/**
+	 * Método para calcular el centro entre dos puntos.
+	 * 
+	 * @param a Primer punto
+	 * @param b Segundo punto
+	 * @return Punto medio entre dos punto
+	 */
+	public static int centrar(int a, int b) {
+		int puntoMedio = (a - b) / 2;
+		return puntoMedio;
+	}
 
 	/**
-	 * getHora
-	 * @return Una cita con año,mes,dia y hora.
+	 * Método que calcula la distnacia si se quiere poner un objeto en medio de dos
+	 * espacios en blancos.
+	 * 
+	 * @param x Distancia b
+	 * @param y Distnacia a
+	 * @param z Distancia del objeto
+	 * @return puntoMedio
+	 */
+	public static int centrar(int x, int y, int z) {
+		int puntoMedio = (z - x - y) / 3;
+		return puntoMedio;
+	}
+
+	/**
+	 * Método getter hora
+	 * 
+	 * @return Regresa la hora y fecha de la cita
 	 */
 	public LocalDateTime getHora() {
-		return LocalDateTime.of(parseoCmb(cmbYear), cmbMes.getSelectedIndex()+1, parseoCmb(cmbDia), getHora(cmbHora),
+		return LocalDateTime.of(parseoCmb(cmbYear), cmbMes.getSelectedIndex() + 1, parseoCmb(cmbDia), getHora(cmbHora),
 				getMinuto(cmbHora));
 	}
 
-	private int parseoCmb(JComboBox<Integer> i) {
-		return Integer.parseInt(i.getSelectedItem().toString());
+	/**
+	 * Método getter del botón guardar.
+	 * 
+	 * @return Botón guardar.
+	 */
+	public Button getBtnGuardar() {
+		return btnGuardar;
 	}
 
 	/**
-	 * getHora 
-	 * @param s
-	 * @return La hora de la cita.
+	 * Método getter del botón cancelar.
+	 * 
+	 * @return Botón cancelar.
 	 */
-	private int getHora(JComboBox<String> s) {
-		return Integer.parseInt(s.getSelectedItem().toString().substring(0, 2));
+	public Button getBtnCancelar() {
+		return btnCancelar;
 	}
 
 	/**
-	 * getMinuto
-	 * @param s
-	 * @return El minuto de la cita
+	 * Método getter del nobmre de la mascota.
+	 * 
+	 * @return JTextField de el nombre de la mascota.
 	 */
-	private int getMinuto(JComboBox<String> s) {
-		return Integer.parseInt(s.getSelectedItem().toString().substring(3));
+	public JTextField getTxtNombreMascota() {
+		return txtNombreMascota;
 	}
 
-	/**Opciones panel */
+	/**
+	 * Método getter del sexo de la mascota.
+	 * 
+	 * @return JComboBox de el sexo de una mascota
+	 */
+	public JComboBox<String> getCmbSexo() {
+		return cmbSexo;
+	}
+
+	/**
+	 * Método getter de la edad de la mascota.
+	 * 
+	 * @return JComboBox la edad de una mascota
+	 */
+	public JComboBox<Integer> getCmbEdad() {
+		return cmbEdad;
+	}
+
+	/**
+	 * Método getter del día de la cita.
+	 * 
+	 * @return JComboBox del día de la cita.
+	 */
+	public JComboBox<Integer> getCmbDia() {
+		return cmbDia;
+	}
+
+	/**
+	 * Método getter del mes de la cita.
+	 * 
+	 * @return JComboBox del mes de la cita.
+	 */
+	public JComboBox<String> getCmbMes() {
+		return cmbMes;
+	}
+
+	/**
+	 * Método getter del año de la cita.
+	 * 
+	 * @return JComboBox del año de la cita.
+	 */
+	public JComboBox<Integer> getCmbYear() {
+		return cmbYear;
+	}
+
+	/**
+	 * Método getter del hora de la cita.
+	 * 
+	 * @return JComboBox del hora de la cita.
+	 */
+	public JComboBox<String> getCmbHora() {
+		return cmbHora;
+	}
+
+	/**
+	 * Método getter de la especie de la mascota.
+	 * 
+	 * @return JComboBox de la especie de la mascota.
+	 */
+	public JComboBox<String> getCmbEspecie() {
+		return cmbEspecie;
+	}
+
+	/**
+	 * Método que genera el título.
+	 * 
+	 * @param titulo Nombre del panel
+	 * @param width  Ancho del lo que abarca el título
+	 */
 	protected void creaTitulo(String titulo, int width) {
 		JLabel lblTitulo = new JLabel(titulo);
 		marcoTitulo.add(lblTitulo);
@@ -142,9 +247,7 @@ public abstract class OpcionActual extends JPanel {
 	}
 
 	/**
-	 * cuestionarioPorDefecto.
-	 * 
-	 * Datos de una mascota
+	 * Método que da un cuestionario por defecto.
 	 */
 	protected void cuestionarioPorDefecto() {
 		ingresaNombre();
@@ -154,9 +257,58 @@ public abstract class OpcionActual extends JPanel {
 	}
 
 	/**
-	 * ingresa nombre 
+	 * Método que agrega los botones.
+	 */
+	protected void colocaBotones() {
+		btnGuardar = new Button("Confirmar cita");
+		btnGuardar.setBounds(centrar(105, 105, panelGuardar.getWidth()), centrar(panelGuardar.getHeight(), 35), 105,
+				35);
+		panelGuardar.add(btnGuardar);
+		btnGuardar.setForeground(new Color(255, 255, 255));
+		btnGuardar.setBackground(new Color(36, 47, 65));
+		btnGuardar.setFont(new Font("Cantarell", Font.BOLD, 12));
+
+		btnCancelar = new Button("Cancelar");
+		btnCancelar.setBounds(2 * centrar(105, 105, panelGuardar.getWidth()) + 105,
+				centrar(panelGuardar.getHeight(), 35), 105, 35);
+		panelGuardar.add(btnCancelar);
+		btnCancelar.setForeground(new Color(36, 47, 65));
+		btnCancelar.setFont(new Font("Cantarell", Font.BOLD, 12));
+		btnCancelar.setBackground(new Color(100, 226, 159));
+	}
+
+	/**
+	 * Método que convierte un la selección de ComboBox en un entero.
 	 * 
-	 * Panel para la creación del nombre de una mascota 
+	 * @param i ComboBox que se busca convertir a entero.
+	 * @return Número entero en el interior del ComboBox.
+	 */
+	private int parseoCmb(JComboBox<Integer> i) {
+		return Integer.parseInt(i.getSelectedItem().toString());
+	}
+
+	/**
+	 * Método que convierte un ComboBox de hora y minuto en una hora.
+	 * 
+	 * @param s ComboBox que se busca convertir.
+	 * @return La hora.
+	 */
+	private int getHora(JComboBox<String> s) {
+		return Integer.parseInt(s.getSelectedItem().toString().substring(0, 2));
+	}
+
+	/**
+	 * Método que convierte un ComboBox de hora y minuto en una hora.
+	 * 
+	 * @param s ComboBox que se busca convertir.
+	 * @return El minuto.
+	 */
+	private int getMinuto(JComboBox<String> s) {
+		return Integer.parseInt(s.getSelectedItem().toString().substring(3));
+	}
+
+	/**
+	 * Método que añade los campos para ingresar el nombre de la mascota.
 	 */
 	private void ingresaNombre() {
 		JLabel lblNombreMascota = new JLabel("Nombre de la mascota");
@@ -181,9 +333,7 @@ public abstract class OpcionActual extends JPanel {
 	}
 
 	/**
-	 * ingresaEdadySexo.
-	 * 
-	 * Panel para el registro de la edad y sexo de una mascota 
+	 * Método que añade los campos para ingresar la edad y sexo de la mascota.
 	 */
 	private void ingresaEdadySexo() {
 		JLabel lblSexoyEdad = new JLabel("Sexo y edad");
@@ -206,9 +356,7 @@ public abstract class OpcionActual extends JPanel {
 	}
 
 	/**
-	 * ingresa cita.
-	 * 
-	 * Panel para la asignación de una cita
+	 * Método que añade los campos para agreagar la fecha y hora de la cita.
 	 */
 	private void ingresaCita() {
 		JLabel lblFechayHora = new JLabel("Fecha y hora de la cita");
@@ -257,9 +405,7 @@ public abstract class OpcionActual extends JPanel {
 	}
 
 	/**
-	 * ingresaEspecie.
-	 * 
-	 * Panel para el registro de la especie de la mascota
+	 * Método que añade los campos para el registro de la especie de la mascota.
 	 */
 	private void ingresaEspecie() {
 		JLabel lblEspecie = new JLabel("Especie");
@@ -275,118 +421,4 @@ public abstract class OpcionActual extends JPanel {
 		cmbEspecie.setBackground(Color.WHITE);
 	}
 
-	/**Opciones de panel */
-	protected void colocaBotones() {
-		btnGuardar = new Button("Confirmar cita");
-		btnGuardar.setBounds(centrar(105, 105, panelGuardar.getWidth()), centrar(panelGuardar.getHeight(), 35), 105,
-				35);
-		panelGuardar.add(btnGuardar);
-		btnGuardar.setForeground(new Color(255, 255, 255));
-		btnGuardar.setBackground(new Color(36, 47, 65));
-		btnGuardar.setFont(new Font("Cantarell", Font.BOLD, 12));
-
-		btnCancelar = new Button("Cancelar");
-		btnCancelar.setBounds(2 * centrar(105, 105, panelGuardar.getWidth()) + 105,
-				centrar(panelGuardar.getHeight(), 35), 105, 35);
-		panelGuardar.add(btnCancelar);
-		btnCancelar.setForeground(new Color(36, 47, 65));
-		btnCancelar.setFont(new Font("Cantarell", Font.BOLD, 12));
-		btnCancelar.setBackground(new Color(100, 226, 159));
-	}
-
-	/**Opciones de panel */
-	public Button getBtnGuardar() {
-		return btnGuardar;
-	}
-
-	/**Opciones de panel */
-	public Button getBtnCancelar() {
-		return btnCancelar;
-	}
-
-	/**Opciones de panel */
-	protected static int centrar(int panelWidth, int lblWidth) {
-		int puntoMedio = (panelWidth - lblWidth) / 2;
-		return puntoMedio;
-	}
-
-	/**
-	 * centrar
-	 * @param x coordenadas en x
-	 * @param y coordenadas en y
-	 * @param z coordenadas en z
-	 * @return puntoMedio
-	 */
-	public static int centrar(int x, int y, int z) {
-		int puntoMedio = (z - x - y) / 3;
-		return puntoMedio;
-	}
-
-	
-	/**
-	 * getTxtNombreMascota.
-	 * @return el nombre de la mascota
-	 */	
-	public JTextField getTxtNombreMascota() {
-		return txtNombreMascota;
-	}
-
-	
-	/**
-	 * getcmbSexo.
-	 * @return el cambio de  para el cambio de sexo de una mascota
-	 */	
-	public JComboBox<String> getCmbSexo() {
-		return cmbSexo;
-	}
-
-	
-	/**
-	 * getcmbEdad.
-	 * @return el cambio de edad de una mascota
-	 */	
-	public JComboBox<Integer> getCmbEdad() {
-		return cmbEdad;
-	}
-
-	
-	/**
-	 * getcmbDia.
-	 * @return el cambio de día para una cita
-	 */	
-	public JComboBox<Integer> getCmbDia() {
-		return cmbDia;
-	}
-
-	/**
-	 * getcmbMes.
-	 * @return el cambio de mes para una cita.
-	 */	
-	public JComboBox<String> getCmbMes() {
-		return cmbMes;
-	}
-
-	/**
-	 * getcmbYear.
-	 * @return el cambio de año para una cita.
-	 */	
-	public JComboBox<Integer> getCmbYear() {
-		return cmbYear;
-	}
-
-	/**
-	 * getcmbHora.
-	 * @return el cambio de hora para una cita.
-	 */	
-	public JComboBox<String> getCmbHora() {
-		return cmbHora;
-	}
-
-	/**
-	 * getcmbEspecie.
-	 * @return el cambio de una especie.
-	 */
-	public JComboBox<String> getCmbEspecie() {
-		return cmbEspecie;
-	}
 }

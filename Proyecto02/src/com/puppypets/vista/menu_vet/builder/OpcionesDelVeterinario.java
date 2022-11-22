@@ -1,4 +1,4 @@
-package com.puppypets.vista.menu_vet;
+package com.puppypets.vista.menu_vet.builder;
 
 import java.awt.Color;
 import java.util.Arrays;
@@ -8,6 +8,12 @@ import javax.swing.JPanel;
 
 import com.puppypets.vista.MiniPanel;
 
+/**
+ * Método que implementa las opciones del menú del veterinario.
+ * 
+ * @author 106956120
+ *
+ */
 @SuppressWarnings("serial")
 public class OpcionesDelVeterinario extends JPanel {
 
@@ -17,52 +23,77 @@ public class OpcionesDelVeterinario extends JPanel {
 	private MiniPanel panelLogOut;
 	private List<MiniPanel> opciones;
 	public final Color VERDE_OSCURO = new Color(139, 182, 64);
-	public final Color VIOLETA = new Color(194, 0, 91);
-	public final Color VIOLETA_CLARO = new Color(202, 0, 117); 
-	public final Color VIO = new Color(210, 54, 142);
-	
+
+	/**
+	 * Método constructor.
+	 * 
+	 * @param builder Constructor de las opciones.
+	 */
 	public OpcionesDelVeterinario(ConstructorOpcionesDelVeterinario builder) {
 		this.citasAgendadas = builder.citasAgendadas;
 		this.mascotasAgendadas = builder.mascotasAgendadas;
 		this.clientesPago = builder.clientesPago;
 		this.panelLogOut = builder.panelLogOut;
 		opciones = Arrays.asList(citasAgendadas, mascotasAgendadas, clientesPago, panelLogOut);
-		
+
 		setBackground(VERDE_OSCURO);
 		setBounds(0, 0, 266, 476);
-		setLayout(null);		
+		setLayout(null);
 		agregaPaneles();
 	}
-	
+
+	/**
+	 * Método getter de las citas agendadas.
+	 * 
+	 * @return Citas agendadas.
+	 */
+	public MiniPanel getCitasAgendadas() {
+		return citasAgendadas;
+	}
+
+	/**
+	 * Método getter de las mascotas atendidas.
+	 * 
+	 * @return Mascotas atendidas.
+	 */
+	public MiniPanel getMascotasAgendadas() {
+		return mascotasAgendadas;
+	}
+
+	/**
+	 * Método getter de las citas pagadas.
+	 * 
+	 * @return Citas pagadas.
+	 */
+	public MiniPanel getClientesPago() {
+		return clientesPago;
+	}
+
+	/**
+	 * Método getter del panel de cerrar sesión.
+	 * 
+	 * @return Minipanel de cerrar sesión
+	 */
+	public MiniPanel getPanelLogOut() {
+		return panelLogOut;
+	}
+
+	/**
+	 * Método getter de las opciones.
+	 * 
+	 * @return Opciones.
+	 */
+	public List<MiniPanel> getOpciones() {
+		return opciones;
+	}
+
+	/**
+	 * Método para agregar los paneles (opciones) al panel.
+	 */
 	private void agregaPaneles() {
 		add(citasAgendadas);
 		add(mascotasAgendadas);
 		add(clientesPago);
 		add(panelLogOut);
 	}
-	
-	public MiniPanel getCitasAgendadas() {
-		return citasAgendadas;
-	}
-
-
-	public MiniPanel getMascotasAgendadas() {
-		return mascotasAgendadas;
-	}
-
-	
-	public MiniPanel getClientesPago() {
-		return clientesPago;
-	}
-
-	
-	public MiniPanel getPanelLogOut() {
-		return panelLogOut;
-	}
-
-
-	public List<MiniPanel> getOpciones() {
-		return opciones;
-	}
-	
 }

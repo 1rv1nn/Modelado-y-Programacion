@@ -11,6 +11,15 @@ import javax.swing.JPanel;
 
 import com.puppypets.vista.MiniPanel;
 
+/**
+ * Clase que implementa las opciones del cliente.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * @version Oracle JDK 17.0 LTS
+ *
+ */
 @SuppressWarnings("serial")
 public class OpcionesDelCliente extends JPanel {
 	private MiniPanel panelCita;
@@ -24,14 +33,19 @@ public class OpcionesDelCliente extends JPanel {
 	public final Color VERDE = new Color(58, 202, 128);
 	public final Color VERDE_OSCURO = new Color(47, 182, 114);
 
-	public OpcionesDelCliente(ConstructorOpcionesDelCliente cpo) {
-		this.panelCita = cpo.panelCita;
-		this.panelCirugia = cpo.panelCirugia;
-		this.panelEstetica = cpo.panelEstetica;
-		this.panelVacunacion = cpo.panelVacunacion;
-		this.panelEstudios = cpo.panelEstudios;
-		this.panelPago = cpo.panelPago;
-		this.panelLogOut = cpo.panelLogOut;
+	/**
+	 * Método constructor
+	 * 
+	 * @param builder Constructor de las opciones.
+	 */
+	public OpcionesDelCliente(ConstructorOpcionesDelCliente builder) {
+		this.panelCita = builder.panelCita;
+		this.panelCirugia = builder.panelCirugia;
+		this.panelEstetica = builder.panelEstetica;
+		this.panelVacunacion = builder.panelVacunacion;
+		this.panelEstudios = builder.panelEstudios;
+		this.panelPago = builder.panelPago;
+		this.panelLogOut = builder.panelLogOut;
 		opciones = Arrays.asList(panelCita, panelCirugia, panelEstetica, panelVacunacion, panelEstudios, panelPago,
 				panelLogOut);
 
@@ -42,26 +56,81 @@ public class OpcionesDelCliente extends JPanel {
 		agregaPaneles();
 	}
 
-	private void agregaPaneles() {
-		add(panelCita);
-		add(panelCirugia);
-		add(panelEstetica);
-		add(panelVacunacion);
-		add(panelEstudios);
-		add(panelPago);
-		add(panelLogOut);
+	/**
+	 * Método getter panel cita.
+	 * 
+	 * @return Panel cita.
+	 */
+	public MiniPanel getPanelCita() {
+		return panelCita;
 	}
 
-	private void agregaMarca() {
-		JLabel lblMarca = new JLabel("Puppy Pets ©");
-		lblMarca.setForeground(Color.WHITE);
-		lblMarca.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
-		lblMarca.setFont(new Font("Cantarell", Font.BOLD, 22));
-		lblMarca.setBounds(10, 24, 246, 60);
-		add(lblMarca);
+	/**
+	 * Método getter panel cirugía.
+	 * 
+	 * @return Panel cirugía.
+	 */
+	public MiniPanel getPanelCirugia() {
+		return panelCirugia;
 	}
 
+	/**
+	 * Método getter panel estética.
+	 * 
+	 * @return Panel estética.
+	 */
+	public MiniPanel getPanelEstetica() {
+		return panelEstetica;
+	}
+
+	/**
+	 * Método getter panel vacunación.
+	 * 
+	 * @return Panel vacunación.
+	 */
+	public MiniPanel getPanelVacunacion() {
+		return panelVacunacion;
+	}
+
+	/**
+	 * Método getter panel estudios.
+	 * 
+	 * @return Panel estudios.
+	 */
+	public MiniPanel getPanelEstudios() {
+		return panelEstudios;
+	}
+
+	/**
+	 * Método getter panel pago.
+	 * 
+	 * @return Panel pago.
+	 */
+	public MiniPanel getPanelPago() {
+		return panelPago;
+	}
+
+	/**
+	 * Método getter panel logout.
+	 * 
+	 * @return Panel de cerrar sesión.
+	 */
+	public MiniPanel getPanelLogOut() {
+		return panelLogOut;
+	}
+
+	/**
+	 * Método getter mini paneles.
+	 * 
+	 * @return Todas las opciones.
+	 */
+	public List<MiniPanel> getMiniPaneles() {
+		return opciones;
+	}
+
+	/**
+	 * Método que limpia los paneles (los devuelve a su color original).
+	 */
 	public void limpiar() {
 		panelCita.setBackground(VERDE);
 		panelCirugia.setBackground(VERDE);
@@ -72,35 +141,29 @@ public class OpcionesDelCliente extends JPanel {
 		panelLogOut.setBackground(VERDE_OSCURO);
 	}
 
-	public MiniPanel getPanelCita() {
-		return panelCita;
+	/**
+	 * Método que agreag los paneles (opciones) que tendrá el panel.
+	 */
+	private void agregaPaneles() {
+		add(panelCita);
+		add(panelCirugia);
+		add(panelEstetica);
+		add(panelVacunacion);
+		add(panelEstudios);
+		add(panelPago);
+		add(panelLogOut);
 	}
 
-	public MiniPanel getPanelCirugia() {
-		return panelCirugia;
-	}
-
-	public MiniPanel getPanelEstetica() {
-		return panelEstetica;
-	}
-
-	public MiniPanel getPanelVacunacion() {
-		return panelVacunacion;
-	}
-
-	public MiniPanel getPanelEstudios() {
-		return panelEstudios;
-	}
-
-	public MiniPanel getPanelPago() {
-		return panelPago;
-	}
-
-	public MiniPanel getPanelLogOut() {
-		return panelLogOut;
-	}
-
-	public List<MiniPanel> getMiniPaneles() {
-		return opciones;
+	/**
+	 * Método que agreaga el nombre de la marca al panel.
+	 */
+	private void agregaMarca() {
+		JLabel lblMarca = new JLabel("Puppy Pets ©");
+		lblMarca.setForeground(Color.WHITE);
+		lblMarca.setIcon(new ImageIcon(
+				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
+		lblMarca.setFont(new Font("Cantarell", Font.BOLD, 22));
+		lblMarca.setBounds(10, 24, 246, 60);
+		add(lblMarca);
 	}
 }

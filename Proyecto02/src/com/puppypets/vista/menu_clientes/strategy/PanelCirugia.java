@@ -1,21 +1,20 @@
 package com.puppypets.vista.menu_clientes.strategy;
 
-
-
 /**
- * Clase PanelCirugia que hereda de la clase OpcionActual.
+ * Clase que implementa el registro de una cita para cirugia.
  * 
  * @author Cruz González Irvin Javier
  * @author Ugalde Flores Jimena
  * @author Ugalde Ubaldo Fernando
- * 
- * @version 1.0
- * @since Java JDK 11.0
+ * @version Oracle JDK 17.0 LTS
  * 
  */
 @SuppressWarnings("serial")
 public class PanelCirugia extends OpcionActual {
 
+	/**
+	 * Método constructor de la clase.
+	 */
 	public PanelCirugia() {
 		super();
 	}

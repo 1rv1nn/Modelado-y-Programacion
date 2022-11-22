@@ -8,17 +8,34 @@ import com.puppypets.controlador.CtrlFrames;
 import com.puppypets.modelo.proxy.Cliente;
 import com.puppypets.vista.Registro;
 
+/**
+ * Clase controlador del Registro.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * @version Oracle JDK 17.0 LTS
+ *
+ */
 public class CtrlRegistro implements CtrlFrames {
 
 	private static CtrlRegistro controlador;
 	private Registro frmRegistro;
 
+	/**
+	 * Método constructor de la clase.
+	 */
 	private CtrlRegistro() {
 		frmRegistro = new Registro();
 		frmRegistro.getBtnCancelar().addActionListener(this);
 		frmRegistro.getBtnGuardar().addActionListener(this);
 	}
 
+	/**
+	 * Método para obtener una instancia de la clase.
+	 * 
+	 * @return
+	 */
 	public static CtrlRegistro getInstancia() {
 		if (controlador == null)
 			controlador = new CtrlRegistro();
@@ -74,6 +91,10 @@ public class CtrlRegistro implements CtrlFrames {
 		JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
 	}
 
+	/**
+	 * Método recolectar los datos que ingreso el usuario y posteriormente realizar
+	 * el registro de no ser que ya exista uno previamente con esos datos.
+	 */
 	private void registro() {
 		String nombre = frmRegistro.getTxtNombre().getText();
 		String usuario = frmRegistro.getTxtUsuario().getText();
@@ -94,6 +115,11 @@ public class CtrlRegistro implements CtrlFrames {
 		}
 	}
 
+	/**
+	 * Método para agregar al cliente nuevo y regresar a la pantalla inicial.
+	 * 
+	 * @param clienteNuevo
+	 */
 	private void registraNuevoUsuario(Cliente clienteNuevo) {
 		CtrlClientes.getInstancia().agregaCliente(clienteNuevo);
 		mandaMensaje("Se ha registrado el usuario correctamente.", "Registro completado");
@@ -102,6 +128,11 @@ public class CtrlRegistro implements CtrlFrames {
 		CtrlLogIn.getInstancia().iniciaFrame();
 	}
 
+	/**
+	 * Error que se lanza cuando un dato es inválido.
+	 * 
+	 * @param validacion Tipo de error que salió o si fue éxitoso el registro.
+	 */
 	private void lanzaErrorDatoInvalido(String validacion) {
 		if (validacion.contains("TEL")) {
 			mandaError("Ingreso un télefono invalido.");
@@ -118,6 +149,10 @@ public class CtrlRegistro implements CtrlFrames {
 		}
 	}
 
+	/**
+	 * Método que lanza un error al usuario por no aceptar los términos y
+	 * condiciones.
+	 */
 	private void lanzaErrorTerminos() {
 		if (!frmRegistro.getChckbxTerminos().isSelected()) {
 			mandaError("No ha aceptado los terminos de condición");
@@ -126,6 +161,13 @@ public class CtrlRegistro implements CtrlFrames {
 		}
 	}
 
+	/**
+	 * Método que lanza error por no haber completado todos los campos.
+	 * 
+	 * @param nombre    Campo de nombre.
+	 * @param direccion Campo de dirección del cliente.
+	 * @param usuario   Campo de usuario del cliente.
+	 */
 	private void lanzaErrorCamposVacios(String nombre, String direccion, String usuario) {
 		if (nombre.equals("") || direccion.equals("") || usuario.equals("")) {
 			mandaError("No ha contestado toda la informacion");
@@ -134,6 +176,9 @@ public class CtrlRegistro implements CtrlFrames {
 		}
 	}
 
+	/**
+	 * Método que lanza un error por no confirmar bien la constraseña.
+	 */
 	private void lanzaErrorPassword(String password, String confirmacion) {
 		if (!password.equals(confirmacion)) {
 			mandaError("Las contraseñas no coinciden");

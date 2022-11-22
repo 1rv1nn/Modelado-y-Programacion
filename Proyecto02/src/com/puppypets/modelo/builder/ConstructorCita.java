@@ -9,55 +9,54 @@ import com.puppypets.modelo.Mascota;
  * 
  * @author Cruz González Irvin Javier
  * @author Ugalde Flores Jimena
- * @author Ugalde Ubaldo Fernando (FWgalde)
- * 
- * @version 1.0
- * @since Oracle JDK 17.0 LTS
+ * @author Ugalde Ubaldo Fernando
+ * @version Oracle JDK 17.0 LTS
  * 
  */
-
 public class ConstructorCita {
-	Mascota mascota;
-	LocalDateTime tiempo;
-	boolean express;
-	String motivo;
-	
-	
+	protected Mascota mascota;
+	protected LocalDateTime tiempo;
+	protected boolean express;
+	protected String motivo;
+
 	/**
-	 * Constructor de una cita
-	 * @param mascota
-	 * @return constructor cita
+	 * Método para establecer la mascota en la cita.
+	 * 
+	 * @param mascota Mascota que será tratada en la cita.
+	 * @return Constructor de la cita.
 	 */
 	public ConstructorCita setMascota(Mascota mascota) {
 		this.mascota = mascota;
 		return this;
 	}
-	
+
 	/**
-	 * Construcutor del tiempo estimado para la cita
-	 * @param tiempo Tiempo estimado
-	 * @return El tiempo estimado
+	 * Método para establecer la fecha y hora de la cita.
+	 * 
+	 * @param tiempo Fecha y hora de la cita.
+	 * @return Constructor de la cita.
 	 */
 	public ConstructorCita setTiempo(LocalDateTime tiempo) {
 		this.tiempo = tiempo;
 		return this;
 	}
-	
-	
+
 	/**
-	 * Constructor de una cita expreess 
-	 * @param esExpress 
-	 * @return La cita express
+	 * Método para establecer si una cita es express o no.
+	 * 
+	 * @param esExpress Expresar si una cita es express.
+	 * @return Constructor de la cita.
 	 */
 	public ConstructorCita setExpress(boolean esExpress) {
 		this.express = esExpress;
 		return this;
 	}
-	
+
 	/**
-	 * Construcutor del motivo de una cita
-	 * @param motivo Motivo de la cita
-	 * @return El motivo
+	 * Método para establecer el motivo de la cita.
+	 * 
+	 * @param motivo Motivo de la cita.
+	 * @return Constructor de la cita.
 	 */
 	public ConstructorCita setMotivo(String motivo) {
 		this.motivo = motivo;

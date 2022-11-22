@@ -11,10 +11,18 @@ import com.puppypets.vista.MiniPanel;
 import com.puppypets.vista.menu_clientes.builder.ConstructorOpcionesDelCliente;
 import com.puppypets.vista.menu_clientes.builder.OpcionesDelCliente;
 import com.puppypets.vista.menu_clientes.strategy.OpcionActual;
-import com.puppypets.vista.menu_clientes.strategy.PanelSeleccionado;
 
 import javax.swing.ImageIcon;
 
+/**
+ * Clase que implementa el menu del cliente.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * @version Oracle JDK 17.0 LTS
+ *
+ */
 @SuppressWarnings("serial")
 public class MenuCliente extends JFrame {
 
@@ -24,6 +32,9 @@ public class MenuCliente extends JFrame {
 	private final Color VERDE = new Color(58, 202, 128);
 	private final Color VERDE_OSCURO = new Color(47, 182, 114);
 
+	/**
+	 * Método constructor del cliente.
+	 */
 	public MenuCliente() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 754, 670);
@@ -38,23 +49,70 @@ public class MenuCliente extends JFrame {
 		creaOpciones();
 	}
 
+	/**
+	 * Método que devuelve el panel seleccionado.
+	 * 
+	 * @return PanelActual después de elegirlo en las opciones (cita o pago).
+	 */
+	public PanelSeleccionado getPanelActual() {
+		return panelActual;
+	}
+
+	/**
+	 * Método getter del panel de opciones.
+	 * 
+	 * @return Panel de opciones.
+	 */
 	public OpcionesDelCliente getPanelOpciones() {
 		return panelOpciones;
 	}
 
-	private Optional<OpcionesDelCliente> getOpciones() {
-		return Optional.ofNullable(panelOpciones);
+	/**
+	 * Método que cambia los paneles.
+	 * 
+	 * @param panelPago Panel que quiere ser colocado.
+	 * @param mp        Minipanel que fue seleccionado.
+	 */
+	public void cambioPanel(PanelPago panelPago, MiniPanel mp) {
+		getPanelOpciones().limpiar();
+		mp.setClicks(mp.getClicks() + 1);
+		mp.setBackground(new Color(66, 219, 140));
+		getPanelActual().cambioAPago(panelPago);
 	}
 
+	/**
+	 * Método que cambia los paneles.
+	 * 
+	 * @param nuevoPanelActual Panel de cita que quiere ser colocado..
+	 * @param mp               Minipanel que fue seleccionado.
+	 */
+	public void cambioPanel(OpcionActual nuevoPanelActual, MiniPanel mp) {
+		getPanelOpciones().limpiar();
+		mp.setClicks(mp.getClicks() + 1);
+		mp.setBackground(new Color(66, 219, 140));
+		getPanelActual().cambioACita(nuevoPanelActual);
+	}
+
+	/**
+	 * Método que restablece el frame a su estado original.
+	 */
 	public void restablece() {
 		getOpciones().ifPresentOrElse(this::restablecePanelOpciones, () -> panelActual.restableceDefaultPanel());
 	}
 
+	/**
+	 * Método que restablece un un panel para quitar los campos.
+	 * 
+	 * @param panel Panel de opción que se quiere restablecer.
+	 */
 	private void restablecePanelOpciones(OpcionesDelCliente panel) {
 		panel.limpiar();
 		panelActual.restableceDefaultPanel();
 	}
 
+	/**
+	 * Método que crea las opciones del panel de opciones.
+	 */
 	private void creaOpciones() {
 		ImageIcon imgCita = new ImageIcon(
 				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\appointment (1).png");
@@ -98,22 +156,13 @@ public class MenuCliente extends JFrame {
 		contentPane.add(panelOpciones);
 	}
 
-	public PanelSeleccionado getPanelActual() {
-		return panelActual;
-	}
-	
-	public void cambioPanel(PanelPago panelPago, MiniPanel mp) {
-		getPanelOpciones().limpiar();
-		mp.setClicks(mp.getClicks() + 1);
-		mp.setBackground(new Color(66, 219, 140));
-		getPanelActual().cambioAPago(panelPago);
-	}
-	
-	public void cambioPanel(OpcionActual nuevoPanelActual, MiniPanel mp) {
-		getPanelOpciones().limpiar();
-		mp.setClicks(mp.getClicks() + 1);
-		mp.setBackground(new Color(66, 219, 140));
-		getPanelActual().cambioACita(nuevoPanelActual);
+	/**
+	 * Método que devuelve el panel de opciones.
+	 * 
+	 * @return Optional del panel de opciones.
+	 */
+	private Optional<OpcionesDelCliente> getOpciones() {
+		return Optional.ofNullable(panelOpciones);
 	}
 
 }

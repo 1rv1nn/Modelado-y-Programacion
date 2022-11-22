@@ -11,12 +11,24 @@ import com.puppypets.modelo.Veterinario;
 import com.puppypets.modelo.proxy.Cliente;
 import com.puppypets.vista.InicioSesion;
 
+/**
+ * Clase que implementa el controlador del inicio de sesión.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * @version Oracle JDK 17.0 LTS
+ *
+ */
 public class CtrlLogIn implements CtrlFrames {
 	private static CtrlLogIn controlador;
 	private CtrlClientes cc;
 	private CtrlVeterinarios cv;
 	private InicioSesion frmInicio;
 
+	/**
+	 * Método constructor de la clase.
+	 */
 	private CtrlLogIn() {
 		frmInicio = new InicioSesion();
 		this.cc = CtrlClientes.getInstancia();
@@ -25,6 +37,11 @@ public class CtrlLogIn implements CtrlFrames {
 		frmInicio.getBtnRegister().addActionListener(this);
 	}
 
+	/**
+	 * Método para obtener una instancia de la clase.
+	 * 
+	 * @return
+	 */
 	public static CtrlLogIn getInstancia() {
 		if (controlador == null) {
 			controlador = new CtrlLogIn();
@@ -76,6 +93,11 @@ public class CtrlLogIn implements CtrlFrames {
 		JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
 	}
 
+	/**
+	 * Método que regresa el usuario que iniciará sesión.
+	 * 
+	 * @return Optional del usuario, pues puede que no exista.
+	 */
 	private Optional<Usuario> iniciaSesion() {
 		String usuario = frmInicio.getTxtUsername().getText();
 		StringBuilder password = new StringBuilder();
@@ -90,6 +112,13 @@ public class CtrlLogIn implements CtrlFrames {
 		return Optional.empty();
 	}
 
+	/**
+	 * Método que verifica la contraseña de un usuario
+	 * 
+	 * @param u        Usuario del cual analizaremos su contraseña.
+	 * @param password Contraseña ingresada que queremos comparar.
+	 * @return true si es la misma, false en otro caso.
+	 */
 	private boolean verificaPassword(Usuario u, String password) {
 		if (u.getPassword().equals(password))
 			return true;
@@ -97,6 +126,12 @@ public class CtrlLogIn implements CtrlFrames {
 		return false;
 	}
 
+	/**
+	 * Método para escoger el panel al que se accederá al iniciar sesión dependiendo
+	 * el tipo de usuario.
+	 * 
+	 * @param u usuario que inicio sesión.
+	 */
 	private void escogePanel(Usuario u) {
 		if (u instanceof Cliente) {
 			CtrlMenuCliente.getInstancia().setUsuarioActual((Cliente) u);

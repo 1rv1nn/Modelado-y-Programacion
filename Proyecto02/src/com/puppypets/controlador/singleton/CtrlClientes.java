@@ -6,16 +6,18 @@ import java.util.function.Predicate;
 
 import com.puppypets.controlador.ValidacionRegistro;
 import com.puppypets.controlador.ValidacionRegistro.Validacion;
-import com.puppypets.modelo.BaseDeDatos;
 import com.puppypets.modelo.Mascota;
 import com.puppypets.modelo.proxy.Cliente;
+import com.puppypets.modelo.singleton.BaseDeDatos;
 
 /**
- * Clase que implementa el controlador de los clientes para ejecutar sus
- * operaciones.
+ * Clase que implementa el controlador de los clientes.
  * 
- * @author 106956120
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
  * @version Oracle JDK 17.0 LTS
+ * 
  */
 public class CtrlClientes {
 	private static CtrlClientes cc;
@@ -83,11 +85,24 @@ public class CtrlClientes {
 				.and(ValidacionRegistro.esUsuarioValido()).apply(c);
 		return resultado.toString();
 	}
-	
+
+	/**
+	 * Método para encontrar si un cliente ya tiene dicha mascota.
+	 * 
+	 * @param c Cliente del cual se quiere obtener la información.
+	 * @param m Mascota de la cual queremos saber si pertenece al cliente c.
+	 * @return
+	 */
 	public Optional<Mascota> encuentraMascota(Cliente c, Mascota m) {
 		return c.getMascotas().stream().filter(mismaMascota(m)).findAny();
 	}
-	
+
+	/**
+	 * Método que regresa un predicado de si existe una mascota igual.
+	 * 
+	 * @param mascota Mascota que se quiere ver si es repetida.
+	 * @return Predicado de las condiciones.
+	 */
 	public Predicate<Mascota> mismaMascota(Mascota mascota) {
 		Predicate<Mascota> mismoNombre = m -> m.getNombre().equals(mascota.getNombre());
 		Predicate<Mascota> mismaEdad = m -> m.getEdad() == mascota.getEdad();
@@ -95,5 +110,4 @@ public class CtrlClientes {
 		Predicate<Mascota> mismoSexo = m -> m.getSexo().equals(mascota.getSexo());
 		return mismoNombre.and(mismaEdad).and(mismaEspecie).and(mismoSexo);
 	}
-	
 }

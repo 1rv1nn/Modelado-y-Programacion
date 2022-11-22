@@ -8,21 +8,21 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
 /**
- * Clase PanelVacunacion que hereda de la clase abstracta OpcionActual.
+ * Clase que implementa el registro de una cita para estudios clínicos.
  * 
  * @author Cruz González Irvin Javier
  * @author Ugalde Flores Jimena
  * @author Ugalde Ubaldo Fernando
- * 
- * @version 1.0
- * @since Java JDK 11.0
+ * @version Oracle JDK 17.0 LTS
  * 
  */
 @SuppressWarnings("serial")
 public class PanelVacunacion extends OpcionActual {
 	private JComboBox<String> cmbVacuna;
 
-	/**Constructor */
+	/**
+	 * Método constructor de la clase.
+	 */
 	public PanelVacunacion() {
 		super();
 	}
@@ -46,9 +46,7 @@ public class PanelVacunacion extends OpcionActual {
 	}
 	
 	/**
-	 * seleccionaVacuna.
-	 * 
-	 * Se elige una vacuna para la mascota
+	 * Método que añade los campos para escoger una vacuna para la mascota.
 	 */
 	private void seleccionaVacuna() {
 		JLabel lblEstudio = new JLabel("Vacuna");
