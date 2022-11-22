@@ -7,6 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.puppypets.vista.menu_clientes.PanelPago;
+
 @SuppressWarnings("serial")
 public class PanelSeleccionado extends JPanel {
 	

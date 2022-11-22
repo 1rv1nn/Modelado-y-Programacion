@@ -9,18 +9,18 @@ import com.puppypets.modelo.proxy.Cliente;
 import com.puppypets.vista.Registro;
 
 public class CtrlRegistro implements CtrlFrames {
-	
+
 	private static CtrlRegistro controlador;
 	private Registro frmRegistro;
-	
+
 	private CtrlRegistro() {
 		frmRegistro = new Registro();
 		frmRegistro.getBtnCancelar().addActionListener(this);
 		frmRegistro.getBtnGuardar().addActionListener(this);
 	}
-	
+
 	public static CtrlRegistro getInstancia() {
-		if(controlador == null)
+		if (controlador == null)
 			controlador = new CtrlRegistro();
 		return controlador;
 	}
@@ -33,7 +33,7 @@ public class CtrlRegistro implements CtrlFrames {
 		} else if (accion.equals(frmRegistro.getBtnCancelar())) {
 			ocultaFrame();
 			CtrlLogIn.getInstancia().iniciaFrame();
-		} 
+		}
 	}
 
 	@Override
@@ -73,17 +73,17 @@ public class CtrlRegistro implements CtrlFrames {
 	public void mandaMensaje(String mensaje, String titulo) {
 		JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
 	}
-	
+
 	private void registro() {
 		String nombre = frmRegistro.getTxtNombre().getText();
 		String usuario = frmRegistro.getTxtUsuario().getText();
 		String telefono = frmRegistro.getTxtTelefono().getText();
 		String cuenta = frmRegistro.getTxtCuenta().getText();
 		String direccion = frmRegistro.getTxtDireccion().getText();
-		String password = frmRegistro.getPasswordField().getPassword().toString();
-		String passwordConfirm = frmRegistro.getPasswordConfirmacion().getPassword().toString();
+		String password = new String(frmRegistro.getPasswordField().getPassword());
+		String passwordConfirm = new String(frmRegistro.getPasswordConfirmacion().getPassword());
 
-		Cliente clienteNuevo = new Cliente(usuario, password.toString(), nombre, telefono, direccion, cuenta);
+		Cliente clienteNuevo = new Cliente(usuario, password, nombre, telefono, direccion, cuenta);
 		try {
 			lanzaErrorDatoInvalido(CtrlClientes.getInstancia().validaDatosCliente(clienteNuevo));
 			lanzaErrorTerminos();
@@ -93,7 +93,7 @@ public class CtrlRegistro implements CtrlFrames {
 		} catch (Exception e) {
 		}
 	}
-	
+
 	private void registraNuevoUsuario(Cliente clienteNuevo) {
 		CtrlClientes.getInstancia().agregaCliente(clienteNuevo);
 		mandaMensaje("Se ha registrado el usuario correctamente.", "Registro completado");
@@ -101,7 +101,7 @@ public class CtrlRegistro implements CtrlFrames {
 		ocultaFrame();
 		CtrlLogIn.getInstancia().iniciaFrame();
 	}
-	
+
 	private void lanzaErrorDatoInvalido(String validacion) {
 		if (validacion.contains("TEL")) {
 			mandaError("Ingreso un télefono invalido.");
@@ -115,9 +115,9 @@ public class CtrlRegistro implements CtrlFrames {
 			mandaError("El usuario ya existe, intente con otro.");
 			limpiaCampos();
 			throw new IllegalArgumentException();
-		} 
+		}
 	}
-	
+
 	private void lanzaErrorTerminos() {
 		if (!frmRegistro.getChckbxTerminos().isSelected()) {
 			mandaError("No ha aceptado los terminos de condición");
@@ -125,7 +125,7 @@ public class CtrlRegistro implements CtrlFrames {
 			throw new IllegalArgumentException();
 		}
 	}
-	
+
 	private void lanzaErrorCamposVacios(String nombre, String direccion, String usuario) {
 		if (nombre.equals("") || direccion.equals("") || usuario.equals("")) {
 			mandaError("No ha contestado toda la informacion");
@@ -133,13 +133,13 @@ public class CtrlRegistro implements CtrlFrames {
 			throw new IllegalArgumentException();
 		}
 	}
-	
+
 	private void lanzaErrorPassword(String password, String confirmacion) {
-		if (!password.toString().equals(confirmacion.toString())) {
+		if (!password.equals(confirmacion)) {
 			mandaError("Las contraseñas no coinciden");
 			limpiaCampos();
 			throw new IllegalArgumentException();
 		}
 	}
-	
+
 }

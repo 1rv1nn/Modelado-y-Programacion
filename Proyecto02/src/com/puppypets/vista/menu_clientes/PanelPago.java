@@ -1,4 +1,4 @@
-package com.puppypets.vista.menu_clientes.strategy;
+package com.puppypets.vista.menu_clientes;
 
 import java.awt.Button;
 import java.awt.Color;
@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import com.puppypets.modelo.builder.Cita;
+import com.puppypets.vista.menu_clientes.strategy.OpcionActual;
 
 @SuppressWarnings("serial")
 public class PanelPago extends JPanel {

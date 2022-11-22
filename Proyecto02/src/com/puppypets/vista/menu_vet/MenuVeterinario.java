@@ -3,8 +3,11 @@ package com.puppypets.vista.menu_vet;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
+import com.puppypets.modelo.builder.Cita;
 import com.puppypets.vista.MiniPanel;
 
 import javax.swing.JTable;
@@ -26,6 +29,7 @@ public class MenuVeterinario extends JFrame {
 	private JPanel panelPrincipal;
 	private JLabel lblTitulo;
 	private JLabel lblNombre;
+	private DefaultTableModel modelo;
 
 	/**
 	 * Create the frame.
@@ -40,7 +44,7 @@ public class MenuVeterinario extends JFrame {
 		
 		panelPrincipal = new JPanel();
 		panelPrincipal.setBackground(new Color(36, 47, 65));
-		panelPrincipal.setBounds(265, 0, 651, 476);
+		panelPrincipal.setBounds(266, 0, 651, 476);
 		contentPane.add(panelPrincipal);
 		panelPrincipal.setLayout(null);
 		creaOpciones();		
@@ -49,6 +53,9 @@ public class MenuVeterinario extends JFrame {
 		creaTitulo();
 		creaOpciones();
 		cambiaTitulo("Próximas citas");
+		modelo = new DefaultTableModel();
+		tablaClientes.setModel(modelo);
+		creaModeloCitas();
 	}
 	
 	private void creaTabla() {
@@ -60,7 +67,9 @@ public class MenuVeterinario extends JFrame {
 		
 		tablaClientes = new JTable();
 		tablaClientes.setBounds(10, 11, 611, 307);
-		panelTabla.add(tablaClientes);
+		tablaClientes.setEnabled(false);
+		tablaClientes.setVisible(true);
+		agregaScroll();
 	}
 	
 	private void creaTitulo() {
@@ -128,10 +137,6 @@ public class MenuVeterinario extends JFrame {
 		return tablaClientes;
 	}
 
-	public void setTablaClientes(JTable tablaClientes) {
-		this.tablaClientes = tablaClientes;
-	}
-
 	public OpcionesDelVeterinario getPanelOpciones() {
 		return panelOpciones;
 	}
@@ -140,8 +145,11 @@ public class MenuVeterinario extends JFrame {
 		this.panelOpciones = panelOpciones;
 	}
 
-	public JPanel getPanelTabla() {
-		return panelTabla;
+	private void agregaScroll() {
+		JScrollPane scroll = new JScrollPane();
+		scroll.setBounds(10, 11, 611, 307);
+		panelTabla.add(scroll);
+		scroll.setViewportView(tablaClientes);
 	}
 
 	public void setPanelTabla(JPanel panelTabla) {
@@ -156,5 +164,60 @@ public class MenuVeterinario extends JFrame {
 		this.panelPrincipal = panelPrincipal;
 	}
 	
+	public void llenaCampoCita(Cita c) {
+		Object[] fila = new Object[5];
+		fila[0] = c.getTiempo().toString();
+		fila[1] = c.getMascota().getOwner().getId();
+		fila[2] = c.getMascota().getEspecie();
+		fila[3] = c.getMascota().getNombre();
+		fila[4] = c.getMotivo();
+		modelo.addRow(fila);
+	}
+
+	private void creaModeloCitas() {
+		modelo.addColumn("Fecha de cita");
+		modelo.addColumn("ID Cliente");
+		modelo.addColumn("Especie");
+		modelo.addColumn("Mascota");
+		modelo.addColumn("Motivo de visita");
+	}
+	public void llenaCampoMascotas(Cita c) {
+		Object[] fila = new Object[4];
+		fila[0] = c.getMascota().getId();
+		fila[1] = c.getMascota().getEspecie();
+		fila[2] = c.getTiempo();
+		fila[3] = c.getMascota().getEdad();
+		modelo.addRow(fila);
+	}
 	
+	public void cambioATablaMascota(MiniPanel mp) {
+		restablecerTodos();
+		modelo.setColumnCount(0);
+		modelo.setRowCount(0);
+		modelo.fireTableDataChanged();
+		mp.setClicks(mp.getClicks() + 1);
+		mp.setBackground(VERDE_CLARO);
+		creaModeloMascotas();
+	}
+	
+	public void cambioATablaCita(MiniPanel mp) {
+		restablecerTodos();
+		modelo.setColumnCount(0);
+		modelo.setRowCount(0);
+		modelo.fireTableDataChanged();
+		mp.setClicks(mp.getClicks() + 1);
+		mp.setBackground(VERDE_CLARO);
+		creaModeloCitas();
+	}
+	
+	private void restablecerTodos() {
+		panelOpciones.getOpciones().stream().forEach(p -> p.setBackground(p.getDefaultColour()));
+	}
+	
+	private void creaModeloMascotas() {
+		modelo.addColumn("ID Mascota");
+		modelo.addColumn("Especie");
+		modelo.addColumn("Fecha de visita");
+		modelo.addColumn("Edad");
+	}
 }

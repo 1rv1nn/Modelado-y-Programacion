@@ -104,7 +104,6 @@ public class Cliente extends Usuario implements ICliente{
 
 	@Override
 	public void pagoServicios(String cuentaBancaria, double pago) {
-		System.out.println(dineroDisponible-pago);
 		if(pago <= dineroDisponible)
 			dineroDisponible -= pago;
 		else 

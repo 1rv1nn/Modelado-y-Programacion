@@ -11,7 +11,6 @@ import com.puppypets.vista.MiniPanel;
 import com.puppypets.vista.menu_clientes.builder.ConstructorOpcionesDelCliente;
 import com.puppypets.vista.menu_clientes.builder.OpcionesDelCliente;
 import com.puppypets.vista.menu_clientes.strategy.OpcionActual;
-import com.puppypets.vista.menu_clientes.strategy.PanelPago;
 import com.puppypets.vista.menu_clientes.strategy.PanelSeleccionado;
 
 import javax.swing.ImageIcon;

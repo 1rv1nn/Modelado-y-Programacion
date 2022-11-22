@@ -18,12 +18,12 @@ import com.puppypets.modelo.proxy.Cliente;
 import com.puppypets.modelo.proxy.ClienteProxy;
 import com.puppypets.vista.MiniPanel;
 import com.puppypets.vista.menu_clientes.MenuCliente;
+import com.puppypets.vista.menu_clientes.PanelPago;
 import com.puppypets.vista.menu_clientes.strategy.OpcionActual;
 import com.puppypets.vista.menu_clientes.strategy.PanelCirugia;
 import com.puppypets.vista.menu_clientes.strategy.PanelCita;
 import com.puppypets.vista.menu_clientes.strategy.PanelEstetica;
 import com.puppypets.vista.menu_clientes.strategy.PanelEstudios;
-import com.puppypets.vista.menu_clientes.strategy.PanelPago;
 import com.puppypets.vista.menu_clientes.strategy.PanelVacunacion;
 
 public class CtrlMenuCliente extends MouseAdapter implements CtrlFrames {
@@ -66,20 +66,16 @@ public class CtrlMenuCliente extends MouseAdapter implements CtrlFrames {
 		if (esPago(accion)) {
 			if (!(usuarioActual.getPrecioTotal() < 1))
 				pagoCitas();
-			else if (todasPagadas())
-				mandaMensaje("Ya ha pagado todas sus citas", "Info");
-			else
+			else if (usuarioActual.getCitasAgendadas().size() == 0)
 				mandaMensaje("No ha realizado ninguna cita", "Info");
+			else
+				mandaMensaje("Ya ha pagado todas sus citas", "Info");
 			limpiaCampos();
 		} else if (esGuardar(accion)) {
 			accionCita();
 		} else if (esCancelar(accion) || esPagoEnTienda(accion)) {
 			limpiaCampos();
 		}
-	}
-
-	private boolean todasPagadas() {
-		return usuarioActual.getCitasAgendadas().stream().allMatch(c -> c.estaPagada());
 	}
 
 	private boolean esGuardar(Object accion) {
@@ -159,7 +155,6 @@ public class CtrlMenuCliente extends MouseAdapter implements CtrlFrames {
 
 	private void agregaNuevaMascota(Mascota mascota) {
 		usuarioActual.agregaMascota(mascota);
-		System.out.println("nueva");
 		creaCita(mascota);
 	}
 

@@ -36,7 +36,6 @@ public class CtrlLogIn implements CtrlFrames {
 	public void actionPerformed(ActionEvent e) {
 		Object accion = e.getSource();
 		if (accion.equals(frmInicio.getBtnLogIn())) {
-			System.out.println("h");
 			iniciaSesion().ifPresent(u -> escogePanel(u));
 			limpiaCampos();
 		} else if (accion.equals(frmInicio.getBtnRegister())) {

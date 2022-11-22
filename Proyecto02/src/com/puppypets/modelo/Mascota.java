@@ -37,7 +37,7 @@ public class Mascota {
 	 * Método getter del ID
 	 * @return ID de la mascota
 	 */
-	public static int getId() {
+	public int getId() {
 		return id;
 	}
 

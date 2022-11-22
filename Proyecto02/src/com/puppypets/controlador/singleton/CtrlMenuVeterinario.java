@@ -8,7 +8,6 @@ import java.awt.event.MouseEvent;
 import java.util.Optional;
 
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 import com.puppypets.controlador.CtrlFrames;
 import com.puppypets.modelo.Veterinario;
@@ -19,7 +18,6 @@ public class CtrlMenuVeterinario extends MouseAdapter implements CtrlFrames {
 	
 	private static CtrlMenuVeterinario controlador;
 	private MenuVeterinario frmMenu;
-	private DefaultTableModel modelo;
 	private Veterinario usuarioActual;
 	
 	
@@ -43,18 +41,16 @@ public class CtrlMenuVeterinario extends MouseAdapter implements CtrlFrames {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		Object panelPulsado = e.getSource();
-//		if (panelPulsado.equals(frmMenu.getPanelOpciones().getPanelCita())) {
-//			cambioPaneles(0, new CitaMedica(), frmMenu.getPanelOpciones().getPanelCita());
-//		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getPanelCirugia())) {
-//			cambioPaneles(1, new CitaCirugia(), frmMenu.getPanelOpciones().getPanelCirugia());
-//		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getPanelEstetica())) {
-//			cambioPaneles(2, new CitaEstetica(), frmMenu.getPanelOpciones().getPanelEstetica());
-//		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getPanelVacunacion())) {
-//			cambioPaneles(3, new CitaVacunacion(), frmMenu.getPanelOpciones().getPanelVacunacion());
-//		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getPanelEstudios())) {
-//			cambioPaneles(4, new CitaEstudios(), frmMenu.getPanelOpciones().getPanelEstudios());
-//		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getPanelPago())) {
-//			cambioPaneles(5, new CitaEstudios(), frmMenu.getPanelOpciones().getPanelPago());
+		if (panelPulsado.equals(frmMenu.getPanelOpciones().getCitasAgendadas())) {
+			frmMenu.cambioATablaCita(frmMenu.getPanelOpciones().getCitasAgendadas());
+			llenarTablaCita();
+		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getMascotasAgendadas())) {
+			frmMenu.cambioATablaMascota(frmMenu.getPanelOpciones().getMascotasAgendadas());
+			llenarTablaMascota();
+		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getClientesPago())) {
+			frmMenu.cambioATablaCita(frmMenu.getPanelOpciones().getClientesPago());
+			llenarTablaPagada();
+		}
 		if (panelPulsado.equals(frmMenu.getPanelOpciones().getPanelLogOut())) {
 			CtrlLogIn.getInstancia().iniciaFrame();
 			frmMenu.setVisible(false);
@@ -114,19 +110,6 @@ public class CtrlMenuVeterinario extends MouseAdapter implements CtrlFrames {
 		this.usuarioActual = usuarioActual;
 	}
 	
-	private void modelaTabla() {
-		modelo = new DefaultTableModel();
-		frmMenu.getTablaClientes().setModel(modelo);
-	}
-	
-	
-	private void consultaCitas() {
-		modelo.addColumn("Hora");
-		modelo.addColumn("Problema a tratar");
-		modelo.addColumn("Mascota");
-	}
-	
-	
 	
 	private Optional<MiniPanel> panelSinClick(Object panelPulsado) {
 		return frmMenu.getPanelOpciones().getOpciones().stream()
@@ -142,4 +125,15 @@ public class CtrlMenuVeterinario extends MouseAdapter implements CtrlFrames {
 	private void restableceOpcion(MiniPanel mp) {
 		mp.setBackground(mp.getDefaultColour());
 	}
+	
+	private void llenarTablaCita() {
+		usuarioActual.getAgenda().stream().forEach(p -> frmMenu.llenaCampoCita(p));
+	}
+	private void llenarTablaMascota() {
+		usuarioActual.getAgenda().stream().forEach(p -> frmMenu.llenaCampoMascotas(p));
+	}
+	
+	private void llenarTablaPagada() {
+		usuarioActual.getAgenda().stream().filter(p -> p.estaPagada()).forEach(p -> frmMenu.llenaCampoCita(p));
+	}	
 }

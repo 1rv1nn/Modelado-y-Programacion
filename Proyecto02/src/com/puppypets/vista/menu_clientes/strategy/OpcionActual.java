@@ -247,12 +247,12 @@ public abstract class OpcionActual extends JPanel {
 		return btnCancelar;
 	}
 
-	protected static int centrar(int panelWidth, int lblWidth) {
+	public static int centrar(int panelWidth, int lblWidth) {
 		int puntoMedio = (panelWidth - lblWidth) / 2;
 		return puntoMedio;
 	}
 
-	protected static int centrar(int x, int y, int z) {
+	public static int centrar(int x, int y, int z) {
 		int puntoMedio = (z - x - y) / 3;
 		return puntoMedio;
 	}
