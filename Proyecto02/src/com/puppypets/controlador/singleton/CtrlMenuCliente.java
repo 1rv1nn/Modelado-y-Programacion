@@ -1,4 +1,4 @@
-package com.puppypets.controlador;
+package com.puppypets.controlador.singleton;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -9,6 +9,7 @@ import java.util.Optional;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
+import com.puppypets.controlador.CtrlFrames;
 import com.puppypets.modelo.Mascota;
 import com.puppypets.modelo.Veterinario;
 import com.puppypets.modelo.builder.Cita;

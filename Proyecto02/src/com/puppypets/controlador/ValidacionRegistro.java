@@ -3,6 +3,7 @@ package com.puppypets.controlador;
 import java.util.function.Function;
 
 import com.puppypets.controlador.ValidacionRegistro.*;
+import com.puppypets.controlador.singleton.CtrlClientes;
 import com.puppypets.modelo.proxy.Cliente;
 
 public interface ValidacionRegistro extends Function<Cliente, Validacion> {

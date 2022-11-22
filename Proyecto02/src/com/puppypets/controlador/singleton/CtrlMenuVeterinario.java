@@ -1,4 +1,4 @@
-package com.puppypets.controlador;
+package com.puppypets.controlador.singleton;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -10,6 +10,7 @@ import java.util.Optional;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import com.puppypets.controlador.CtrlFrames;
 import com.puppypets.modelo.Veterinario;
 import com.puppypets.vista.MiniPanel;
 import com.puppypets.vista.menu_vet.MenuVeterinario;

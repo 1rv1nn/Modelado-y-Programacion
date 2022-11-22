@@ -1,9 +1,10 @@
-package com.puppypets.controlador;
+package com.puppypets.controlador.singleton;
 
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
 
+import com.puppypets.controlador.ValidacionRegistro;
 import com.puppypets.controlador.ValidacionRegistro.Validacion;
 import com.puppypets.modelo.BaseDeDatos;
 import com.puppypets.modelo.Mascota;
