@@ -3,11 +3,16 @@ package com.puppypets.modelo;
 import com.puppypets.modelo.proxy.Cliente;
 
 /**
- * Clase que implementa a las mascotas del local.
- * @author 106956120
- * @version Oracle JDK 17
- *
- */
+ * Clase que implementa las mascotas del local.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * @since  Oracle JDK 17.0 LTS
+ * 
+ */ 
 public class Mascota {
 	
 	private static int id;
@@ -105,10 +110,18 @@ public class Mascota {
 		this.edad = edad;
 	}
 
+	/**
+	 * Método getter del sexo
+	 * @return sexo de la mascota
+	 */
 	public String getSexo() {
 		return sexo;
 	}
 
+	/**
+	 * Método setter del sexo de la mascota.
+	 * @param sexo Sexo de la mascota.
+	 */
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}

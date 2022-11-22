@@ -9,11 +9,24 @@ import javax.swing.JLabel;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 
+/**
+ * Clase PanelEstudios que hereda de la clase OpcionActual.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * @since Java JDK 11.0
+ * 
+ */
+
 @SuppressWarnings("serial")
 public class PanelEstudios extends OpcionActual {
 	private JComboBox<String> cmbEstudio;
 	private JCheckBox chckbxExpress;
 	
+	/**Constructor */
 	public PanelEstudios() {
 		super();
 		panelGuardar.setLocation(7, 325);
@@ -42,6 +55,11 @@ public class PanelEstudios extends OpcionActual {
 		return motivo.toString();
 	}
 	
+	/**
+	 * seleccionaEstudio.
+	 * 
+	 * Panel para elegir el un tipo de estudio.
+	 */
 	private void seleccionaEstudio() {
 		JLabel lblEstudio = new JLabel("Estudio");
 		lblEstudio.setFont(new Font("Cantarell", Font.BOLD, 14));
@@ -57,6 +75,12 @@ public class PanelEstudios extends OpcionActual {
 		panelCuestionario.add(cmbEstudio);
 	}
 	
+
+	/**
+	 * seleccionaRapidez.
+	 * 
+	 * Elege el tiempo en llevarse a cabo el estudio
+	 */
 	private void seleccionaRapidez() {
 		chckbxExpress = new JCheckBox("Servicio express");
 		chckbxExpress.setToolTipText("Entregas en 8hrs");
@@ -67,6 +91,11 @@ public class PanelEstudios extends OpcionActual {
 		panelCuestionario.add(chckbxExpress);
 	}
 
+	/**
+	 * darInformacionEntrega.
+	 * 
+	 * Proporciona la información del servicio elegido.
+	 */
 	private void daInformacionEntrega() {
 		JLabel lblInfoE = new JLabel("El servicio express se entrega en 8hrs después del ánalisis.");
 		lblInfoE.setFont(new Font("Montserrat Light", Font.PLAIN, 10));

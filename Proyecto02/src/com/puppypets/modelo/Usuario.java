@@ -1,5 +1,16 @@
 package com.puppypets.modelo;
 
+/**
+ * Clase que implementa a un usuario.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando (FWgalde)
+ * 
+ * @version 1.0
+ * @since  Oracle JDK 17.0 LTS
+ */ 
+
 public class Usuario {
 	protected String usuario;
 	protected String password;
@@ -7,6 +18,13 @@ public class Usuario {
 	protected String telefono;
 	protected static int id = 0;
 	
+	/**
+	 * Método constructor de la clase
+	 * @param usuario nombre del usuario
+	 * @param password contraseña de l usuario
+	 * @param nombre   nombre del usuario
+	 * @param telefono telefono del usuario
+	 */
 	public Usuario(String usuario, String password, String nombre, String telefono) {
 		this.usuario = usuario;
 		this.password = password;

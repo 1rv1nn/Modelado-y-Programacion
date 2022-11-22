@@ -15,6 +15,18 @@ import javax.swing.table.DefaultTableModel;
 import com.puppypets.modelo.builder.Cita;
 import com.puppypets.vista.menu_clientes.strategy.OpcionActual;
 
+/**
+ * Clase PanelPago que modela el pago de un servicio.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * @since Java JDK 11.0
+ * 
+ */
+
 @SuppressWarnings("serial")
 public class PanelPago extends JPanel {
 	private JTable table;
@@ -72,6 +84,7 @@ public class PanelPago extends JPanel {
 		creaModelo();
 	}
 
+	/*Opciones de panel */
 	private void agregaScroll() {
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(10, 11, 354, 288);
@@ -79,6 +92,7 @@ public class PanelPago extends JPanel {
 		scroll.setViewportView(table);
 	}
 
+	/**Opciones de panel */
 	private void colocaBotones() {
 		btnGuardar = new Button("Pagar");
 		btnGuardar.setBounds(OpcionActual.centrar(105, 105, panelGuardar.getWidth()),
@@ -101,6 +115,7 @@ public class PanelPago extends JPanel {
 		return table;
 	}
 
+	/** Opciones de Panel */
 	private void creaTitulo(String titulo) {
 		JLabel lblTitulo = new JLabel(titulo);
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -119,6 +134,11 @@ public class PanelPago extends JPanel {
 		table.setVisible(true);
 	}
 
+	/**
+	 * creaModelo
+	 * 
+	 * Se crea las respectivas etiquetas.
+	 */
 	private void creaModelo() {
 		modelo = new DefaultTableModel();
 		table.setModel(modelo);
@@ -128,6 +148,7 @@ public class PanelPago extends JPanel {
 		modelo.addColumn("Precio");
 	}
 	
+
 	public void llenaCampo(Cita c) {
 		Object[] fila = new Object[4];
 		fila[0] = c.getTiempo().toString();
@@ -137,10 +158,12 @@ public class PanelPago extends JPanel {
 		modelo.addRow(fila);
 	}
 
+	/**Opciones de panel */
 	public Button getBtnGuardar() {
 		return btnGuardar;
 	}
 
+	/*Opciones de panel */
 	public Button getBtnCancelar() {
 		return btnCancelar;
 	}

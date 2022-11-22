@@ -15,6 +15,18 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+/**
+ * Clase abstracta OpcionActual que modela el comportamiento de datos iniciales para una cita.
+ * 
+ * @author Cruz González Irvin Javier
+ * @author Ugalde Flores Jimena
+ * @author Ugalde Ubaldo Fernando
+ * 
+ * @version 1.0
+ * @since Java JDK 11.0
+ * 
+ */
+
 @SuppressWarnings("serial")
 public abstract class OpcionActual extends JPanel {
 
@@ -78,13 +90,19 @@ public abstract class OpcionActual extends JPanel {
 		colocaBotones();
 	}
 
+
 	abstract void creaTitulo();
 
+	/*Cuestionario inicial */
 	abstract void creaCuestionario();
 
+	/**Motivo de la cita */
 	public abstract String getMotivacion();
 
-
+	/**
+	 * getHora
+	 * @return Una cita con año,mes,dia y hora.
+	 */
 	public LocalDateTime getHora() {
 		return LocalDateTime.of(parseoCmb(cmbYear), cmbMes.getSelectedIndex()+1, parseoCmb(cmbDia), getHora(cmbHora),
 				getMinuto(cmbHora));
@@ -94,14 +112,25 @@ public abstract class OpcionActual extends JPanel {
 		return Integer.parseInt(i.getSelectedItem().toString());
 	}
 
+	/**
+	 * getHora 
+	 * @param s
+	 * @return La hora de la cita.
+	 */
 	private int getHora(JComboBox<String> s) {
 		return Integer.parseInt(s.getSelectedItem().toString().substring(0, 2));
 	}
 
+	/**
+	 * getMinuto
+	 * @param s
+	 * @return El minuto de la cita
+	 */
 	private int getMinuto(JComboBox<String> s) {
 		return Integer.parseInt(s.getSelectedItem().toString().substring(3));
 	}
 
+	/**Opciones panel */
 	protected void creaTitulo(String titulo, int width) {
 		JLabel lblTitulo = new JLabel(titulo);
 		marcoTitulo.add(lblTitulo);
@@ -112,6 +141,11 @@ public abstract class OpcionActual extends JPanel {
 		lblTitulo.setBounds(x, y, width, 40);
 	}
 
+	/**
+	 * cuestionarioPorDefecto.
+	 * 
+	 * Datos de una mascota
+	 */
 	protected void cuestionarioPorDefecto() {
 		ingresaNombre();
 		ingresaEdadySexo();
@@ -119,6 +153,11 @@ public abstract class OpcionActual extends JPanel {
 		ingresaEspecie();
 	}
 
+	/**
+	 * ingresa nombre 
+	 * 
+	 * Panel para la creación del nombre de una mascota 
+	 */
 	private void ingresaNombre() {
 		JLabel lblNombreMascota = new JLabel("Nombre de la mascota");
 		lblNombreMascota.setBounds(33, 11, 331, 21);
@@ -141,6 +180,11 @@ public abstract class OpcionActual extends JPanel {
 		separador.setBackground(new Color(36, 47, 65));
 	}
 
+	/**
+	 * ingresaEdadySexo.
+	 * 
+	 * Panel para el registro de la edad y sexo de una mascota 
+	 */
 	private void ingresaEdadySexo() {
 		JLabel lblSexoyEdad = new JLabel("Sexo y edad");
 		lblSexoyEdad.setBounds(33, 86, 331, 21);
@@ -161,6 +205,11 @@ public abstract class OpcionActual extends JPanel {
 				14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 }));
 	}
 
+	/**
+	 * ingresa cita.
+	 * 
+	 * Panel para la asignación de una cita
+	 */
 	private void ingresaCita() {
 		JLabel lblFechayHora = new JLabel("Fecha y hora de la cita");
 		lblFechayHora.setBounds(33, 161, 331, 21);
@@ -207,6 +256,11 @@ public abstract class OpcionActual extends JPanel {
 		lblFecha.setFont(new Font("Montserrat", Font.PLAIN, 12));
 	}
 
+	/**
+	 * ingresaEspecie.
+	 * 
+	 * Panel para el registro de la especie de la mascota
+	 */
 	private void ingresaEspecie() {
 		JLabel lblEspecie = new JLabel("Especie");
 		lblEspecie.setBounds(33, 224, 331, 21);
@@ -221,6 +275,7 @@ public abstract class OpcionActual extends JPanel {
 		cmbEspecie.setBackground(Color.WHITE);
 	}
 
+	/**Opciones de panel */
 	protected void colocaBotones() {
 		btnGuardar = new Button("Confirmar cita");
 		btnGuardar.setBounds(centrar(105, 105, panelGuardar.getWidth()), centrar(panelGuardar.getHeight(), 35), 105,
@@ -239,52 +294,98 @@ public abstract class OpcionActual extends JPanel {
 		btnCancelar.setBackground(new Color(100, 226, 159));
 	}
 
+	/**Opciones de panel */
 	public Button getBtnGuardar() {
 		return btnGuardar;
 	}
 
+	/**Opciones de panel */
 	public Button getBtnCancelar() {
 		return btnCancelar;
 	}
 
-	public static int centrar(int panelWidth, int lblWidth) {
+	/**Opciones de panel */
+	protected static int centrar(int panelWidth, int lblWidth) {
 		int puntoMedio = (panelWidth - lblWidth) / 2;
 		return puntoMedio;
 	}
 
+	/**
+	 * centrar
+	 * @param x coordenadas en x
+	 * @param y coordenadas en y
+	 * @param z coordenadas en z
+	 * @return puntoMedio
+	 */
 	public static int centrar(int x, int y, int z) {
 		int puntoMedio = (z - x - y) / 3;
 		return puntoMedio;
 	}
 
+	
+	/**
+	 * getTxtNombreMascota.
+	 * @return el nombre de la mascota
+	 */	
 	public JTextField getTxtNombreMascota() {
 		return txtNombreMascota;
 	}
 
+	
+	/**
+	 * getcmbSexo.
+	 * @return el cambio de  para el cambio de sexo de una mascota
+	 */	
 	public JComboBox<String> getCmbSexo() {
 		return cmbSexo;
 	}
 
+	
+	/**
+	 * getcmbEdad.
+	 * @return el cambio de edad de una mascota
+	 */	
 	public JComboBox<Integer> getCmbEdad() {
 		return cmbEdad;
 	}
 
+	
+	/**
+	 * getcmbDia.
+	 * @return el cambio de día para una cita
+	 */	
 	public JComboBox<Integer> getCmbDia() {
 		return cmbDia;
 	}
 
+	/**
+	 * getcmbMes.
+	 * @return el cambio de mes para una cita.
+	 */	
 	public JComboBox<String> getCmbMes() {
 		return cmbMes;
 	}
 
+	/**
+	 * getcmbYear.
+	 * @return el cambio de año para una cita.
+	 */	
 	public JComboBox<Integer> getCmbYear() {
 		return cmbYear;
 	}
 
+	/**
+	 * getcmbHora.
+	 * @return el cambio de hora para una cita.
+	 */	
 	public JComboBox<String> getCmbHora() {
 		return cmbHora;
 	}
 
+	/**
+	 * getcmbEspecie.
+	 * @return el cambio de una especie.
+	 */
 	public JComboBox<String> getCmbEspecie() {
 		return cmbEspecie;
 	}
