@@ -158,10 +158,9 @@ public class OpcionesDelCliente extends JPanel {
 	 * Método que agreaga el nombre de la marca al panel.
 	 */
 	private void agregaMarca() {
-		JLabel lblMarca = new JLabel("Puppy Pets ©");
+		JLabel lblMarca = new JLabel("Puppy Pets");
 		lblMarca.setForeground(Color.WHITE);
-		lblMarca.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
+		lblMarca.setIcon(new ImageIcon("PP.png"));
 		lblMarca.setFont(new Font("Cantarell", Font.BOLD, 22));
 		lblMarca.setBounds(10, 24, 246, 60);
 		add(lblMarca);

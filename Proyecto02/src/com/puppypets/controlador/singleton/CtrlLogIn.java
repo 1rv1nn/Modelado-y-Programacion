@@ -84,7 +84,7 @@ public class CtrlLogIn implements CtrlFrames {
 
 	@Override
 	public void mandaError(String error) {
-		JOptionPane.showMessageDialog(null, error, "ERROR | Al iniciar sesión", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, error, "ERROR | Al iniciar sesion", JOptionPane.ERROR_MESSAGE);
 		limpiaCampos();
 	}
 
@@ -122,7 +122,7 @@ public class CtrlLogIn implements CtrlFrames {
 	private boolean verificaPassword(Usuario u, String password) {
 		if (u.getPassword().equals(password))
 			return true;
-		mandaError("La contraseña no es correcta");
+		mandaError("La password no es correcta");
 		return false;
 	}
 

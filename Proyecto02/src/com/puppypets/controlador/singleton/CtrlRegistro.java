@@ -82,7 +82,7 @@ public class CtrlRegistro implements CtrlFrames {
 
 	@Override
 	public void mandaError(String error) {
-		JOptionPane.showMessageDialog(null, error, "ERROR | Al iniciar sesión", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, error, "ERROR | Al iniciar sesion", JOptionPane.ERROR_MESSAGE);
 		limpiaCampos();
 	}
 
@@ -135,11 +135,11 @@ public class CtrlRegistro implements CtrlFrames {
 	 */
 	private void lanzaErrorDatoInvalido(String validacion) {
 		if (validacion.contains("TEL")) {
-			mandaError("Ingreso un télefono invalido.");
+			mandaError("Ingreso un telefono invalido.");
 			limpiaCampos();
 			throw new IllegalArgumentException();
 		} else if (validacion.contains("NUM")) {
-			mandaError("Ingreso un número de cuenta invalido.");
+			mandaError("Ingreso un numero de cuenta invalido.");
 			limpiaCampos();
 			throw new IllegalArgumentException();
 		} else if (validacion.contains("USUARIO")) {
@@ -155,7 +155,7 @@ public class CtrlRegistro implements CtrlFrames {
 	 */
 	private void lanzaErrorTerminos() {
 		if (!frmRegistro.getChckbxTerminos().isSelected()) {
-			mandaError("No ha aceptado los terminos de condición");
+			mandaError("No ha aceptado los terminos de condicion");
 			limpiaCampos();
 			throw new IllegalArgumentException();
 		}
@@ -181,7 +181,7 @@ public class CtrlRegistro implements CtrlFrames {
 	 */
 	private void lanzaErrorPassword(String password, String confirmacion) {
 		if (!password.equals(confirmacion)) {
-			mandaError("Las contraseñas no coinciden");
+			mandaError("Las password no coinciden");
 			limpiaCampos();
 			throw new IllegalArgumentException();
 		}

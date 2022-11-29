@@ -79,8 +79,7 @@ public abstract class OpcionActual extends JPanel {
 		panelBanner.setLayout(null);
 
 		JLabel lblBanner = new JLabel("");
-		lblBanner.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\banner.jpg"));
+		lblBanner.setIcon(new ImageIcon("banner.jpg"));
 		lblBanner.setBounds(0, 0, 472, 100);
 		panelBanner.add(lblBanner);
 
@@ -103,7 +102,7 @@ public abstract class OpcionActual extends JPanel {
 	 * Método que da el motivo de la cita
 	 */
 	public abstract String getMotivacion();
-	
+
 	/**
 	 * Método para calcular el centro entre dos puntos.
 	 * 
@@ -417,7 +416,7 @@ public abstract class OpcionActual extends JPanel {
 		cmbEspecie.setBounds(33, 253, 86, 22);
 		panelCuestionario.add(cmbEspecie);
 		cmbEspecie.setModel(new DefaultComboBoxModel<String>(
-				new String[] { "Perro", "Gato", "Pez", "Iguana", "Cobaya", "Ratón", "Hámster", "Pájaro" }));
+				new String[] { "Perro", "Gato", "Pez", "Iguana", "Cobaya", "Raton", "Hamster", "Pajaro" }));
 		cmbEspecie.setBackground(Color.WHITE);
 	}
 

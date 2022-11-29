@@ -69,8 +69,7 @@ public class PanelPago extends JPanel {
 		panelBanner.setLayout(null);
 
 		JLabel lblBanner = new JLabel("");
-		lblBanner.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\matt-nelson-aI3EBLvcyu4-unsplash (1) (1).jpg"));
+		lblBanner.setIcon(new ImageIcon("banner.jpg"));
 		lblBanner.setBounds(0, 0, 472, 100);
 		panelBanner.add(lblBanner);
 		creaTitulo("Pago");
@@ -98,7 +97,7 @@ public class PanelPago extends JPanel {
 	public Button getBtnCancelar() {
 		return btnCancelar;
 	}
-	
+
 	/**
 	 * Método que rellena una fila de la tabla.
 	 * 

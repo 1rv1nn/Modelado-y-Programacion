@@ -29,7 +29,7 @@ public class PanelEstetica extends OpcionActual {
 
 	@Override
 	public void creaTitulo() {
-		creaTitulo("Cita para estética", 340);
+		creaTitulo("Cita para estetica", 340);
 	}
 
 	@Override

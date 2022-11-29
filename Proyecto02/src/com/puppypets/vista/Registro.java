@@ -50,8 +50,7 @@ public class Registro extends JFrame {
 	 * Create the frame.
 	 */
 	public Registro() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("PP.png"));
 		setTitle("Registro");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 787, 795);
@@ -164,8 +163,7 @@ public class Registro extends JFrame {
 		panelLogo.setLayout(null);
 
 		JLabel lblIcono = new JLabel("");
-		lblIcono.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\registro.png"));
+		lblIcono.setIcon(new ImageIcon("registro.png"));
 		lblIcono.setBounds(65, 121, 264, 300);
 		panelLogo.add(lblIcono);
 
@@ -182,8 +180,7 @@ public class Registro extends JFrame {
 		panelImagen.setLayout(null);
 
 		JLabel imgCompu = new JLabel("");
-		imgCompu.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\compu.png"));
+		imgCompu.setIcon(new ImageIcon("compu.png"));
 		imgCompu.setBounds(0, 0, 380, 214);
 		panelImagen.add(imgCompu);
 	}
@@ -241,7 +238,7 @@ public class Registro extends JFrame {
 	 * Método que añade los campos para introducir el teléfono del nuevo cliente
 	 */
 	private void agregaTelefono() {
-		JLabel telefono = new JLabel("Teléfono");
+		JLabel telefono = new JLabel("Telefono");
 		telefono.setForeground(new Color(36, 47, 65));
 		telefono.setFont(new Font("Montserrat", Font.BOLD, 14));
 		telefono.setBounds(48, 114, 83, 31);
@@ -269,7 +266,7 @@ public class Registro extends JFrame {
 	 * Método que añade los campos para introducir la dirección del nuevo usuario.
 	 */
 	private void agregaDireccion() {
-		JLabel lblDireccion = new JLabel("Dirección");
+		JLabel lblDireccion = new JLabel("Direccion");
 		lblDireccion.setForeground(new Color(36, 47, 65));
 		lblDireccion.setFont(new Font("Montserrat", Font.BOLD, 14));
 		lblDireccion.setBounds(48, 197, 83, 31);
@@ -326,7 +323,7 @@ public class Registro extends JFrame {
 	 * Método para agregar los campos de la creación constraseña.
 	 */
 	private void agregaPassword() {
-		JLabel lblPassword = new JLabel("Contraseña");
+		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setForeground(new Color(36, 47, 65));
 		lblPassword.setFont(new Font("Montserrat", Font.BOLD, 14));
 		lblPassword.setBounds(48, 446, 93, 31);
@@ -352,7 +349,7 @@ public class Registro extends JFrame {
 	 * Método que agrega los campos para la confirmación de contraseña.
 	 */
 	private void agregaConfirmacion() {
-		JLabel lblConfirmacion = new JLabel("Confirmación");
+		JLabel lblConfirmacion = new JLabel("Confirma password");
 		lblConfirmacion.setForeground(new Color(36, 47, 65));
 		lblConfirmacion.setFont(new Font("Montserrat", Font.BOLD, 14));
 		lblConfirmacion.setBounds(48, 529, 105, 31);
@@ -402,7 +399,7 @@ public class Registro extends JFrame {
 	 * Método que agrega los campos para aceptar los términos y condiciones.
 	 */
 	private void agregaTerminos() {
-		chckbxTerminos = new JCheckBox("Acepto términos y condiciones");
+		chckbxTerminos = new JCheckBox("Acepto terminos y condiciones");
 		chckbxTerminos.setBackground(new Color(250, 108, 113));
 		chckbxTerminos.setBounds(92, 610, 203, 31);
 		panelRegistro.add(chckbxTerminos);

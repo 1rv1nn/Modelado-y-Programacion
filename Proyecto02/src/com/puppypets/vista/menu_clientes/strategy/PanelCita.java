@@ -21,7 +21,7 @@ public class PanelCita extends OpcionActual {
 
 	@Override
 	public void creaTitulo() {
-		creaTitulo("Cita Médica", 230);
+		creaTitulo("Cita Medica", 230);
 	}
 
 	@Override
@@ -31,6 +31,6 @@ public class PanelCita extends OpcionActual {
 
 	@Override
 	public String getMotivacion() {
-		return "Cita Médica";
+		return "Cita Medica";
 	}
 }

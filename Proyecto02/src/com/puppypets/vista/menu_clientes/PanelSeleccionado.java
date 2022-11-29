@@ -134,8 +134,7 @@ public class PanelSeleccionado extends JPanel {
 	 */
 	private void agregaImagenSecundaria() {
 		lblImagen = new JLabel("");
-		lblImagen.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\lobo.jpg"));
+		lblImagen.setIcon(new ImageIcon("lobo.jpg"));
 		lblImagen.setBounds(0, 0, 472, 565);
 		lblImagen.setVisible(true);
 		add(lblImagen);

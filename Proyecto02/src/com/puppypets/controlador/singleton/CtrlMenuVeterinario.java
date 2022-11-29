@@ -61,7 +61,7 @@ public class CtrlMenuVeterinario extends MouseAdapter implements CtrlFrames {
 		Object panelPulsado = e.getSource();
 		if (panelPulsado.equals(frmMenu.getPanelOpciones().getCitasAgendadas())) {
 			frmMenu.cambioATablaCita(frmMenu.getPanelOpciones().getCitasAgendadas());
-			frmMenu.cambiaTitulo("Próximas citas");
+			frmMenu.cambiaTitulo("Proximas citas");
 			llenarTablaCita();
 		} else if (panelPulsado.equals(frmMenu.getPanelOpciones().getMascotasAgendadas())) {
 			frmMenu.cambioATablaMascota(frmMenu.getPanelOpciones().getMascotasAgendadas());

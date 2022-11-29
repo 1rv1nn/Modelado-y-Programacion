@@ -22,7 +22,7 @@ import javax.swing.SwingConstants;
 public class PanelEstudios extends OpcionActual {
 	private JComboBox<String> cmbEstudio;
 	private JCheckBox chckbxExpress;
-	
+
 	/**
 	 * Método constructor.
 	 */
@@ -36,24 +36,24 @@ public class PanelEstudios extends OpcionActual {
 	public void creaTitulo() {
 		creaTitulo("Cita para estudios", 350);
 	}
-	
+
 	@Override
 	public void creaCuestionario() {
 		cuestionarioPorDefecto();
 		seleccionaEstudio();
 		seleccionaRapidez();
 	}
-	
+
 	@Override
 	public String getMotivacion() {
-		StringBuilder motivo = new StringBuilder();		
-		if(chckbxExpress.isSelected())
+		StringBuilder motivo = new StringBuilder();
+		if (chckbxExpress.isSelected())
 			motivo.append("[E] ");
 		motivo.append("Estudio: ");
 		motivo.append(cmbEstudio.getSelectedItem().toString());
 		return motivo.toString();
 	}
-	
+
 	/**
 	 * Método que añade los campos para elegir el un tipo de estudio.
 	 */
@@ -62,16 +62,17 @@ public class PanelEstudios extends OpcionActual {
 		lblEstudio.setFont(new Font("Cantarell", Font.BOLD, 14));
 		lblEstudio.setBounds(202, 225, 108, 20);
 		panelCuestionario.add(lblEstudio);
-		
+
 		cmbEstudio = new JComboBox<String>();
-		cmbEstudio.setModel(new DefaultComboBoxModel<String>(new String[] {"Hemograma", "Ánalisis sanguíneo", "Prueba de moquillo", "Prueba de parvovirus", "Prueba de Leucemia", "Urianalisis", "Chequeos general", "Biopsias", "Histopatológicos", "Citologías"}));
+		cmbEstudio.setModel(new DefaultComboBoxModel<String>(new String[] { "Hemograma", "Analisis sanguineo",
+				"Prueba de moquillo", "Prueba de parvovirus", "Prueba de Leucemia", "Urianalisis", "Chequeos general",
+				"Biopsias", "Histopatologicos", "Citologias" }));
 		cmbEstudio.setSelectedIndex(4);
 		cmbEstudio.setFont(new Font("Montserrat", Font.PLAIN, 11));
 		cmbEstudio.setBackground(Color.WHITE);
 		cmbEstudio.setBounds(202, 250, 140, 22);
 		panelCuestionario.add(cmbEstudio);
 	}
-	
 
 	/**
 	 * Método que añade los campos para elegir el tiempo de entrega del estudio.
@@ -90,12 +91,12 @@ public class PanelEstudios extends OpcionActual {
 	 * Método que proporciona información sobre los diferentes tiempos de envío.
 	 */
 	private void daInformacionEntrega() {
-		JLabel lblInfoE = new JLabel("El servicio express se entrega en 8hrs después del ánalisis.");
+		JLabel lblInfoE = new JLabel("El servicio express se entrega en 8hrs despues del analisis.");
 		lblInfoE.setFont(new Font("Montserrat Light", Font.PLAIN, 10));
 		lblInfoE.setBounds(81, 584, 305, 25);
 		add(lblInfoE);
-		
-		JLabel lblInfoN = new JLabel("Por otro lado, el servicio regular, tarda 3 días hábiles en ser entregado.");
+
+		JLabel lblInfoN = new JLabel("Por otro lado, el servicio regular, tarda 3 dias habiles en ser entregado.");
 		lblInfoN.setFont(new Font("Montserrat Light", Font.PLAIN, 10));
 		lblInfoN.setBounds(59, 606, 364, 25);
 		add(lblInfoN);

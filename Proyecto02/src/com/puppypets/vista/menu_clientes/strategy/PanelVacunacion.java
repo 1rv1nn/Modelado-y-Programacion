@@ -29,7 +29,7 @@ public class PanelVacunacion extends OpcionActual {
 
 	@Override
 	public void creaTitulo() {
-		creaTitulo("Cita Vacunación", 320);
+		creaTitulo("Cita Vacunacion", 320);
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class PanelVacunacion extends OpcionActual {
 		panelCuestionario.add(lblEstudio);
 		
 		cmbVacuna = new JComboBox<String>();
-		cmbVacuna.setModel(new DefaultComboBoxModel<String>(new String[] {"Parvovirus ", "Moquillo", "Hepatitis ", "Rabia ", "Desparasitación", "Cuadruple", "Cachorros"}));
+		cmbVacuna.setModel(new DefaultComboBoxModel<String>(new String[] {"Parvovirus ", "Moquillo", "Hepatitis ", "Rabia ", "Desparasitacion", "Cuadruple", "Cachorros"}));
 		cmbVacuna.setSelectedIndex(2);
 		cmbVacuna.setFont(new Font("Montserrat", Font.PLAIN, 11));
 		cmbVacuna.setBackground(Color.WHITE);

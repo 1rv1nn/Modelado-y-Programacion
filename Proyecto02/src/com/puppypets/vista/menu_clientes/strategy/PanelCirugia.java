@@ -21,7 +21,7 @@ public class PanelCirugia extends OpcionActual {
 
 	@Override
 	public void creaTitulo() {
-		creaTitulo("Cita para Cirugía", 320);
+		creaTitulo("Cita para Cirugia", 330);
 	}
 
 	@Override

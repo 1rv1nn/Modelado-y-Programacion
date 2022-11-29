@@ -43,8 +43,7 @@ public class InicioSesion extends JFrame {
 	 * Método constructor de la clase.
 	 */
 	public InicioSesion() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("PP.png"));
 		setTitle("Puppy Pets");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 764, 468);
@@ -59,6 +58,7 @@ public class InicioSesion extends JFrame {
 
 	/**
 	 * Método getter de txt
+	 * 
 	 * @return El JTextField de username
 	 */
 	public JTextField getTxtUsername() {
@@ -67,6 +67,7 @@ public class InicioSesion extends JFrame {
 
 	/**
 	 * Método getter de la password
+	 * 
 	 * @return JPasswordField de la contraseña
 	 */
 	public JPasswordField getPasswordField() {
@@ -75,6 +76,7 @@ public class InicioSesion extends JFrame {
 
 	/**
 	 * Método getter del botón login
+	 * 
 	 * @return Botón login
 	 */
 	public Button getBtnLogIn() {
@@ -83,12 +85,13 @@ public class InicioSesion extends JFrame {
 
 	/**
 	 * Método getter del botón registrar
+	 * 
 	 * @return Botón registrar.
 	 */
 	public Button getBtnRegister() {
 		return btnRegister;
 	}
-	
+
 	/**
 	 * Método que crea el panel de inicio de sesión.
 	 */
@@ -121,8 +124,7 @@ public class InicioSesion extends JFrame {
 	 */
 	private void creaLogo() {
 		JLabel imgLogo = new JLabel("");
-		imgLogo.setIcon(new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PuppyPets grande.png"));
+		imgLogo.setIcon(new ImageIcon("PuppyPets grande.png"));
 		imgLogo.setBounds(45, 110, 274, 256);
 		panelLogo.add(imgLogo);
 
@@ -140,13 +142,13 @@ public class InicioSesion extends JFrame {
 		separador1.setBounds(92, 405, 155, 3);
 		panelLogo.add(separador1);
 
-		JLabel lblMarca = new JLabel("Puppy Pets ©");
+		JLabel lblMarca = new JLabel("Puppy Pets ");
 		lblMarca.setBounds(45, 38, 274, 44);
 		panelLogo.add(lblMarca);
 		lblMarca.setFont(new Font("Montserrat Medium", Font.BOLD, 36));
 		lblMarca.setForeground(SystemColor.text);
 
-		JLabel lblEslogan = new JLabel("¡Cuidando de tu mejor amigo!");
+		JLabel lblEslogan = new JLabel(" Cuidando de tu mejor amigo :)");
 		lblEslogan.setFont(new Font("Cantarell", Font.BOLD, 12));
 		lblEslogan.setForeground(new Color(250, 108, 113));
 		lblEslogan.setBounds(83, 385, 196, 19);
@@ -185,7 +187,7 @@ public class InicioSesion extends JFrame {
 	 * Método que agreaga los campos para agregar la contraseña
 	 */
 	private void agregaPassword() {
-		JLabel lblPassword = new JLabel("Contraseña:");
+		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setForeground(new Color(229, 244, 254));
 		lblPassword.setFont(new Font("Montserrat", Font.BOLD, 14));
 		lblPassword.setBounds(51, 180, 89, 14);
@@ -211,7 +213,7 @@ public class InicioSesion extends JFrame {
 	 * Método que añade el botón de iniciar sesión.
 	 */
 	private void agregarBotonIniciarSesion() {
-		btnLogIn = new Button("Iniciar sesión");
+		btnLogIn = new Button("Iniciar sesion");
 		btnLogIn.setBackground(new Color(153, 211, 255));
 		btnLogIn.setForeground(new Color(255, 255, 255));
 		btnLogIn.setFont(new Font("Montserrat", Font.BOLD, 12));

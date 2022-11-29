@@ -47,8 +47,7 @@ public class MenuVeterinario extends JFrame {
 	 * Método constructor del menú del veterinario.
 	 */
 	public MenuVeterinario() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("PP.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 932, 515);
 		contentPane = new JPanel();
@@ -66,7 +65,7 @@ public class MenuVeterinario extends JFrame {
 		creaBienvenida();
 		creaTitulo();
 		creaOpciones();
-		cambiaTitulo("Próximas citas");
+		cambiaTitulo("Proximas citas");
 		modelo = new DefaultTableModel();
 		tabla.setModel(modelo);
 		creaModeloCitas();
@@ -89,7 +88,6 @@ public class MenuVeterinario extends JFrame {
 	public OpcionesDelVeterinario getPanelOpciones() {
 		return panelOpciones;
 	}
-	
 
 	/**
 	 * Método que cambia el título dependiendo lo que se escoja.
@@ -168,7 +166,7 @@ public class MenuVeterinario extends JFrame {
 		mp.setBackground(VERDE_CLARO);
 		creaModeloCitas();
 	}
-	
+
 	public void restablece() {
 		limpiaOpciones();
 		panelOpciones.getCitasAgendadas().setBackground(VERDE_CLARO);
@@ -178,14 +176,14 @@ public class MenuVeterinario extends JFrame {
 		modelo.fireTableDataChanged();
 		creaModeloCitas();
 	}
-	
+
 	/**
 	 * Método que restablece los paneles de las opciones
 	 */
 	private void limpiaOpciones() {
 		panelOpciones.getOpciones().stream().forEach(p -> p.setBackground(p.getDefaultColour()));
 		panelOpciones.getOpciones().stream().forEach(p -> p.setClicks(0));
-		cambiaTitulo("Próximas citas"); 
+		cambiaTitulo("Próximas citas");
 	}
 
 	/**
@@ -240,21 +238,17 @@ public class MenuVeterinario extends JFrame {
 	 * Método que crea el panel de opciones.
 	 */
 	private void creaOpciones() {
-		ImageIcon imgCita = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\cita.png");
-		MiniPanel panelCita = new MiniPanel("Consulta próximas citas", imgCita, 170, VERDE);
+		ImageIcon imgCita = new ImageIcon("cita.png");
+		MiniPanel panelCita = new MiniPanel("Consulta proximas citas", imgCita, 170, VERDE);
 
-		ImageIcon imgMascota = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\mascota.png");
+		ImageIcon imgMascota = new ImageIcon("mascota.png");
 		MiniPanel panelMascota = new MiniPanel("Consulta mascotas", imgMascota, 220, VERDE);
 
-		ImageIcon imgPago = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\tarjeta.png");
+		ImageIcon imgPago = new ImageIcon("tarjeta.png");
 		MiniPanel panelPago = new MiniPanel("Consulta citas pagadas", imgPago, 280, VERDE_OSCURO);
 
-		ImageIcon imgLogOut = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\logout.png");
-		MiniPanel panelLogOut = new MiniPanel("Cerrar sesión", imgLogOut, 340, VERDE_OSCURO);
+		ImageIcon imgLogOut = new ImageIcon("logout.png");
+		MiniPanel panelLogOut = new MiniPanel("Cerrar sesion", imgLogOut, 340, VERDE_OSCURO);
 
 		panelCita.setBackground(VERDE_CLARO);
 		panelCita.setClicks(1);
@@ -266,7 +260,6 @@ public class MenuVeterinario extends JFrame {
 		panelOpciones = new OpcionesDelVeterinario(builder);
 		contentPane.add(panelOpciones);
 	}
-	
 
 	/**
 	 * Método para agregar scroll por si la tabla tiene demasiados datos.

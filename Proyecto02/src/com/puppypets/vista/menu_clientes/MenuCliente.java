@@ -37,8 +37,7 @@ public class MenuCliente extends JFrame {
 	 * Método constructor del cliente.
 	 */
 	public MenuCliente() {
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage("D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\PP.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("PP.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 754, 670);
 		contentPane = new JPanel();
@@ -117,33 +116,26 @@ public class MenuCliente extends JFrame {
 	 * Método que crea las opciones del panel de opciones.
 	 */
 	private void creaOpciones() {
-		ImageIcon imgCita = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\cita.png");
+		ImageIcon imgCita = new ImageIcon("cita.png");
 		MiniPanel panelCita = new MiniPanel("Agendar una cita medica", imgCita, 110, VERDE);
 
-		ImageIcon imgCirugia = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\cirugia.png");
-		MiniPanel panelCirugia = new MiniPanel("Agendar cirugía", imgCirugia, 170, VERDE);
+		ImageIcon imgCirugia = new ImageIcon("cirugia.png");
+		MiniPanel panelCirugia = new MiniPanel("Agendar cirugia", imgCirugia, 170, VERDE);
 
-		ImageIcon imgEstetica = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\corte.png");
-		MiniPanel panelEstetica = new MiniPanel("Agendar estética", imgEstetica, 230, VERDE);
+		ImageIcon imgEstetica = new ImageIcon("corte.png");
+		MiniPanel panelEstetica = new MiniPanel("Agendar estetica", imgEstetica, 230, VERDE);
 
-		ImageIcon imgVacunacion = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\vacuna.png");
-		MiniPanel panelVacunacion = new MiniPanel("Agendar vacunación", imgVacunacion, 290, VERDE);
+		ImageIcon imgVacunacion = new ImageIcon("vacuna.png");
+		MiniPanel panelVacunacion = new MiniPanel("Agendar vacunacion", imgVacunacion, 290, VERDE);
 
-		ImageIcon imgEstudios = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\analisis.png");
-		MiniPanel panelEstudios = new MiniPanel("Agendar estudios clínicos", imgEstudios, 350, VERDE);
+		ImageIcon imgEstudios = new ImageIcon("analisis.png");
+		MiniPanel panelEstudios = new MiniPanel("Agendar estudios clinicos", imgEstudios, 350, VERDE);
 
-		ImageIcon imgPago = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\tarjeta.png");
+		ImageIcon imgPago = new ImageIcon("tarjeta.png");
 		MiniPanel panelPago = new MiniPanel("Pago de servicios", imgPago, 410, VERDE_OSCURO);
 
-		ImageIcon imgLogOut = new ImageIcon(
-				"D:\\106956120\\Documents\\Programming\\Git\\Modelado-y-Programacion\\Proyecto02\\logout.png");
-		MiniPanel panelLogOut = new MiniPanel("Cerrar sesión", imgLogOut, 470, VERDE_OSCURO);
+		ImageIcon imgLogOut = new ImageIcon("logout.png");
+		MiniPanel panelLogOut = new MiniPanel("Cerrar sesion", imgLogOut, 470, VERDE_OSCURO);
 
 		ConstructorOpcionesDelCliente builder = new ConstructorOpcionesDelCliente();
 		builder.setPanelCita(panelCita);

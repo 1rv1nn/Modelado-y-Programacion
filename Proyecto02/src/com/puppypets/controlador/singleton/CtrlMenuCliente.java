@@ -232,7 +232,7 @@ public class CtrlMenuCliente extends MouseAdapter implements CtrlFrames {
 			usuarioActual.getCitasAgendadas().stream().forEach(c -> c.setPago(true));
 			mandaMensaje("Ha pagado sus citas", "Exito");
 		} catch (IllegalArgumentException iae) {
-			mandaError("Las cuentan no son iguales, se cerrara sesión");
+			mandaError("Las cuentan no son iguales, se cerrara sesion");
 			CtrlLogIn.getInstancia().iniciaFrame();
 			ocultaFrame();
 			frmMenu.getPanelOpciones().limpiar();
@@ -284,7 +284,7 @@ public class CtrlMenuCliente extends MouseAdapter implements CtrlFrames {
 			mandaError("No puede agendar una cita en el pasado");
 			limpiaCampos();
 		} catch (NoSuchElementException nee) {
-			mandaError("No colocó el nombre de su mascota");
+			mandaError("No coloco el nombre de su mascota");
 			limpiaCampos();
 		}
 	}
@@ -352,7 +352,7 @@ public class CtrlMenuCliente extends MouseAdapter implements CtrlFrames {
 		Cita nuevaCita = new Cita(builder);
 		usuarioActual.agregarCita(nuevaCita);
 		disponible.agregaCita(nuevaCita);
-		mandaMensaje("Se ha confirmado su cita", "Éxito");
+		mandaMensaje("Se ha confirmado su cita", "Exito");
 	}
 
 	/**
